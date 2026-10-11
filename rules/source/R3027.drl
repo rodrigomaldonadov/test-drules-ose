@@ -1,0 +1,7 @@
+rule "R3027"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3027", "El valor del atributo no se encuentra en el catálogo");
+end

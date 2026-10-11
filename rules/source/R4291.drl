@@ -1,0 +1,7 @@
+rule "R4291"
+    when
+        $ctx : CpeContext( cargoDescInvalidoNivelGlobal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4291", "El dato ingresado como cargo/descuento no es valido a nivel global.");
+end

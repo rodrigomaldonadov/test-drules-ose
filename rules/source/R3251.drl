@@ -1,0 +1,8 @@
+rule "R3251"
+    when
+        $ctx : CpeContext( esCredito == true,
+                           faltaMontoNetoPendiente == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3251", "Si el tipo de transaccion es al Credito debe consignarse el Monto neto pendiente de pago");
+end

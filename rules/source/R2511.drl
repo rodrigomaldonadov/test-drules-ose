@@ -1,0 +1,7 @@
+rule "R2511"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2511", "El tipo de documento no es aceptado.");
+end

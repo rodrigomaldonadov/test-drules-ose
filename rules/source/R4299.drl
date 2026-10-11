@@ -1,0 +1,11 @@
+rule "R4299"
+    when
+        $ctx : CpeContext(
+            (esBoleta || esNotaCredito || esNotaDebito),
+            sumaVentaGravadasLineaIncorrecta == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4299", "La sumatoria del total valor de venta - operaciones gravadas de linea no corresponden al total.");
+        $ctx.marcarError(4299);
+end

@@ -1,0 +1,7 @@
+rule "R4255"
+    when
+        $ctx : CpeContext( atributoSchemeNameIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4255", "El dato ingresado como atributo @schemeName es incorrecto.");
+end

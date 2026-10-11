@@ -1,0 +1,8 @@
+rule "R4278"
+    when
+        $ctx : CpeContext(valorReferencialCargaUtilNominalFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4278", "El dato ingresado como valor referencial de carga util nominal no cumple con el formato establecido.");
+        $ctx.marcarError(4278);
+end

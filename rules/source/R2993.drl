@@ -1,0 +1,7 @@
+rule "R2993"
+    when
+        $ctx : CpeContext( factorIgvLineaCero == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2993", "El factor de afectacion de IGV por linea debe ser diferente a 0.00.");
+end

@@ -1,0 +1,8 @@
+rule "R4271"
+    when
+        $ctx : CpeContext(descripcionTramoFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4271", "El dato ingresado como descripcion del tramo no cumple con el formato establecido.");
+        $ctx.marcarError(4271);
+end

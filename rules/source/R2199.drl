@@ -1,0 +1,7 @@
+rule "R2199"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2199", "El sistema de calculo del ISC es incorrecto");
+end

@@ -1,0 +1,8 @@
+rule "R4289"
+    when
+        $ctx : CpeContext(esBoleta == true, cargoDescItemDifiere == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4289", "El valor de cargo/descuento por item difiere de los importes consignados.");
+        $ctx.marcarError(4289);
+end

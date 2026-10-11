@@ -1,0 +1,8 @@
+rule "R4274"
+    when
+        $ctx : CpeContext(tipoCargaUtilIncorrecto == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4274", "El dato ingresado como tipo de carga util es incorrecto.");
+        $ctx.marcarError(4274);
+end

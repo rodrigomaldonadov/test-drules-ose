@@ -1,0 +1,7 @@
+rule "R3127"
+    when
+        $ctx : CpeContext( faltaCodigoBbssDetraccion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3127", "El XML no contiene el tag o no existe informacion del Codigo de BBSS de detraccion para el tipo de operacion.");
+end

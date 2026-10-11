@@ -1,0 +1,7 @@
+rule "R2685"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2685", "El valor de la moneda del Importe total Percibido debe ser PEN");
+end

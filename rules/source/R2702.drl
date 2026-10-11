@@ -1,0 +1,7 @@
+rule "R2702"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2702", "El XML no contiene el tag o no existe información de la fecha de cobro del documento Relacionado");
+end

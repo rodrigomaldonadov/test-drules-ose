@@ -1,0 +1,8 @@
+rule "R4277"
+    when
+        $ctx : CpeContext(unidadMedidaCargaVehiculoNoCorresponde == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4277", "El dato ingresado como unidad de medida de la carga del vehiculo no corresponde al valor esperado.");
+        $ctx.marcarError(4277);
+end

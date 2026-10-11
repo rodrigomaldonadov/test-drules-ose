@@ -1,0 +1,7 @@
+rule "R2400"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2400", "El tipo de documento modificado por la Nota de debito debe ser boleta electronica");
+end

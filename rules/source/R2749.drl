@@ -1,0 +1,7 @@
+rule "R2749"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2749", "La moneda de referencia para el tipo de cambio debe ser la misma que la del documento relacionado");
+end

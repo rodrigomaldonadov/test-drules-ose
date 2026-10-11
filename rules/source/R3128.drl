@@ -1,0 +1,7 @@
+rule "R3128"
+    when
+        $ctx : CpeContext( codigoBbssDetraccionNoCorresponde == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3128", "El XML contiene informacion de codigo de bien y servicio de detraccion que no corresponde al tipo de operacion.");
+end

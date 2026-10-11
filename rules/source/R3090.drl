@@ -1,0 +1,7 @@
+rule "R3090"
+    when
+        $ctx : CpeContext( multiplesTagsNumDocReceptor == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3090", "El XML contiene mas de un tag como elemento de numero de documento del receptor.");
+end

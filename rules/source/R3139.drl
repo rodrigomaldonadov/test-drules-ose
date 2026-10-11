@@ -1,0 +1,7 @@
+rule "R3139"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3139", "El XML no contiene el tag de apellidos y nombres del huesped.");
+end

@@ -1,0 +1,7 @@
+rule "R3248"
+    when
+        $ctx : CpeContext( tipoTransaccionRepetido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3248", "El tipo de transaccion o el identificador de la cuota no debe repetirse en el comprobante");
+end

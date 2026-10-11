@@ -1,0 +1,7 @@
+rule "R2992"
+    when
+        $ctx : CpeContext( faltaTasaTributoLinea == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2992", "El XML no contiene el tag de la tasa del tributo de la linea");
+end

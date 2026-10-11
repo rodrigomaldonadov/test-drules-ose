@@ -1,0 +1,7 @@
+rule "R3006"
+    when
+        $ctx : CpeContext( descripcionLeyendaInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3006", "El dato ingresado en descripcion de leyenda no cumple con el formato establecido.");
+end

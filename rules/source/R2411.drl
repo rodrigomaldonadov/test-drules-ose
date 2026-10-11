@@ -1,0 +1,7 @@
+rule "R2411"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2411", "Ha consignado mas de un elemento cac:AllowanceCharge con el mismo campo cbc:ChargeIndicator");
+end

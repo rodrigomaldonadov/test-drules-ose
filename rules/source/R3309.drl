@@ -1,0 +1,9 @@
+rule "R3309"
+    when
+        $ctx : CpeContext( tipoOperacion == "2001",
+                           formaPagoContado == true,
+                           sinPaymentTermsPercepcion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3309", "Si forma de pago es Contado debe consignar un Payment Terms con indicador Percepcion");
+end

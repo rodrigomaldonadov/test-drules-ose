@@ -1,0 +1,7 @@
+rule "R3266"
+    when
+        $ctx : CpeContext( montoCuotaMayorTotal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3266", "El Monto del pago unico o de las cuotas debe ser menor o igual al Importe total del comprobante");
+end

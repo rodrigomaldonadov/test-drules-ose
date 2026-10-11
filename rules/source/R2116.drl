@@ -1,0 +1,7 @@
+rule "R2116"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2116", "El tipo de documento modificado por la Nota de credito debe ser factura electronica o ticket");
+end

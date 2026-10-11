@@ -1,0 +1,7 @@
+rule "R2719"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2719", "El XML no contiene el tag o no existe información de la moneda de referencia para el tipo de cambio");
+end

@@ -1,0 +1,7 @@
+rule "R4006"
+    when
+        $ctx : CpeContext( idGuiaSinSerieNumero == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4006", "El ID de las guias debe tener informacion de la SERIE-NUMERO de guia.");
+end

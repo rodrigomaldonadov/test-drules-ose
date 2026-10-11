@@ -1,0 +1,7 @@
+rule "R2912"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2912", "La urbanización del domicilio fiscal del cliente no cumple con el formato establecido");
+end

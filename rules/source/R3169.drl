@@ -1,0 +1,7 @@
+rule "R3169"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3169", "El XML no contiene el tag de Carta Porte Aéreo: Lugar de origen - Dirección detallada");
+end

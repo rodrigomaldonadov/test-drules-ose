@@ -1,0 +1,7 @@
+rule "R3314"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3314", "Si consigna cuenta de BN y montos de la detraccion, debe informar el codigo bien sujeto a detraccion");
+end

@@ -1,0 +1,11 @@
+rule "El XML no contiene tag o no existe informacion de la fecha del concepto por linea"
+    when
+        $ctx : CpeContext(
+            esFactura == true,
+            tipoDocCliente != null,
+            tipoDocCliente != "6"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3243", "El XML no contiene tag o no existe informacion de la fecha del concepto por linea");
+end

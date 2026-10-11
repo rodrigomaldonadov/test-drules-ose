@@ -1,0 +1,10 @@
+rule "R2173"
+    when
+        $ctx : CpeContext(
+            esNotaDebito == true,
+            motivoNota == null || motivoNota.trim().length() == 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2173", "Debe consignar el motivo de la Nota de Debito (DiscrepancyResponse/Description)");
+end

@@ -1,0 +1,7 @@
+rule "R3053"
+    when
+        $ctx : CpeContext( montoBaseCargDescLineaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3053", "El Monto base de cargo/descuento por linea no cumple con el formato establecido.");
+end

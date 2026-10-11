@@ -1,0 +1,8 @@
+rule "R3262"
+    when
+        $ctx : CpeContext( tieneRetencionIgv == true,
+                           receptorNoEsAgenteRetencion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3262", "Si existe retencion de IGV en el comprobante, el receptor debe ser un Agente de Retencion");
+end

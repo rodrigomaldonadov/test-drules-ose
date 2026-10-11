@@ -1,0 +1,11 @@
+rule "R3088"
+    when
+        $ctx : CpeContext(
+            moneda != null,
+            moneda.trim().length() > 0,
+            moneda not matches "PEN|USD|EUR|GBP|JPY|CAD|CHF|AUD|BRL|MXN|CLP|COP|ARS|BOB|PYG|UYU|VES"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3088", "El valor ingresado como moneda del comprobante no es valido (catalogo nro 02).");
+end

@@ -1,0 +1,7 @@
+rule "R2601"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2601", "Senor contribuyente a la fecha no se encuentra registrado ó habilitado con la condición de Agente de percepción.");
+end

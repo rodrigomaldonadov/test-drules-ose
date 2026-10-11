@@ -1,0 +1,7 @@
+rule "R2694"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2694", "El número de documento relacionado no está permitido o no es valido");
+end

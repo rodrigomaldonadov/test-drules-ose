@@ -1,0 +1,11 @@
+rule "R4296"
+    when
+        $ctx : CpeContext(
+            (esBoleta || esNotaCredito || esNotaDebito),
+            sumaVentaInafectasLineaIncorrecta == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4296", "La sumatoria del total valor de venta - operaciones inafectas de linea no corresponden al total.");
+        $ctx.marcarError(4296);
+end

@@ -1,0 +1,7 @@
+rule "R3165"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3165", "El XML no contiene el tag de BVME transporte ferroviario: Servicio transporte:Número de asiento");
+end

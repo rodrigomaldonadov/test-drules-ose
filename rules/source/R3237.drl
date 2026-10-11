@@ -1,0 +1,7 @@
+rule "R3237"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3237", "Debe consignar el campo cac:TaxSubtotal/cbc:BaseUnitMeasure a nivel de ítem");
+end

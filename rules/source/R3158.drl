@@ -1,0 +1,7 @@
+rule "R3158"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3158", "El dato ingresado como Agente de Viajes-Tipo de documento no corresponde al valor esperado.");
+end

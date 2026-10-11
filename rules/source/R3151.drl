@@ -1,0 +1,7 @@
+rule "R3151"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3151", "El XML no contiene el tag de Créditos Hipotecarios: Partida Registral");
+end

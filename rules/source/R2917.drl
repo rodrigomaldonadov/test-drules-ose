@@ -1,0 +1,7 @@
+rule "R2917"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2917", "Debe corresponder a algún valor válido establecido en el catálogo 13");
+end

@@ -1,0 +1,7 @@
+rule "R2257"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2257", "El XML no contiene el tag InstructionID");
+end

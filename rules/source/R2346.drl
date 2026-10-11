@@ -1,0 +1,7 @@
+rule "R2346"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2346", "La fecha de generación del resumen debe ser igual a la fecha consignada en el nombre del archivo");
+end

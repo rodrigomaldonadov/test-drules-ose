@@ -1,0 +1,7 @@
+rule "R3031"
+    when
+        $ctx : CpeContext( taxableAmountLineaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3031", "El dato ingresado en TaxableAmount de la linea no cumple con el formato establecido");
+end

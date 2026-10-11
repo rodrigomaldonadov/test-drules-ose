@@ -1,0 +1,7 @@
+rule "R2687"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2687", "El dato ingresado en SUNATTotalCashed debe ser numérico mayor a cero");
+end

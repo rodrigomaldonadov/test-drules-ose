@@ -1,0 +1,8 @@
+rule "R3308"
+    when
+        $ctx : CpeContext( tienePercepcion == true,
+                           tipoOperacion != "2001" )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3308", "Solo debe consignar informacion de percepciones si el tipo de operacion es 2001-Operacion sujeta a Percepcion");
+end

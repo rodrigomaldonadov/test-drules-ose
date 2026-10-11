@@ -1,0 +1,8 @@
+rule "R2416"
+    when
+        $ctx : CpeContext( leyendaTransferenciaGratuita == true,
+                           totalValorVentaGratuitas <= 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2416", "Si existe leyenda Transferencia Gratuita debe consignar Total Valor de Venta de Operaciones Gratuitas");
+end

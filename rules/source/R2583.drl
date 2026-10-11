@@ -1,0 +1,7 @@
+rule "R2583"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2583", "Debe consignar tipo de documento que modifica");
+end

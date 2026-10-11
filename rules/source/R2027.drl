@@ -1,0 +1,7 @@
+rule "R2027"
+    when
+        $ctx : CpeContext( descripcionItemFormatoInvalidoGlobal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2027", "El XML no contiene el tag o no existe informacion de cac:Item/cbc:Description del item");
+end

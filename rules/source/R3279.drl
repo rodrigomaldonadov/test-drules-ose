@@ -1,0 +1,7 @@
+rule "R3279"
+    when
+        $ctx : CpeContext( valorVentaImpuestosNoConcuerda == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3279", "La sumatoria del Total del valor de venta mas los impuestos no concuerda con la base imponible");
+end

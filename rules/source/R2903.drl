@@ -1,0 +1,7 @@
+rule "R2903"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2903", "La provincia del domicilio fiscal del emisor no cumple con el formato establecido");
+end

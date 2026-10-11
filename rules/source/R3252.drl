@@ -1,0 +1,7 @@
+rule "R3252"
+    when
+        $ctx : CpeContext( cuotasSinTipoCredito == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3252", "Si existe informacion de cuota de pago, el tipo de transaccion debe ser al credito");
+end

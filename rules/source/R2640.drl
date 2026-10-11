@@ -1,0 +1,7 @@
+rule "R2640"
+    when
+        $ctx : CpeContext( operacionGratuitaMasDeUnMonto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2640", "Operacion gratuita, solo debe consignar un monto referencial");
+end

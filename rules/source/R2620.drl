@@ -1,0 +1,7 @@
+rule "R2620"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2620", "El Proveedor no puede ser el mismo que el Emisor del comprobante de retención.");
+end

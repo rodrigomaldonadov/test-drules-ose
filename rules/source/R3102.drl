@@ -1,0 +1,7 @@
+rule "R3102"
+    when
+        $ctx : CpeContext( factorAfectacionLineaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3102", "El dato ingresado como factor de afectacion por linea no cumple con el formato establecido.");
+end

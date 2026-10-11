@@ -1,0 +1,7 @@
+rule "R2209"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2209", "El documento modificado en la Nota de debito no esta registrada");
+end

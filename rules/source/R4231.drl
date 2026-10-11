@@ -1,0 +1,7 @@
+rule "R4231"
+    when
+        $ctx : CpeContext( codigoUbigeoNoExiste == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4231", "El codigo de Ubigeo no existe en el listado.");
+end

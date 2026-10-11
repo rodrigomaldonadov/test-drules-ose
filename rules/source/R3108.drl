@@ -1,0 +1,7 @@
+rule "R3108"
+    when
+        $ctx : CpeContext( factorBaseIscNoCorresponde == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3108", "El producto del factor y monto base de la afectacion del ISC no corresponde al monto de afectacion de linea.");
+end

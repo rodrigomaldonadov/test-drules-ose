@@ -1,0 +1,7 @@
+rule "R1001"
+    when
+        $ctx : CpeContext( formatoSerieCorrelativoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1001", "ID - El dato SERIE-CORRELATIVO no cumple con el formato de acuerdo al tipo de comprobante");
+end

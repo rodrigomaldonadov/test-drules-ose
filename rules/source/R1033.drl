@@ -1,0 +1,7 @@
+rule "R1033"
+    when
+        $ctx : CpeContext( duplicado == true, esFactura == false )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1033", "El comprobante fue registrado previamente con otros datos");
+end

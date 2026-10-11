@@ -1,0 +1,7 @@
+rule "R2373"
+    when
+        $ctx : CpeContext( iscSinSistemaCalculo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2373", "Si existe monto de ISC en el ITEM debe especificar el sistema de calculo");
+end

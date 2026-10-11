@@ -1,0 +1,11 @@
+rule "R1007"
+    when
+        $ctx : CpeContext(
+            schemeIdEmisor != null,
+            schemeIdEmisor.trim().length() > 0,
+            schemeIdEmisor != "6"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1007", "El dato ingresado no cumple con el estandar");
+end

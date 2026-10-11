@@ -1,0 +1,7 @@
+rule "R4200"
+    when
+        $ctx : CpeContext( valorNoEnCatalogo13 == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4200", "Debe corresponder a algun valor valido establecido en el catalogo 13");
+end

@@ -1,0 +1,7 @@
+rule "R2370"
+    when
+        $ctx : CpeContext( lineExtensionAmountItemInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2370", "El dato ingresado en LineExtensionAmount del item no cumple con el formato establecido");
+end

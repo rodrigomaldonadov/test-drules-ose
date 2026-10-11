@@ -1,0 +1,7 @@
+rule "R3302"
+    when
+        $ctx : CpeContext( sumaIgvGratuitasLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3302", "La sumatoria de los IGV de operaciones gratuitas de la linea (codigo tributo 9996) no corresponden al total");
+end

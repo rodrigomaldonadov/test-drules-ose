@@ -1,0 +1,11 @@
+rule "R4300"
+    when
+        $ctx : CpeContext(
+            (esBoleta || esNotaCredito || esNotaDebito),
+            sumaVentaIvapLineaIncorrecta == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4300", "La sumatoria del total valor de venta - IVAP de linea no corresponden al total.");
+        $ctx.marcarError(4300);
+end

@@ -1,0 +1,7 @@
+rule "R3214"
+    when
+        $ctx : CpeContext( faltaMontoAnticipadoDocumentoRelacionado == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3214", "No existe informacion del Monto Anticipado para el comprobante que se realizo el anticipo");
+end

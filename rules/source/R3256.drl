@@ -1,0 +1,7 @@
+rule "R3256"
+    when
+        $ctx : CpeContext( cuotaSinFecha == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3256", "Si se consigna informacion de la cuota de pago, debe indicarse la fecha del pago unico o de las cuotas");
+end

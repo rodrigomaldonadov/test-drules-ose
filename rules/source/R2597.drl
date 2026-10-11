@@ -1,0 +1,7 @@
+rule "R2597"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2597", "Falta consignar información del monto de interes moratorio");
+end

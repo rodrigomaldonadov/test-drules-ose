@@ -1,0 +1,7 @@
+rule "R3319"
+    when
+        $ctx : CpeContext( sumaCuotasDistintaMontoNeto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3319", "La suma de las cuotas debe ser igual al Monto neto pendiente de pago.");
+end

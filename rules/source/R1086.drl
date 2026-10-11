@@ -1,0 +1,7 @@
+rule "R1086"
+    when
+        $ctx : CpeContext( emisorEsSsco == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1086", "El emisor electronico es un Sujeto sin capacidad operativa (SSCO)");
+end

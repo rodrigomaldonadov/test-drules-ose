@@ -1,0 +1,7 @@
+rule "R2315"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2315", "El tag VoidReasonDescription esta vacío");
+end

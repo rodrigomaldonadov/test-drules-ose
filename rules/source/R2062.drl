@@ -1,0 +1,7 @@
+rule "R2062"
+    when
+        $ctx : CpeContext( payableAmountFormatoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2062", "El dato ingresado en PayableAmount no cumple con el formato establecido");
+end

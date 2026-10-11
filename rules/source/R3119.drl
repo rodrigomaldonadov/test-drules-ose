@@ -1,0 +1,7 @@
+rule "R3119"
+    when
+        $ctx : CpeContext( faltaDireccionDestinoTransporte == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3119", "El XML no contiene el tag o no existe informacion de la direccion del punto de destino en Detracciones - Servicio de transporte de carga.");
+end

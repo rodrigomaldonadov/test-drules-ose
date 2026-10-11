@@ -1,0 +1,7 @@
+rule "R2110"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2110", "UBLVersionID - La versión del UBL no es correcta");
+end

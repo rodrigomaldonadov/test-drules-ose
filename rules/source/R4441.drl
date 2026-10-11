@@ -1,0 +1,7 @@
+rule "R4441"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4441", "El comprobante que se realizo el anticipo no se encuentra autorizado");
+end

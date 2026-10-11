@@ -1,0 +1,7 @@
+rule "R3110"
+    when
+        $ctx : CpeContext( igvLineaDebeSerCero == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3110", "El monto de afectacion de IGV por linea debe ser igual a 0.00 para Exoneradas, Inafectas, Exportacion, Gratuitas de exoneradas o Gratuitas de inafectas.");
+end

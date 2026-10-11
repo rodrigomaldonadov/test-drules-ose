@@ -1,0 +1,7 @@
+rule "R3323"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3323", "Solo se permite 1 documento relacionado cuando el Indicador de emisión excepcional es '01'");
+end

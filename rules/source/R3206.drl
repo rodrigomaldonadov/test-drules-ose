@@ -1,0 +1,11 @@
+rule "R3206"
+    when
+        $ctx : CpeContext(
+            tipoOperacion != null,
+            tipoOperacion.trim().length() > 0,
+            tipoOperacion not matches "0101|0102|0103|0104|0105|0106|0107|0108|0109|0110|0111|0112|0113|0120|0121|0200|0201|0202|0203|0204|0205|0206|0207|0208|0301|0302|0401|1001|1002|1003|1004|2001|2002|2003|2004|2100|2101|2102|2103|2104|2106"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3206", "El dato ingresado como tipo de operacion no corresponde a un valor esperado (catalogo nro. 51)");
+end

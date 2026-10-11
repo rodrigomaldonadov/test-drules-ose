@@ -1,0 +1,7 @@
+rule "R3462"
+    when
+        $ctx : CpeContext( tasaIgvDiferenteONoVigente == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3462", "La tasa del IGV debe ser la misma en todas las lineas o items del documento y debe corresponder con una tasa vigente.");
+end

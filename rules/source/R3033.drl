@@ -1,0 +1,7 @@
+rule "R3033"
+    when
+        $ctx : CpeContext( codigoBienServicioDetraccionInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3033", "El codigo de bien o servicio sujeto a detraccion no existe en el listado.");
+end

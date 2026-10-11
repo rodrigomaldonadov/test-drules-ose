@@ -1,0 +1,7 @@
+rule "R1079"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1079", "Solo puede enviar el comprobante en un resumen diario");
+end

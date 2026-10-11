@@ -1,0 +1,7 @@
+rule "R3224"
+    when
+        $ctx : CpeContext( valorReferencialNoOnerosasinGratuita == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3224", "Si existe 'Valor referencial unitario en operac. no onerosas' con monto mayor a cero, la operacion debe ser gratuita (codigo de tributo 9996)");
+end

@@ -1,0 +1,7 @@
+rule "R3500"
+    when
+        $ctx : CpeContext( porcentajeParticipacionInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3500", "El Porcentaje de participacion no cumple con el formato o longitud especificada");
+end

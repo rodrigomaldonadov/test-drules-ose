@@ -1,0 +1,7 @@
+rule "R4268"
+    when
+        $ctx : CpeContext( cargoDescInvalidoNivelItem == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4268", "El dato ingresado como cargo/descuento no es valido a nivel de item.");
+end

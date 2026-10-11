@@ -1,0 +1,7 @@
+rule "R1035"
+    when
+        $ctx : CpeContext( serieArchivoDistintaXml == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1035", "Numero de Serie del nombre del archivo no coincide con el consignado en el contenido del archivo XML");
+end

@@ -1,0 +1,7 @@
+rule "R3502"
+    when
+        $ctx : CpeContext( descripcionContratoInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3502", "La Descripcion del contrato de colaboracion empresarial no cumple el formato o longitud establecida");
+end

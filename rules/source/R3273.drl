@@ -1,0 +1,7 @@
+rule "R3273"
+    when
+        $ctx : CpeContext( sumaVentaExportacionesLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3273", "La sumatoria del total valor de venta - Exportaciones de linea no corresponden al total");
+end

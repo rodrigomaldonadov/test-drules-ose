@@ -1,0 +1,7 @@
+rule "R3103"
+    when
+        $ctx : CpeContext( factorBaseIgvNoCorresponde == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3103", "El producto del factor y monto base de la afectacion del IGV/IVAP no corresponde al monto de afectacion de linea.");
+end

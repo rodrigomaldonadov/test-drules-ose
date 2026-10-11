@@ -1,0 +1,8 @@
+rule "R4265"
+    when
+        $ctx : CpeContext( esOperacionConDetraccion == true,
+                           tieneLeyenda2006 == false )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4265", "El XML no contiene el codigo de leyenda 2006 para tipo de operacion de detracciones");
+end

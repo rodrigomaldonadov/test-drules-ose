@@ -1,0 +1,7 @@
+rule "R2602"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2602", "El régimen percepción enviado no corresponde con su condición de Agente de percepción.");
+end

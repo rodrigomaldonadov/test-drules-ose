@@ -1,0 +1,8 @@
+rule "R4273"
+    when
+        $ctx : CpeContext(configuracionVehicularFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4273", "El dato ingresado como configuracion vehicular no cumple con el formato establecido.");
+        $ctx.marcarError(4273);
+end

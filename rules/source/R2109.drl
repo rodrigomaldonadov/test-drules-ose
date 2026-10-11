@@ -1,0 +1,11 @@
+rule "R2109"
+    when
+        $ctx : CpeContext(
+            fechaVencimiento != null,
+            fechaEmision != null,
+            fechaVencimiento.isBefore( fechaEmision )
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2109", "La fecha de vencimiento no puede ser anterior a la fecha de emision");
+end

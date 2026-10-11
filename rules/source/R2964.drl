@@ -1,0 +1,7 @@
+rule "R2964"
+    when
+        $ctx : CpeContext( nombreTributoIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2964", "El valor del tag nombre del tributo no corresponde al esperado.");
+end

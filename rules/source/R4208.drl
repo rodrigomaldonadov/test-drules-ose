@@ -1,0 +1,8 @@
+rule "R4208"
+    when
+        $ctx : CpeContext(docIdentidadReceptorFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4208", "El dato ingresado como numero de documento de identidad del receptor no cumple con el formato establecido");
+        $ctx.marcarError(4208);
+end

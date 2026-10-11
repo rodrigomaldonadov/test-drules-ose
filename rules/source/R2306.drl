@@ -1,0 +1,7 @@
+rule "R2306"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2306", "LineID - El dato ingresado debe ser correlativo mayor a cero");
+end

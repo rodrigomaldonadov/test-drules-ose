@@ -1,0 +1,7 @@
+rule "R1017"
+    when
+        $ctx : CpeContext( serie == null || serie.trim().length() == 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1017", "El XML no contiene el tag ID o la serie esta vacia");
+end

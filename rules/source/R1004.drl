@@ -1,0 +1,7 @@
+rule "R1004"
+    when
+        $ctx : CpeContext( tipoDocumento == null || tipoDocumento.trim().length() == 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1004", "El XML no contiene el tag o no existe informacion de InvoiceTypeCode");
+end

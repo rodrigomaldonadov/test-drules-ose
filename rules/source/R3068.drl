@@ -1,0 +1,7 @@
+rule "R3068"
+    when
+        $ctx : CpeContext( codigoTributoRepetidoTotales == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3068", "El codigo de tributo no debe repetirse a nivel de totales");
+end

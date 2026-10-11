@@ -1,0 +1,7 @@
+rule "R3181"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3181", "El dato ingresado como Codigo de producto SUNAT no corresponde al valor esperado para tipo de operación.");
+end

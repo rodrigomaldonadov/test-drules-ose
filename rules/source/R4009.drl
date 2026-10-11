@@ -1,0 +1,7 @@
+rule "R4009"
+    when
+        $ctx : CpeContext( documentTypeCodeDocRelacionadoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4009", "El DocumentTypeCode de Otros documentos relacionados tiene valores incorrectos.");
+end

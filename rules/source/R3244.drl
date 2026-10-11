@@ -1,0 +1,7 @@
+rule "R3244"
+    when
+        $ctx : CpeContext( faltaTipoTransaccion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3244", "Debe consignar la informacion del tipo de transaccion del comprobante");
+end

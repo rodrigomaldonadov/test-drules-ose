@@ -1,0 +1,7 @@
+rule "R2600"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2600", "El comprobante fue enviado fuera del plazo permitido.");
+end

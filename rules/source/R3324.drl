@@ -1,0 +1,7 @@
+rule "R3324"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3324", "Solo se permite '01' para el Tipo de documento relacionado cuando el valor del Indicador de emisión excepcional es '01'");
+end

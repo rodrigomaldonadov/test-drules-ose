@@ -1,0 +1,10 @@
+rule "R2122"
+    when
+        $ctx : CpeContext(
+            ( esNotaCredito == true || esNotaDebito == true ),
+            fechaDocumentoRelacionado == null
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2122", "Debe consignar la fecha del documento relacionado en la nota");
+end

@@ -1,0 +1,3343 @@
+{
+  "summary": {
+    "impl_total_rules": 333,
+    "source_total_rules": 694,
+    "direct_matches": 333,
+    "description_matches": 0,
+    "condition_matches": 0,
+    "unmatched": 0
+  },
+  "matches": [
+    {
+      "impl_code": "1032",
+      "impl_rule": "R1032",
+      "impl_desc": "el comprobante ya esta informado y se encuentra con estado anulado o rechazado",
+      "source_code": "1032",
+      "source_rule": "R1032",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1033",
+      "impl_rule": "R1033",
+      "impl_desc": "el comprobante fue registrado previamente con otros datos",
+      "source_code": "1033",
+      "source_rule": "R1033",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2329",
+      "impl_rule": "R2329",
+      "impl_desc": "la fecha de emision se encuentra fuera del limite permitido",
+      "source_code": "2329",
+      "source_rule": "R2329",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1004",
+      "impl_rule": "R1004",
+      "impl_desc": "el xml no contiene el tag o no existe informacion de invoicetypecode",
+      "source_code": "1004",
+      "source_rule": "R1004",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1003",
+      "impl_rule": "R1003",
+      "impl_desc": "invoicetypecode el valor del tipo de documento es invalido o no coincide con el nombre del archivo",
+      "source_code": "1003",
+      "source_rule": "R1003",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2070",
+      "impl_rule": "R2070",
+      "impl_desc": "el xml no contiene el tag o no existe informacion de documentcurrencycode",
+      "source_code": "2070",
+      "source_rule": "R2070",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3088",
+      "impl_rule": "R3088",
+      "impl_desc": "el valor ingresado como moneda del comprobante no es valido catalogo nro 02",
+      "source_code": "3088",
+      "source_rule": "R3088",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2010",
+      "impl_rule": "2010 - CPE contribuyente no esta activo",
+      "impl_desc": "el contribuyente no esta activo",
+      "source_code": "2010",
+      "source_rule": "2010 - CPE contribuyente no esta activo",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1008",
+      "impl_rule": "R1008",
+      "impl_desc": "el xml no contiene el tag o no existe informacion en tipo de documento del emisor",
+      "source_code": "1008",
+      "source_rule": "R1008",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1007",
+      "impl_rule": "R1007",
+      "impl_desc": "el dato ingresado no cumple con el estandar",
+      "source_code": "1007",
+      "source_rule": "R1007",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1010",
+      "impl_rule": "R1010",
+      "impl_desc": "el xml no contiene el tag issuedate",
+      "source_code": "1010",
+      "source_rule": "R1010",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1011",
+      "impl_rule": "R1011",
+      "impl_desc": "issuedate el dato ingresado no es valido",
+      "source_code": "1011",
+      "source_rule": "R1011",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1012",
+      "impl_rule": "R1012",
+      "impl_desc": "id el dato ingresado no cumple con el patron serie correlativo",
+      "source_code": "1012",
+      "source_rule": "R1012",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1037",
+      "impl_rule": "R1037",
+      "impl_desc": "el xml no contiene el tag o no existe informacion de registrationname del emisor del documento",
+      "source_code": "1037",
+      "source_rule": "R1037",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2014",
+      "impl_rule": "R2014",
+      "impl_desc": "el xml no contiene el tag o no existe informacion del numero de documento de identidad del receptor del documento",
+      "source_code": "2014",
+      "source_rule": "R2014",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2015",
+      "impl_rule": "R2015",
+      "impl_desc": "el xml no contiene el tag o no existe informacion del tipo de documento de identidad del receptor del documento",
+      "source_code": "2015",
+      "source_rule": "R2015",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2017",
+      "impl_rule": "R2017",
+      "impl_desc": "el numero de documento de identidad del receptor debe ser ruc",
+      "source_code": "2017",
+      "source_rule": "R2017",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2801",
+      "impl_rule": "R2801",
+      "impl_desc": "el dni ingresado no cumple con el estandar",
+      "source_code": "2801",
+      "source_rule": "R2801",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2800",
+      "impl_rule": "R2800",
+      "impl_desc": "el dato ingresado en el tipo de documento de identidad del receptor no esta permitido",
+      "source_code": "2800",
+      "source_rule": "R2800",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2021",
+      "impl_rule": "R2021",
+      "impl_desc": "el xml no contiene el tag o no existe informacion de registrationname del receptor del documento",
+      "source_code": "2021",
+      "source_rule": "R2021",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2022",
+      "impl_rule": "R2022",
+      "impl_desc": "registrationname el dato ingresado no cumple con el estandar",
+      "source_code": "2022",
+      "source_rule": "R2022",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2336",
+      "impl_rule": "R2336",
+      "impl_desc": "ocurrio un error en el proceso de validacion de la firma digital",
+      "source_code": "2336",
+      "source_rule": "R2336",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2044",
+      "impl_rule": "R2044",
+      "impl_desc": "payableamount es obligatorio",
+      "source_code": "2044",
+      "source_rule": "R2044",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2062",
+      "impl_rule": "R2062",
+      "impl_desc": "el dato ingresado en payableamount no cumple con el formato establecido",
+      "source_code": "2062",
+      "source_rule": "R2062",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3280",
+      "impl_rule": "R3280",
+      "impl_desc": "el importe total del comprobante no coincide con el valor calculado",
+      "source_code": "3280",
+      "source_rule": "R3280",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2956",
+      "impl_rule": "R2956",
+      "impl_desc": "el monto total de impuestos es obligatorio",
+      "source_code": "2956",
+      "source_rule": "R2956",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3291",
+      "impl_rule": "R3291",
+      "impl_desc": "el calculo del igv es incorrecto",
+      "source_code": "3291",
+      "source_rule": "R3291",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3205",
+      "impl_rule": "R3205",
+      "impl_desc": "debe consignar el tipo de operacion",
+      "source_code": "3205",
+      "source_rule": "R3205",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3206",
+      "impl_rule": "R3206",
+      "impl_desc": "el dato ingresado como tipo de operacion no corresponde a un valor esperado catalogo nro 51",
+      "source_code": "3206",
+      "source_rule": "R3206",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2118",
+      "impl_rule": "R2118",
+      "impl_desc": "debe indicar las facturas relacionadas a la nota de credito",
+      "source_code": "2118",
+      "source_rule": "R2118",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2206",
+      "impl_rule": "R2206",
+      "impl_desc": "debe indicar los documentos afectados por la nota de debito",
+      "source_code": "2206",
+      "source_rule": "R2206",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2127",
+      "impl_rule": "R2127",
+      "impl_desc": "responsecode el dato ingresado no cumple con la estructura",
+      "source_code": "2127",
+      "source_rule": "R2127",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2172",
+      "impl_rule": "R2172",
+      "impl_desc": "responsecode el dato ingresado no cumple con la estructura",
+      "source_code": "2172",
+      "source_rule": "R2172",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2026",
+      "impl_rule": "R2026",
+      "impl_desc": "el xml no contiene el tag cac item cbc description en el detalle de los items",
+      "source_code": "2026",
+      "source_rule": "R2026",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2024",
+      "impl_rule": "R2024",
+      "impl_desc": "el xml no contiene el tag invoicedquantity en el detalle de los items o es cero 0",
+      "source_code": "2024",
+      "source_rule": "R2024",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2068",
+      "impl_rule": "R2068",
+      "impl_desc": "el xml no contiene el tag cac price cbc priceamount en el detalle de los items",
+      "source_code": "2068",
+      "source_rule": "R2068",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3288",
+      "impl_rule": "R3288",
+      "impl_desc": "debe consignar el total valor de venta",
+      "source_code": "3288",
+      "source_rule": "R3288",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2031",
+      "impl_rule": "R2031",
+      "impl_desc": "el dato ingresado en total valor de venta no cumple con el estandar",
+      "source_code": "2031",
+      "source_rule": "R2031",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1001",
+      "impl_rule": "R1001",
+      "impl_desc": "id el dato serie correlativo no cumple con el formato de acuerdo al tipo de comprobante",
+      "source_code": "1001",
+      "source_rule": "R1001",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1002",
+      "impl_rule": "R1002",
+      "impl_desc": "el xml no contiene el tag customizationid o es vacio",
+      "source_code": "1002",
+      "source_rule": "R1002",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1002",
+      "impl_rule": "R1002",
+      "impl_desc": "customizationid el valor del tag es diferente a 2 0",
+      "source_code": "1002",
+      "source_rule": "R1002",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1017",
+      "impl_rule": "R1017",
+      "impl_desc": "el xml no contiene el tag id o la serie esta vacia",
+      "source_code": "1017",
+      "source_rule": "R1017",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1018",
+      "impl_rule": "R1018",
+      "impl_desc": "la serie del comprobante no cumple con el formato para factura fxxx",
+      "source_code": "1018",
+      "source_rule": "R1018",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1018",
+      "impl_rule": "R1018",
+      "impl_desc": "la serie del comprobante no cumple con el formato para boleta bxxx",
+      "source_code": "1018",
+      "source_rule": "R1018",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1019",
+      "impl_rule": "R1019",
+      "impl_desc": "el xml no contiene el numero de comprobante o es vacio",
+      "source_code": "1019",
+      "source_rule": "R1019",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1019",
+      "impl_rule": "R1019",
+      "impl_desc": "el numero de comprobante no cumple con el formato 1 a 99999999",
+      "source_code": "1019",
+      "source_rule": "R1019",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2109",
+      "impl_rule": "R2109",
+      "impl_desc": "la fecha de vencimiento no puede ser anterior a la fecha de emision",
+      "source_code": "2109",
+      "source_rule": "R2109",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2072",
+      "impl_rule": "CustomizationID ",
+      "impl_desc": "customizationid la version del documento no es la correcta",
+      "source_code": "2072",
+      "source_rule": "CustomizationID ",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2073",
+      "impl_rule": "R2073",
+      "impl_desc": "el xml no existe informacion de customizationid",
+      "source_code": "2073",
+      "source_rule": "R2073",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2074",
+      "impl_rule": "R2074",
+      "impl_desc": "ublversionid la version del ubl no es correcta",
+      "source_code": "2074",
+      "source_rule": "R2074",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3240",
+      "impl_rule": "R3240",
+      "impl_desc": "el total de operaciones inafectas no puede ser negativo",
+      "source_code": "3240",
+      "source_rule": "R3240",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3241",
+      "impl_rule": "R3241",
+      "impl_desc": "para el tipo de operacion 2100 2101 y 2102 creditos debe consignar numero de contrato fecha de otorgamiento y monto del credito otorgado capital",
+      "source_code": "3241",
+      "source_rule": "R3241",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3242",
+      "impl_rule": "Para el tipo de operacion 2104 - Empresas del sistema de seguros, debe consignar Informacion adicional a nivel de item",
+      "impl_desc": "para el tipo de operacion 2104 empresas del sistema de seguros debe consignar informacion adicional a nivel de item",
+      "source_code": "3242",
+      "source_rule": "Para el tipo de operacion 2104 - Empresas del sistema de seguros, debe consignar Informacion adicional a nivel de item",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3296",
+      "impl_rule": "R3296",
+      "impl_desc": "la sumatoria del monto base isc de linea no corresponden al total",
+      "source_code": "3296",
+      "source_rule": "R3296",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3297",
+      "impl_rule": "R3297",
+      "impl_desc": "la sumatoria del monto base otros tributos de linea no corresponden al total",
+      "source_code": "3297",
+      "source_rule": "R3297",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3298",
+      "impl_rule": "sumatoria del total del importe del tributo ISC ",
+      "impl_desc": "la sumatoria del total del importe del tributo isc de linea no corresponden al total",
+      "source_code": "3298",
+      "source_rule": "sumatoria del total del importe del tributo ISC ",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3243",
+      "impl_rule": "El XML no contiene tag o no existe informacion de la fecha del concepto por linea",
+      "impl_desc": "el xml no contiene tag o no existe informacion de la fecha del concepto por linea",
+      "source_code": "3243",
+      "source_rule": "El XML no contiene tag o no existe informacion de la fecha del concepto por linea",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3244",
+      "impl_rule": "R3244",
+      "impl_desc": "debe consignar la informacion del tipo de transaccion del comprobante",
+      "source_code": "3244",
+      "source_rule": "R3244",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3245",
+      "impl_rule": "R3245",
+      "impl_desc": "debe informar si el tipo de transaccion es al contado o al credito",
+      "source_code": "3245",
+      "source_rule": "R3245",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2119",
+      "impl_rule": "R2119",
+      "impl_desc": "el tipo de documento relacionado en la nota de credito no es valido catalogo nro 01",
+      "source_code": "2119",
+      "source_rule": "R2119",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2120",
+      "impl_rule": "R2120",
+      "impl_desc": "debe consignar el motivo de la nota de credito discrepancyresponse description",
+      "source_code": "2120",
+      "source_rule": "R2120",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2173",
+      "impl_rule": "R2173",
+      "impl_desc": "debe consignar el motivo de la nota de debito discrepancyresponse description",
+      "source_code": "2173",
+      "source_rule": "R2173",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2121",
+      "impl_rule": "R2121",
+      "impl_desc": "debe consignar el responsecode de la nota de credito",
+      "source_code": "2121",
+      "source_rule": "R2121",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2174",
+      "impl_rule": "R2174",
+      "impl_desc": "debe consignar el responsecode de la nota de debito",
+      "source_code": "2174",
+      "source_rule": "R2174",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2122",
+      "impl_rule": "R2122",
+      "impl_desc": "debe consignar la fecha del documento relacionado en la nota",
+      "source_code": "2122",
+      "source_rule": "R2122",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2123",
+      "impl_rule": "R2123",
+      "impl_desc": "la fecha del documento relacionado no puede ser posterior a la fecha de emision de la nota",
+      "source_code": "2123",
+      "source_rule": "R2123",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3034",
+      "impl_rule": "R3034",
+      "impl_desc": "el xml no contiene el tag o no existe informacion en el nro de cuenta de detraccion",
+      "source_code": "3034",
+      "source_rule": "R3034",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3035",
+      "impl_rule": "R3035",
+      "impl_desc": "el xml no contiene el tag o no existe informacion en el monto de detraccion",
+      "source_code": "3035",
+      "source_rule": "R3035",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2025",
+      "impl_rule": "R2025",
+      "impl_desc": "invoicedquantity el dato ingresado no cumple con el estandar",
+      "source_code": "2025",
+      "source_rule": "R2025",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2027",
+      "impl_rule": "R2027",
+      "impl_desc": "el xml no contiene el tag o no existe informacion de cac item cbc description del item",
+      "source_code": "2027",
+      "source_rule": "R2027",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2029",
+      "impl_rule": "R2029",
+      "impl_desc": "el xml no contiene el precio de venta unitario priceamount con pricetypecode 01",
+      "source_code": "2029",
+      "source_rule": "R2029",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3258",
+      "impl_rule": "R3258",
+      "impl_desc": "el valor de la forma de pago no es valido contado o credito",
+      "source_code": "3258",
+      "source_rule": "R3258",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3259",
+      "impl_rule": "R3259",
+      "impl_desc": "no se deben informar cuotas cuando la forma de pago es contado",
+      "source_code": "3259",
+      "source_rule": "R3259",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3260",
+      "impl_rule": "R3260",
+      "impl_desc": "debe consignar al menos una cuota cuando la forma de pago es credito",
+      "source_code": "3260",
+      "source_rule": "R3260",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4008",
+      "impl_rule": "R4008",
+      "impl_desc": "el tipo de operacion informado requiere datos de detraccion",
+      "source_code": "4008",
+      "source_rule": "R4008",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3050",
+      "impl_rule": "R3050",
+      "impl_desc": "afectacion de igv no corresponde al codigo de tributo de la linea",
+      "source_code": "3050",
+      "source_rule": "R3050",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3051",
+      "impl_rule": "R3051",
+      "impl_desc": "nombre de tributo no corresponde al codigo de tributo de la linea",
+      "source_code": "3051",
+      "source_rule": "R3051",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4052",
+      "impl_rule": "R4052",
+      "impl_desc": "el id de la guia de remision referenciada no cumple con el formato txxx xxxxxxxx",
+      "source_code": "4052",
+      "source_rule": "R4052",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1034",
+      "impl_rule": "R1034",
+      "impl_desc": "numero de ruc del nombre del archivo no coincide con el consignado en el contenido del archivo xml",
+      "source_code": "1034",
+      "source_rule": "R1034",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1035",
+      "impl_rule": "R1035",
+      "impl_desc": "numero de serie del nombre del archivo no coincide con el consignado en el contenido del archivo xml",
+      "source_code": "1035",
+      "source_rule": "R1035",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1036",
+      "impl_rule": "R1036",
+      "impl_desc": "numero de documento en el nombre del archivo no coincide con el consignado en el contenido del xml",
+      "source_code": "1036",
+      "source_rule": "R1036",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1078",
+      "impl_rule": "R1078",
+      "impl_desc": "el emisor no se encuentra autorizado a emitir en el see desde los sistemas del contribuyente",
+      "source_code": "1078",
+      "source_rule": "R1078",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1080",
+      "impl_rule": "R1080",
+      "impl_desc": "debe enviar su comprobante por el see empresas supervisadas",
+      "source_code": "1080",
+      "source_rule": "R1080",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1083",
+      "impl_rule": "R1083",
+      "impl_desc": "el numero de ruc del receptor no existe",
+      "source_code": "1083",
+      "source_rule": "R1083",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "1086",
+      "impl_rule": "R1086",
+      "impl_desc": "el emisor electronico es un sujeto sin capacidad operativa ssco",
+      "source_code": "1086",
+      "source_rule": "R1086",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2023",
+      "impl_rule": "R2023",
+      "impl_desc": "el numero de orden del item no cumple con el formato establecido",
+      "source_code": "2023",
+      "source_rule": "R2023",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2028",
+      "impl_rule": "R2028",
+      "impl_desc": "debe existir el tag cac alternativeconditionprice",
+      "source_code": "2028",
+      "source_rule": "R2028",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2033",
+      "impl_rule": "R2033",
+      "impl_desc": "el dato ingresado en taxamount de la linea no cumple con el formato establecido",
+      "source_code": "2033",
+      "source_rule": "R2033",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2036",
+      "impl_rule": "R2036",
+      "impl_desc": "el codigo del tributo es invalido",
+      "source_code": "2036",
+      "source_rule": "R2036",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2037",
+      "impl_rule": "R2037",
+      "impl_desc": "el xml no contiene el tag cac taxcategory cac taxscheme cbc id del item",
+      "source_code": "2037",
+      "source_rule": "R2037",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2040",
+      "impl_rule": "R2040",
+      "impl_desc": "el tipo de afectacion del igv es incorrecto",
+      "source_code": "2040",
+      "source_rule": "R2040",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2041",
+      "impl_rule": "R2041",
+      "impl_desc": "el sistema de calculo del isc es incorrecto",
+      "source_code": "2041",
+      "source_rule": "R2041",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2048",
+      "impl_rule": "R2048",
+      "impl_desc": "el dato ingresado en taxamount no cumple con el formato establecido",
+      "source_code": "2048",
+      "source_rule": "R2048",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2052",
+      "impl_rule": "R2052",
+      "impl_desc": "el xml no contiene el tag codigo de tributo internacional de impuestos globales",
+      "source_code": "2052",
+      "source_rule": "R2052",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2054",
+      "impl_rule": "R2054",
+      "impl_desc": "el xml no contiene el tag taxscheme name de impuestos globales",
+      "source_code": "2054",
+      "source_rule": "R2054",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2064",
+      "impl_rule": "R2064",
+      "impl_desc": "el dato ingresado en chargetotalamount no cumple con el formato establecido",
+      "source_code": "2064",
+      "source_rule": "R2064",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2065",
+      "impl_rule": "R2065",
+      "impl_desc": "el dato ingresado en el campo total descuentos no cumple con el formato establecido",
+      "source_code": "2065",
+      "source_rule": "R2065",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2071",
+      "impl_rule": "R2071",
+      "impl_desc": "la moneda debe ser la misma en todo el documento salvo las percepciones que solo son en moneda nacional",
+      "source_code": "2071",
+      "source_rule": "R2071",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2075",
+      "impl_rule": "R2075",
+      "impl_desc": "el xml no contiene el tag o no existe informacion de ublversionid",
+      "source_code": "2075",
+      "source_rule": "R2075",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2364",
+      "impl_rule": "R2364",
+      "impl_desc": "el comprobante contiene un tipo y numero de guia de remision repetido",
+      "source_code": "2364",
+      "source_rule": "R2364",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2365",
+      "impl_rule": "R2365",
+      "impl_desc": "el comprobante contiene un tipo y numero de documento relacionado repetido",
+      "source_code": "2365",
+      "source_rule": "R2365",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2367",
+      "impl_rule": "R2367",
+      "impl_desc": "el dato ingresado en priceamount del precio de venta unitario por item no cumple con el formato establecido",
+      "source_code": "2367",
+      "source_rule": "R2367",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2369",
+      "impl_rule": "R2369",
+      "impl_desc": "el dato ingresado en priceamount del valor de venta unitario por item no cumple con el formato establecido",
+      "source_code": "2369",
+      "source_rule": "R2369",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2370",
+      "impl_rule": "R2370",
+      "impl_desc": "el dato ingresado en lineextensionamount del item no cumple con el formato establecido",
+      "source_code": "2370",
+      "source_rule": "R2370",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2371",
+      "impl_rule": "R2371",
+      "impl_desc": "el xml no contiene el tag cbc taxexemptionreasoncode de afectacion al igv",
+      "source_code": "2371",
+      "source_rule": "R2371",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2373",
+      "impl_rule": "R2373",
+      "impl_desc": "si existe monto de isc en el item debe especificar el sistema de calculo",
+      "source_code": "2373",
+      "source_rule": "R2373",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2377",
+      "impl_rule": "R2377",
+      "impl_desc": "el name o taxtypecode debe corresponder al codigo de tributo del item",
+      "source_code": "2377",
+      "source_rule": "R2377",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2409",
+      "impl_rule": "R2409",
+      "impl_desc": "existe mas de un tag cac alternativeconditionprice con el mismo cbc pricetypecode",
+      "source_code": "2409",
+      "source_rule": "R2409",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2410",
+      "impl_rule": "R2410",
+      "impl_desc": "se ha consignado un valor invalido en el campo cbc pricetypecode",
+      "source_code": "2410",
+      "source_rule": "R2410",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2416",
+      "impl_rule": "R2416",
+      "impl_desc": "si existe leyenda transferencia gratuita debe consignar total valor de venta de operaciones gratuitas",
+      "source_code": "2416",
+      "source_rule": "R2416",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2752",
+      "impl_rule": "R2752",
+      "impl_desc": "el numero de item no puede estar duplicado",
+      "source_code": "2752",
+      "source_rule": "R2752",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2802",
+      "impl_rule": "R2802",
+      "impl_desc": "el dato ingresado como numero de documento de identidad del receptor no cumple con el formato establecido",
+      "source_code": "2802",
+      "source_rule": "R2802",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2883",
+      "impl_rule": "R2883",
+      "impl_desc": "es obligatorio indicar la unidad de medida del item",
+      "source_code": "2883",
+      "source_rule": "R2883",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2638",
+      "impl_rule": "R2638",
+      "impl_desc": "si tiene operaciones de un tributo en alguna linea debe consignar el tag del total del tributo",
+      "source_code": "2638",
+      "source_rule": "R2638",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2640",
+      "impl_rule": "R2640",
+      "impl_desc": "operacion gratuita solo debe consignar un monto referencial",
+      "source_code": "2640",
+      "source_rule": "R2640",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2641",
+      "impl_rule": "R2641",
+      "impl_desc": "operacion gratuita debe consignar total valor venta operaciones gratuitas mayor a cero",
+      "source_code": "2641",
+      "source_rule": "R2641",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2642",
+      "impl_rule": "R2642",
+      "impl_desc": "operaciones de exportacion deben consignar tipo afectacion igual a 40",
+      "source_code": "2642",
+      "source_rule": "R2642",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2644",
+      "impl_rule": "R2644",
+      "impl_desc": "comprobante operacion sujeta ivap solo debe tener items con codigo de afectacion del igv igual a 17",
+      "source_code": "2644",
+      "source_rule": "R2644",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2650",
+      "impl_rule": "R2650",
+      "impl_desc": "factura de operacion sujeta al ivap no debe consignar valor para isc o debe ser 0",
+      "source_code": "2650",
+      "source_rule": "R2650",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2788",
+      "impl_rule": "R2788",
+      "impl_desc": "el dato ingresado en moneda debe ser pen",
+      "source_code": "2788",
+      "source_rule": "R2788",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2792",
+      "impl_rule": "R2792",
+      "impl_desc": "el dato ingresado en moneda del monto de cargo descuento para percepcion debe ser pen",
+      "source_code": "2792",
+      "source_rule": "R2792",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2797",
+      "impl_rule": "R2797",
+      "impl_desc": "el monto de percepcion no puede ser mayor al importe total del comprobante",
+      "source_code": "2797",
+      "source_rule": "R2797",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2798",
+      "impl_rule": "R2798",
+      "impl_desc": "el monto de percepcion no tiene el valor correcto segun el tipo de percepcion",
+      "source_code": "2798",
+      "source_rule": "R2798",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2949",
+      "impl_rule": "R2949",
+      "impl_desc": "el impuesto icbper no se encuentra vigente",
+      "source_code": "2949",
+      "source_rule": "R2949",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2954",
+      "impl_rule": "R2954",
+      "impl_desc": "el valor ingresado como codigo de motivo de cargo descuento por linea no es valido catalogo 53",
+      "source_code": "2954",
+      "source_rule": "R2954",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2955",
+      "impl_rule": "R2955",
+      "impl_desc": "el formato ingresado en el tag cac invoiceline cac allowancecharge cbc amount no cumple con el formato establecido",
+      "source_code": "2955",
+      "source_rule": "R2955",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2961",
+      "impl_rule": "R2961",
+      "impl_desc": "el valor del tag codigo de tributo internacional no corresponde al esperado",
+      "source_code": "2961",
+      "source_rule": "R2961",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2964",
+      "impl_rule": "R2964",
+      "impl_desc": "el valor del tag nombre del tributo no corresponde al esperado",
+      "source_code": "2964",
+      "source_rule": "R2964",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2968",
+      "impl_rule": "R2968",
+      "impl_desc": "el dato ingresado en cac allowancecharge cbc amount no cumple con el formato establecido",
+      "source_code": "2968",
+      "source_rule": "R2968",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2992",
+      "impl_rule": "R2992",
+      "impl_desc": "el xml no contiene el tag de la tasa del tributo de la linea",
+      "source_code": "2992",
+      "source_rule": "R2992",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2993",
+      "impl_rule": "R2993",
+      "impl_desc": "el factor de afectacion de igv por linea debe ser diferente a 0 00",
+      "source_code": "2993",
+      "source_rule": "R2993",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2996",
+      "impl_rule": "R2996",
+      "impl_desc": "el xml no contiene el tag o no existe informacion del nombre de tributo de la linea",
+      "source_code": "2996",
+      "source_rule": "R2996",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2999",
+      "impl_rule": "R2999",
+      "impl_desc": "el dato ingresado en el total valor de venta globales no cumple con el formato establecido",
+      "source_code": "2999",
+      "source_rule": "R2999",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3000",
+      "impl_rule": "R3000",
+      "impl_desc": "el monto total del impuestos sobre el valor de venta de operaciones gratuitas inafectas exoneradas debe ser igual a 0 00",
+      "source_code": "3000",
+      "source_rule": "R3000",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3003",
+      "impl_rule": "R3003",
+      "impl_desc": "el xml no contiene el tag o no existe informacion de total valor de venta globales",
+      "source_code": "3003",
+      "source_rule": "R3003",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3019",
+      "impl_rule": "R3019",
+      "impl_desc": "el dato ingresado en total precio de venta no cumple con el formato establecido",
+      "source_code": "3019",
+      "source_rule": "R3019",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3020",
+      "impl_rule": "R3020",
+      "impl_desc": "el dato ingresado en el monto total de impuestos no cumple con el formato establecido",
+      "source_code": "3020",
+      "source_rule": "R3020",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3021",
+      "impl_rule": "R3021",
+      "impl_desc": "el dato ingresado en el monto total de impuestos por linea no cumple con el formato establecido",
+      "source_code": "3021",
+      "source_rule": "R3021",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3024",
+      "impl_rule": "R3024",
+      "impl_desc": "el tag cac taxtotal no debe repetirse a nivel de totales",
+      "source_code": "3024",
+      "source_rule": "R3024",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3026",
+      "impl_rule": "R3026",
+      "impl_desc": "el tag cac taxtotal no debe repetirse a nivel de item",
+      "source_code": "3026",
+      "source_rule": "R3026",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3031",
+      "impl_rule": "R3031",
+      "impl_desc": "el dato ingresado en taxableamount de la linea no cumple con el formato establecido",
+      "source_code": "3031",
+      "source_rule": "R3031",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3067",
+      "impl_rule": "R3067",
+      "impl_desc": "el codigo de tributo no debe repetirse a nivel de item",
+      "source_code": "3067",
+      "source_rule": "R3067",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3068",
+      "impl_rule": "R3068",
+      "impl_desc": "el codigo de tributo no debe repetirse a nivel de totales",
+      "source_code": "3068",
+      "source_rule": "R3068",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3102",
+      "impl_rule": "R3102",
+      "impl_desc": "el dato ingresado como factor de afectacion por linea no cumple con el formato establecido",
+      "source_code": "3102",
+      "source_rule": "R3102",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3103",
+      "impl_rule": "R3103",
+      "impl_desc": "el producto del factor y monto base de la afectacion del igv ivap no corresponde al monto de afectacion de linea",
+      "source_code": "3103",
+      "source_rule": "R3103",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3104",
+      "impl_rule": "R3104",
+      "impl_desc": "el factor de afectacion de isc por linea debe ser diferente a 0 00",
+      "source_code": "3104",
+      "source_rule": "R3104",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3105",
+      "impl_rule": "R3105",
+      "impl_desc": "el xml debe contener al menos un tributo por linea de afectacion por igv",
+      "source_code": "3105",
+      "source_rule": "R3105",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3108",
+      "impl_rule": "R3108",
+      "impl_desc": "el producto del factor y monto base de la afectacion del isc no corresponde al monto de afectacion de linea",
+      "source_code": "3108",
+      "source_rule": "R3108",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3109",
+      "impl_rule": "R3109",
+      "impl_desc": "el producto del factor y monto base de la afectacion de otros tributos no corresponde al monto de afectacion de linea",
+      "source_code": "3109",
+      "source_rule": "R3109",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3110",
+      "impl_rule": "R3110",
+      "impl_desc": "el monto de afectacion de igv por linea debe ser igual a 0 00 para exoneradas inafectas exportacion gratuitas de exoneradas o gratuitas de inafectas",
+      "source_code": "3110",
+      "source_rule": "R3110",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3111",
+      "impl_rule": "R3111",
+      "impl_desc": "el monto de afectacion de igv por linea debe ser diferente a 0 00",
+      "source_code": "3111",
+      "source_rule": "R3111",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3195",
+      "impl_rule": "R3195",
+      "impl_desc": "el xml no contiene el tag de impuesto por linea taxttotal",
+      "source_code": "3195",
+      "source_rule": "R3195",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3270",
+      "impl_rule": "R3270",
+      "impl_desc": "el precio unitario de la operacion que esta informando difiere de los calculos realizados en base a la informacion remitida",
+      "source_code": "3270",
+      "source_rule": "R3270",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3271",
+      "impl_rule": "R3271",
+      "impl_desc": "el valor de venta por item difiere de los importes consignados",
+      "source_code": "3271",
+      "source_rule": "R3271",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3272",
+      "impl_rule": "R3272",
+      "impl_desc": "la base imponible a nivel de linea difiere de la informacion consignada en el comprobante",
+      "source_code": "3272",
+      "source_rule": "R3272",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3273",
+      "impl_rule": "R3273",
+      "impl_desc": "la sumatoria del total valor de venta exportaciones de linea no corresponden al total",
+      "source_code": "3273",
+      "source_rule": "R3273",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3274",
+      "impl_rule": "R3274",
+      "impl_desc": "la sumatoria del total valor de venta operaciones inafectas de linea no corresponden al total",
+      "source_code": "3274",
+      "source_rule": "R3274",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3275",
+      "impl_rule": "R3275",
+      "impl_desc": "la sumatoria del total valor de venta operaciones exoneradas de linea no corresponden al total",
+      "source_code": "3275",
+      "source_rule": "R3275",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3276",
+      "impl_rule": "R3276",
+      "impl_desc": "la sumatoria del total valor de venta operaciones gratuitas de linea no corresponden al total",
+      "source_code": "3276",
+      "source_rule": "R3276",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3277",
+      "impl_rule": "R3277",
+      "impl_desc": "la sumatoria del total valor de venta operaciones gravadas de linea no corresponden al total",
+      "source_code": "3277",
+      "source_rule": "R3277",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3278",
+      "impl_rule": "R3278",
+      "impl_desc": "la sumatoria de valor de venta no corresponde a los importes consignados",
+      "source_code": "3278",
+      "source_rule": "R3278",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3279",
+      "impl_rule": "R3279",
+      "impl_desc": "la sumatoria del total del valor de venta mas los impuestos no concuerda con la base imponible",
+      "source_code": "3279",
+      "source_rule": "R3279",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3290",
+      "impl_rule": "R3290",
+      "impl_desc": "el valor de cargo descuento por item difiere de los importes consignados",
+      "source_code": "3290",
+      "source_rule": "R3290",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3292",
+      "impl_rule": "R3292",
+      "impl_desc": "el importe total de impuestos por linea no coincide con la sumatoria de los impuestos por linea",
+      "source_code": "3292",
+      "source_rule": "R3292",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3293",
+      "impl_rule": "R3293",
+      "impl_desc": "la sumatoria del total valor de venta ivap de linea no corresponden al total",
+      "source_code": "3293",
+      "source_rule": "R3293",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3294",
+      "impl_rule": "R3294",
+      "impl_desc": "la sumatoria de impuestos globales no corresponde al monto total de impuestos",
+      "source_code": "3294",
+      "source_rule": "R3294",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3295",
+      "impl_rule": "R3295",
+      "impl_desc": "el importe del ivap no corresponden al determinado por la informacion consignada",
+      "source_code": "3295",
+      "source_rule": "R3295",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3299",
+      "impl_rule": "R3299",
+      "impl_desc": "la sumatoria del total del importe del tributo otros tributos de linea no corresponden al total",
+      "source_code": "3299",
+      "source_rule": "R3299",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3300",
+      "impl_rule": "R3300",
+      "impl_desc": "la sumatoria consignada en descuentos globales no corresponden al total",
+      "source_code": "3300",
+      "source_rule": "R3300",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3301",
+      "impl_rule": "R3301",
+      "impl_desc": "la sumatoria consignados en cargos globales no corresponden al total",
+      "source_code": "3301",
+      "source_rule": "R3301",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3302",
+      "impl_rule": "R3302",
+      "impl_desc": "la sumatoria de los igv de operaciones gratuitas de la linea codigo tributo 9996 no corresponden al total",
+      "source_code": "3302",
+      "source_rule": "R3302",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3303",
+      "impl_rule": "R3303",
+      "impl_desc": "el monto para el redondeo del importe total excede el valor permitido",
+      "source_code": "3303",
+      "source_rule": "R3303",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3305",
+      "impl_rule": "R3305",
+      "impl_desc": "debe consignar el total precio de venta",
+      "source_code": "3305",
+      "source_rule": "R3305",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3306",
+      "impl_rule": "R3306",
+      "impl_desc": "la sumatoria del total del importe del tributo icbper de linea no corresponden al total",
+      "source_code": "3306",
+      "source_rule": "R3306",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3307",
+      "impl_rule": "R3307",
+      "impl_desc": "el valor de cargo descuento global difiere de los importes consignados",
+      "source_code": "3307",
+      "source_rule": "R3307",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3319",
+      "impl_rule": "R3319",
+      "impl_desc": "la suma de las cuotas debe ser igual al monto neto pendiente de pago",
+      "source_code": "3319",
+      "source_rule": "R3319",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3462",
+      "impl_rule": "R3462",
+      "impl_desc": "la tasa del igv debe ser la misma en todas las lineas o items del documento y debe corresponder con una tasa vigente",
+      "source_code": "3462",
+      "source_rule": "R3462",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3006",
+      "impl_rule": "R3006",
+      "impl_desc": "el dato ingresado en descripcion de leyenda no cumple con el formato establecido",
+      "source_code": "3006",
+      "source_rule": "R3006",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3014",
+      "impl_rule": "R3014",
+      "impl_desc": "el codigo de leyenda no debe repetirse en el comprobante",
+      "source_code": "3014",
+      "source_rule": "R3014",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3016",
+      "impl_rule": "R3016",
+      "impl_desc": "el dato ingresado en base monto por cargo descuento globales no cumple con el formato establecido",
+      "source_code": "3016",
+      "source_rule": "R3016",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3025",
+      "impl_rule": "R3025",
+      "impl_desc": "el dato ingresado en factor de cargo o descuento global no cumple con el formato establecido",
+      "source_code": "3025",
+      "source_rule": "R3025",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3052",
+      "impl_rule": "R3052",
+      "impl_desc": "el factor de cargo descuento por linea no cumple con el formato establecido",
+      "source_code": "3052",
+      "source_rule": "R3052",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3053",
+      "impl_rule": "R3053",
+      "impl_desc": "el monto base de cargo descuento por linea no cumple con el formato establecido",
+      "source_code": "3053",
+      "source_rule": "R3053",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3071",
+      "impl_rule": "R3071",
+      "impl_desc": "el dato ingresado como codigo de motivo de cargo descuento global no es valido catalogo nro 53",
+      "source_code": "3071",
+      "source_rule": "R3071",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3072",
+      "impl_rule": "R3072",
+      "impl_desc": "el xml no contiene el tag o no existe informacion de codigo de motivo de cargo descuento global",
+      "source_code": "3072",
+      "source_rule": "R3072",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3073",
+      "impl_rule": "R3073",
+      "impl_desc": "el xml no contiene el tag o no existe informacion de codigo de motivo de cargo descuento por item",
+      "source_code": "3073",
+      "source_rule": "R3073",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3074",
+      "impl_rule": "R3074",
+      "impl_desc": "el monto del cargo para el para fise debe ser igual mayor a 0 00",
+      "source_code": "3074",
+      "source_rule": "R3074",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3092",
+      "impl_rule": "R3092",
+      "impl_desc": "para cargo descuento fise debe ingresar monto base y debe ser mayor a 0 00",
+      "source_code": "3092",
+      "source_rule": "R3092",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3107",
+      "impl_rule": "R3107",
+      "impl_desc": "el dato ingresado como codigo de tributo global es invalido para tipo de operacion",
+      "source_code": "3107",
+      "source_rule": "R3107",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3114",
+      "impl_rule": "R3114",
+      "impl_desc": "el dato ingresado como indicador de cargo descuento no corresponde al valor esperado",
+      "source_code": "3114",
+      "source_rule": "R3114",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3282",
+      "impl_rule": "R3282",
+      "impl_desc": "si se informa descuentos globales por anticipo debe existir total de anticipos con monto mayor a cero",
+      "source_code": "3282",
+      "source_rule": "R3282",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3287",
+      "impl_rule": "R3287",
+      "impl_desc": "si se informa total de anticipos debe consignar los descuentos globales por anticipo con monto mayor a cero",
+      "source_code": "3287",
+      "source_rule": "R3287",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3244",
+      "impl_rule": "R3244",
+      "impl_desc": "debe consignar la informacion del tipo de transaccion del comprobante",
+      "source_code": "3244",
+      "source_rule": "R3244",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3245",
+      "impl_rule": "R3245",
+      "impl_desc": "debe informar si el tipo de transaccion es al contado o al credito",
+      "source_code": "3245",
+      "source_rule": "R3245",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3246",
+      "impl_rule": "R3246",
+      "impl_desc": "el tipo de transaccion o el identificador de la cuota no cumple con el formato esperado",
+      "source_code": "3246",
+      "source_rule": "R3246",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3247",
+      "impl_rule": "R3247",
+      "impl_desc": "el tipo de transaccion no puede ser a la vez al contado y al credito",
+      "source_code": "3247",
+      "source_rule": "R3247",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3248",
+      "impl_rule": "R3248",
+      "impl_desc": "el tipo de transaccion o el identificador de la cuota no debe repetirse en el comprobante",
+      "source_code": "3248",
+      "source_rule": "R3248",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3249",
+      "impl_rule": "R3249",
+      "impl_desc": "si el tipo de transaccion es al credito debe existir al menos informacion de una cuota de pago",
+      "source_code": "3249",
+      "source_rule": "R3249",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3250",
+      "impl_rule": "R3250",
+      "impl_desc": "el monto neto pendiente de pago no cumple el formato definido",
+      "source_code": "3250",
+      "source_rule": "R3250",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3251",
+      "impl_rule": "R3251",
+      "impl_desc": "si el tipo de transaccion es al credito debe consignarse el monto neto pendiente de pago",
+      "source_code": "3251",
+      "source_rule": "R3251",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3252",
+      "impl_rule": "R3252",
+      "impl_desc": "si existe informacion de cuota de pago el tipo de transaccion debe ser al credito",
+      "source_code": "3252",
+      "source_rule": "R3252",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3253",
+      "impl_rule": "R3253",
+      "impl_desc": "el monto del pago unico o de las cuotas no cumple el formato definido",
+      "source_code": "3253",
+      "source_rule": "R3253",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3254",
+      "impl_rule": "R3254",
+      "impl_desc": "si se consigna informacion de la cuota de pago debe indicarse el monto de la cuota",
+      "source_code": "3254",
+      "source_rule": "R3254",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3255",
+      "impl_rule": "R3255",
+      "impl_desc": "fecha del pago unico o de las cuotas no cumple el formato definido",
+      "source_code": "3255",
+      "source_rule": "R3255",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3256",
+      "impl_rule": "R3256",
+      "impl_desc": "si se consigna informacion de la cuota de pago debe indicarse la fecha del pago unico o de las cuotas",
+      "source_code": "3256",
+      "source_rule": "R3256",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3265",
+      "impl_rule": "R3265",
+      "impl_desc": "el monto neto pendiente de pago debe ser menor o igual al importe total del comprobante",
+      "source_code": "3265",
+      "source_rule": "R3265",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3266",
+      "impl_rule": "R3266",
+      "impl_desc": "el monto del pago unico o de las cuotas debe ser menor o igual al importe total del comprobante",
+      "source_code": "3266",
+      "source_rule": "R3266",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3267",
+      "impl_rule": "R3267",
+      "impl_desc": "fecha del pago unico o de las cuotas no puede ser anterior o igual a la fecha de emision del comprobante",
+      "source_code": "3267",
+      "source_rule": "R3267",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3461",
+      "impl_rule": "R3461",
+      "impl_desc": "la forma de pago y o numero de cuota no pueden estar contenidos en el mismo cac paymentterms",
+      "source_code": "3461",
+      "source_rule": "R3461",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3093",
+      "impl_rule": "R3093",
+      "impl_desc": "si operacion es sujeta a percepcion y la forma de pago es contado debe ingresar cargo para percepcion",
+      "source_code": "3093",
+      "source_rule": "R3093",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3233",
+      "impl_rule": "R3233",
+      "impl_desc": "para cargo percepcion debe ingresar monto base y debe ser mayor a 0 00",
+      "source_code": "3233",
+      "source_rule": "R3233",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3262",
+      "impl_rule": "R3262",
+      "impl_desc": "si existe retencion de igv en el comprobante el receptor debe ser un agente de retencion",
+      "source_code": "3262",
+      "source_rule": "R3262",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3263",
+      "impl_rule": "R3263",
+      "impl_desc": "el importe de la retencion no tiene el valor correcto",
+      "source_code": "3263",
+      "source_rule": "R3263",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3264",
+      "impl_rule": "R3264",
+      "impl_desc": "el importe total de la operacion base imponible de retencion no puede ser mayor al importe total del comprobante",
+      "source_code": "3264",
+      "source_rule": "R3264",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3269",
+      "impl_rule": "R3269",
+      "impl_desc": "si existe retencion de igv en el comprobante el emisor no debe ser un agente de retencion",
+      "source_code": "3269",
+      "source_rule": "R3269",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3308",
+      "impl_rule": "R3308",
+      "impl_desc": "solo debe consignar informacion de percepciones si el tipo de operacion es 2001 operacion sujeta a percepcion",
+      "source_code": "3308",
+      "source_rule": "R3308",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3309",
+      "impl_rule": "R3309",
+      "impl_desc": "si forma de pago es contado debe consignar un payment terms con indicador percepcion",
+      "source_code": "3309",
+      "source_rule": "R3309",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3310",
+      "impl_rule": "R3310",
+      "impl_desc": "debe consignar el monto total incluido la percepcion",
+      "source_code": "3310",
+      "source_rule": "R3310",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3311",
+      "impl_rule": "R3311",
+      "impl_desc": "el monto total incluido la percepcion no cumple con el formato establecido",
+      "source_code": "3311",
+      "source_rule": "R3311",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3316",
+      "impl_rule": "R3316",
+      "impl_desc": "si el tipo de operacion es 2002 debe informar los datos de la retencion de segunda categoria",
+      "source_code": "3316",
+      "source_rule": "R3316",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3317",
+      "impl_rule": "R3317",
+      "impl_desc": "si consigna infomacion de la retencion de segunda categoria el tipo de operacion debe ser 2002",
+      "source_code": "3317",
+      "source_rule": "R3317",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3318",
+      "impl_rule": "R3318",
+      "impl_desc": "debe consignar la base de la retencion de segunda categoria",
+      "source_code": "3318",
+      "source_rule": "R3318",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3330",
+      "impl_rule": "R3330",
+      "impl_desc": "solo debe consignar informacion de percepciones si la forma de pago es contado",
+      "source_code": "3330",
+      "source_rule": "R3330",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2503",
+      "impl_rule": "R2503",
+      "impl_desc": "paidamount monto anticipado por documento debe ser mayor a cero",
+      "source_code": "2503",
+      "source_rule": "R2503",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2505",
+      "impl_rule": "R2505",
+      "impl_desc": "codigo de documento de referencia debe ser 02 o 03",
+      "source_code": "2505",
+      "source_rule": "R2505",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2509",
+      "impl_rule": "R2509",
+      "impl_desc": "total de anticipos diferente a los montos anticipados por documento",
+      "source_code": "2509",
+      "source_rule": "R2509",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2520",
+      "impl_rule": "R2520",
+      "impl_desc": "el tipo documento del emisor que realiza el anticipo debe ser 6 del catalogo de tipo de documento",
+      "source_code": "2520",
+      "source_rule": "R2520",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2521",
+      "impl_rule": "R2521",
+      "impl_desc": "el dato ingresado debe indicar serie correlativo del documento que se realizo el anticipo",
+      "source_code": "2521",
+      "source_rule": "R2521",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2529",
+      "impl_rule": "R2529",
+      "impl_desc": "ruc que emitio documento de anticipo no existe",
+      "source_code": "2529",
+      "source_rule": "R2529",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3211",
+      "impl_rule": "R3211",
+      "impl_desc": "falta identificador del pago del monto de anticipo para relacionarlo con el comprobante que se realizo el anticipo",
+      "source_code": "3211",
+      "source_rule": "R3211",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3212",
+      "impl_rule": "R3212",
+      "impl_desc": "el comprobante contiene un identificador de pago repetido en los montos anticipados",
+      "source_code": "3212",
+      "source_rule": "R3212",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3213",
+      "impl_rule": "R3213",
+      "impl_desc": "el comprobante contiene un pago anticipado pero no se ha consignado el documento que se realizo el anticipo",
+      "source_code": "3213",
+      "source_rule": "R3213",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3214",
+      "impl_rule": "R3214",
+      "impl_desc": "no existe informacion del monto anticipado para el comprobante que se realizo el anticipo",
+      "source_code": "3214",
+      "source_rule": "R3214",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3215",
+      "impl_rule": "R3215",
+      "impl_desc": "el comprobante contiene un identificador de pago repetido en los comprobantes que se realizo el anticipo",
+      "source_code": "3215",
+      "source_rule": "R3215",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3216",
+      "impl_rule": "R3216",
+      "impl_desc": "falta identificador del pago del comprobante para relacionarlo con el monto de anticipo",
+      "source_code": "3216",
+      "source_rule": "R3216",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3217",
+      "impl_rule": "R3217",
+      "impl_desc": "debe consignar de ruc del emisor del comprobante de anticipo",
+      "source_code": "3217",
+      "source_rule": "R3217",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3218",
+      "impl_rule": "R3218",
+      "impl_desc": "el comprobante que se realizo el anticipo no existe",
+      "source_code": "3218",
+      "source_rule": "R3218",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3219",
+      "impl_rule": "R3219",
+      "impl_desc": "el comprobante que se realizo el anticipo no se encuentra autorizado",
+      "source_code": "3219",
+      "source_rule": "R3219",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3220",
+      "impl_rule": "R3220",
+      "impl_desc": "si consigna montos de anticipo debe informar el total de anticipos",
+      "source_code": "3220",
+      "source_rule": "R3220",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3033",
+      "impl_rule": "R3033",
+      "impl_desc": "el codigo de bien o servicio sujeto a detraccion no existe en el listado",
+      "source_code": "3033",
+      "source_rule": "R3033",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3037",
+      "impl_rule": "R3037",
+      "impl_desc": "el dato ingresado en monto de detraccion no cumple con el formato establecido",
+      "source_code": "3037",
+      "source_rule": "R3037",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3059",
+      "impl_rule": "R3059",
+      "impl_desc": "el xml no contiene el tag o no existe informacion de codigo de tributo",
+      "source_code": "3059",
+      "source_rule": "R3059",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3063",
+      "impl_rule": "R3063",
+      "impl_desc": "el xml no contiene el tag de matricula de embarcacion en detracciones para recursos hidrobiologicos",
+      "source_code": "3063",
+      "source_rule": "R3063",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3064",
+      "impl_rule": "R3064",
+      "impl_desc": "el xml no contiene tag o no existe informacion del valor del concepto por linea",
+      "source_code": "3064",
+      "source_rule": "R3064",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3065",
+      "impl_rule": "R3065",
+      "impl_desc": "el xml no contiene tag de la fecha del concepto por linea",
+      "source_code": "3065",
+      "source_rule": "R3065",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3116",
+      "impl_rule": "R3116",
+      "impl_desc": "el xml no contiene el tag o no existe informacion del ubigeo de punto de origen en detracciones servicio de transporte de carga",
+      "source_code": "3116",
+      "source_rule": "R3116",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3117",
+      "impl_rule": "R3117",
+      "impl_desc": "el xml no contiene el tag o no existe informacion de la direccion del punto de origen en detracciones servicio de transporte de carga",
+      "source_code": "3117",
+      "source_rule": "R3117",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3118",
+      "impl_rule": "R3118",
+      "impl_desc": "el xml no contiene el tag o no existe informacion del ubigeo de punto de destino en detracciones servicio de transporte de carga",
+      "source_code": "3118",
+      "source_rule": "R3118",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3119",
+      "impl_rule": "R3119",
+      "impl_desc": "el xml no contiene el tag o no existe informacion de la direccion del punto de destino en detracciones servicio de transporte de carga",
+      "source_code": "3119",
+      "source_rule": "R3119",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3120",
+      "impl_rule": "R3120",
+      "impl_desc": "el xml no contiene el tag o no existe informacion del detalle del viaje en detracciones servicio de transporte de carga",
+      "source_code": "3120",
+      "source_rule": "R3120",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3122",
+      "impl_rule": "R3122",
+      "impl_desc": "el xml no contiene el tag o no existe informacion del monto del valor referencial en detracciones servicios de transporte de carga",
+      "source_code": "3122",
+      "source_rule": "R3122",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3123",
+      "impl_rule": "R3123",
+      "impl_desc": "el dato ingresado como monto valor referencial en detracciones servicios de transporte de carga no cumple con el formato establecido",
+      "source_code": "3123",
+      "source_rule": "R3123",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3127",
+      "impl_rule": "R3127",
+      "impl_desc": "el xml no contiene el tag o no existe informacion del codigo de bbss de detraccion para el tipo de operacion",
+      "source_code": "3127",
+      "source_rule": "R3127",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3128",
+      "impl_rule": "R3128",
+      "impl_desc": "el xml contiene informacion de codigo de bien y servicio de detraccion que no corresponde al tipo de operacion",
+      "source_code": "3128",
+      "source_rule": "R3128",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3129",
+      "impl_rule": "R3129",
+      "impl_desc": "el dato ingresado como codigo de bbss de detraccion no corresponde al valor esperado",
+      "source_code": "3129",
+      "source_rule": "R3129",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3208",
+      "impl_rule": "R3208",
+      "impl_desc": "la moneda del monto de la detraccion debe ser pen",
+      "source_code": "3208",
+      "source_rule": "R3208",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3030",
+      "impl_rule": "R3030",
+      "impl_desc": "el xml no contiene el tag o no existe informacion del codigo de local anexo del emisor",
+      "source_code": "3030",
+      "source_rule": "R3030",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3089",
+      "impl_rule": "R3089",
+      "impl_desc": "el xml contiene mas de un tag como elemento de numero de documento del emisor",
+      "source_code": "3089",
+      "source_rule": "R3089",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3090",
+      "impl_rule": "R3090",
+      "impl_desc": "el xml contiene mas de un tag como elemento de numero de documento del receptor",
+      "source_code": "3090",
+      "source_rule": "R3090",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3097",
+      "impl_rule": "R3097",
+      "impl_desc": "el emisor a la fecha no se encuentra registrado o habilitado en el registro de exportadores de servicios sunat",
+      "source_code": "3097",
+      "source_rule": "R3097",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3098",
+      "impl_rule": "R3098",
+      "impl_desc": "el xml no contiene el tag o no existe informacion del pais de uso exploracion o aprovechamiento",
+      "source_code": "3098",
+      "source_rule": "R3098",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3099",
+      "impl_rule": "R3099",
+      "impl_desc": "el dato ingresado como pais de uso exploracion o aprovechamiento es incorrecto",
+      "source_code": "3099",
+      "source_rule": "R3099",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3223",
+      "impl_rule": "R3223",
+      "impl_desc": "la combinacion de tributos no es permitida",
+      "source_code": "3223",
+      "source_rule": "R3223",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3224",
+      "impl_rule": "R3224",
+      "impl_desc": "si existe valor referencial unitario en operac no onerosas con monto mayor a cero la operacion debe ser gratuita codigo de tributo 9996",
+      "source_code": "3224",
+      "source_rule": "R3224",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3234",
+      "impl_rule": "R3234",
+      "impl_desc": "el codigo de precio 02 es solo para operaciones gratuitas",
+      "source_code": "3234",
+      "source_rule": "R3234",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3281",
+      "impl_rule": "R3281",
+      "impl_desc": "el emisor electronico no se encuentra inscrito en el registro de establecimientos autorizados rea",
+      "source_code": "3281",
+      "source_rule": "R3281",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3283",
+      "impl_rule": "R3283",
+      "impl_desc": "si se utiliza la leyenda con codigo 2001 el total de operaciones exoneradas debe ser mayor a 0 00",
+      "source_code": "3283",
+      "source_rule": "R3283",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3284",
+      "impl_rule": "R3284",
+      "impl_desc": "si se utiliza la leyenda con codigo 2002 el total de operaciones exoneradas debe ser mayor a 0 00",
+      "source_code": "3284",
+      "source_rule": "R3284",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3285",
+      "impl_rule": "R3285",
+      "impl_desc": "si se utiliza la leyenda con codigo 2003 el total de operaciones exoneradas debe ser mayor a 0 00",
+      "source_code": "3285",
+      "source_rule": "R3285",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3289",
+      "impl_rule": "R3289",
+      "impl_desc": "si se utiliza la leyenda con codigo 2008 el total de operaciones exoneradas debe ser mayor a 0 00",
+      "source_code": "3289",
+      "source_rule": "R3289",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3210",
+      "impl_rule": "R3210",
+      "impl_desc": "solo debe consignar sistema de calculo si el tributo es isc",
+      "source_code": "3210",
+      "source_rule": "R3210",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3497",
+      "impl_rule": "R3497",
+      "impl_desc": "el tipo de contrato debe ser 1 ventas o 2 adquisiciones",
+      "source_code": "3497",
+      "source_rule": "R3497",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3498",
+      "impl_rule": "R3498",
+      "impl_desc": "no se permite mas de un numero de contrato de colaboracion empresarial",
+      "source_code": "3498",
+      "source_rule": "R3498",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3499",
+      "impl_rule": "R3499",
+      "impl_desc": "si informa numero de contrato debe consignar el tipo de contrato la descripcion de contrato y el porcentaje de participacion",
+      "source_code": "3499",
+      "source_rule": "R3499",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3500",
+      "impl_rule": "R3500",
+      "impl_desc": "el porcentaje de participacion no cumple con el formato o longitud especificada",
+      "source_code": "3500",
+      "source_rule": "R3500",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3501",
+      "impl_rule": "R3501",
+      "impl_desc": "el numero del contrato de colaboracion empresarial no cumple el formato o longitud establecida",
+      "source_code": "3501",
+      "source_rule": "R3501",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3502",
+      "impl_rule": "R3502",
+      "impl_desc": "la descripcion del contrato de colaboracion empresarial no cumple el formato o longitud establecida",
+      "source_code": "3502",
+      "source_rule": "R3502",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4005",
+      "impl_rule": "R4005",
+      "impl_desc": "el documenttypecode de las guias debe ser 09 o 31",
+      "source_code": "4005",
+      "source_rule": "R4005",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4006",
+      "impl_rule": "R4006",
+      "impl_desc": "el id de las guias debe tener informacion de la serie numero de guia",
+      "source_code": "4006",
+      "source_rule": "R4006",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4009",
+      "impl_rule": "R4009",
+      "impl_desc": "el documenttypecode de otros documentos relacionados tiene valores incorrectos",
+      "source_code": "4009",
+      "source_rule": "R4009",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4010",
+      "impl_rule": "R4010",
+      "impl_desc": "el id de los documentos relacionados no cumplen con el estandar",
+      "source_code": "4010",
+      "source_rule": "R4010",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4013",
+      "impl_rule": "R4013",
+      "impl_desc": "el ruc del receptor no esta activo",
+      "source_code": "4013",
+      "source_rule": "R4013",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4014",
+      "impl_rule": "R4014",
+      "impl_desc": "el ruc del receptor no esta habido",
+      "source_code": "4014",
+      "source_rule": "R4014",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4041",
+      "impl_rule": "R4041",
+      "impl_desc": "el codigo de pais debe ser pe",
+      "source_code": "4041",
+      "source_rule": "R4041",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4092",
+      "impl_rule": "R4092",
+      "impl_desc": "el nombre comercial del emisor no cumple con el formato establecido",
+      "source_code": "4092",
+      "source_rule": "R4092",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4093",
+      "impl_rule": "R4093",
+      "impl_desc": "el codigo de ubigeo del domicilio fiscal del emisor no es valido",
+      "source_code": "4093",
+      "source_rule": "R4093",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4094",
+      "impl_rule": "R4094",
+      "impl_desc": "la direccion completa y detallada del domicilio fiscal del emisor no cumple con el formato establecido",
+      "source_code": "4094",
+      "source_rule": "R4094",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4095",
+      "impl_rule": "R4095",
+      "impl_desc": "la urbanizacion del domicilio fiscal del emisor no cumple con el formato establecido",
+      "source_code": "4095",
+      "source_rule": "R4095",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4096",
+      "impl_rule": "R4096",
+      "impl_desc": "la provincia del domicilio fiscal del emisor no cumple con el formato establecido",
+      "source_code": "4096",
+      "source_rule": "R4096",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4097",
+      "impl_rule": "R4097",
+      "impl_desc": "el departamento del domicilio fiscal del emisor no cumple con el formato establecido",
+      "source_code": "4097",
+      "source_rule": "R4097",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4098",
+      "impl_rule": "R4098",
+      "impl_desc": "el distrito del domicilio fiscal del emisor no cumple con el formato establecido",
+      "source_code": "4098",
+      "source_rule": "R4098",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4198",
+      "impl_rule": "R4198",
+      "impl_desc": "el xml no contiene el tag o no existe informacion del codigo de local anexo del emisor",
+      "source_code": "4198",
+      "source_rule": "R4198",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4199",
+      "impl_rule": "R4199",
+      "impl_desc": "el codigo de local anexo consignado no se encuentra declarado en el ruc",
+      "source_code": "4199",
+      "source_rule": "R4199",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4231",
+      "impl_rule": "R4231",
+      "impl_desc": "el codigo de ubigeo no existe en el listado",
+      "source_code": "4231",
+      "source_rule": "R4231",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4236",
+      "impl_rule": "R4236",
+      "impl_desc": "el dato ingresado como direccion completa y detallada no cumple con el formato establecido",
+      "source_code": "4236",
+      "source_rule": "R4236",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4238",
+      "impl_rule": "R4238",
+      "impl_desc": "el dato ingresado como urbanizacion no cumple con el formato establecido",
+      "source_code": "4238",
+      "source_rule": "R4238",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4239",
+      "impl_rule": "R4239",
+      "impl_desc": "el dato ingresado como provincia no cumple con el formato establecido",
+      "source_code": "4239",
+      "source_rule": "R4239",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4240",
+      "impl_rule": "R4240",
+      "impl_desc": "el dato ingresado como departamento no cumple con el formato establecido",
+      "source_code": "4240",
+      "source_rule": "R4240",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4241",
+      "impl_rule": "R4241",
+      "impl_desc": "el dato ingresado como distrito no cumple con el formato establecido",
+      "source_code": "4241",
+      "source_rule": "R4241",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4242",
+      "impl_rule": "R4242",
+      "impl_desc": "el dato ingresado como local anexo no cumple con el formato establecido",
+      "source_code": "4242",
+      "source_rule": "R4242",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4251",
+      "impl_rule": "R4251",
+      "impl_desc": "el dato ingresado como atributo listagencyname es incorrecto",
+      "source_code": "4251",
+      "source_rule": "R4251",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4252",
+      "impl_rule": "R4252",
+      "impl_desc": "el dato ingresado como atributo listname es incorrecto",
+      "source_code": "4252",
+      "source_rule": "R4252",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4253",
+      "impl_rule": "R4253",
+      "impl_desc": "el dato ingresado como atributo listuri es incorrecto",
+      "source_code": "4253",
+      "source_rule": "R4253",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4255",
+      "impl_rule": "R4255",
+      "impl_desc": "el dato ingresado como atributo schemename es incorrecto",
+      "source_code": "4255",
+      "source_rule": "R4255",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4256",
+      "impl_rule": "R4256",
+      "impl_desc": "el dato ingresado como atributo schemeagencyname es incorrecto",
+      "source_code": "4256",
+      "source_rule": "R4256",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4257",
+      "impl_rule": "R4257",
+      "impl_desc": "el dato ingresado como atributo schemeuri es incorrecto",
+      "source_code": "4257",
+      "source_rule": "R4257",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4258",
+      "impl_rule": "R4258",
+      "impl_desc": "el dato ingresado como atributo unitcodelistid es incorrecto",
+      "source_code": "4258",
+      "source_rule": "R4258",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4259",
+      "impl_rule": "R4259",
+      "impl_desc": "el dato ingresado como atributo unitcodelistagencyname es incorrecto",
+      "source_code": "4259",
+      "source_rule": "R4259",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4260",
+      "impl_rule": "R4260",
+      "impl_desc": "el dato ingresado como atributo name es incorrecto",
+      "source_code": "4260",
+      "source_rule": "R4260",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4261",
+      "impl_rule": "R4261",
+      "impl_desc": "el dato ingresado como atributo listschemeuri es incorrecto",
+      "source_code": "4261",
+      "source_rule": "R4261",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4264",
+      "impl_rule": "R4264",
+      "impl_desc": "el xml no contiene el codigo de leyenda 2007 para el tipo de operacion ivap",
+      "source_code": "4264",
+      "source_rule": "R4264",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4265",
+      "impl_rule": "R4265",
+      "impl_desc": "el xml no contiene el codigo de leyenda 2006 para tipo de operacion de detracciones",
+      "source_code": "4265",
+      "source_rule": "R4265",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4266",
+      "impl_rule": "R4266",
+      "impl_desc": "el xml no contiene el codigo de leyenda 2005 para el tipo de operacion venta itinerante",
+      "source_code": "4266",
+      "source_rule": "R4266",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4268",
+      "impl_rule": "R4268",
+      "impl_desc": "el dato ingresado como cargo descuento no es valido a nivel de item",
+      "source_code": "4268",
+      "source_rule": "R4268",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4291",
+      "impl_rule": "R4291",
+      "impl_desc": "el dato ingresado como cargo descuento no es valido a nivel global",
+      "source_code": "4291",
+      "source_rule": "R4291",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4338",
+      "impl_rule": "R4338",
+      "impl_desc": "registrationname el nombre o razon social del emisor no cumple con el estandar",
+      "source_code": "4338",
+      "source_rule": "R4338",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4439",
+      "impl_rule": "R4439",
+      "impl_desc": "el emisor no se encuentra en el padron de tasa especial del igv restaurantes y hoteles",
+      "source_code": "4439",
+      "source_rule": "R4439",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4237",
+      "impl_rule": "R4237",
+      "impl_desc": "la tasa del tributo de la linea no corresponde al valor esperado",
+      "source_code": "4237",
+      "source_rule": "R4237",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4200",
+      "impl_rule": "R4200",
+      "impl_desc": "debe corresponder a algun valor valido establecido en el catalogo 13",
+      "source_code": "4200",
+      "source_rule": "R4200",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4202",
+      "impl_rule": "R4202",
+      "impl_desc": "el valor ingresado como numero de dam no cumple con el estandar",
+      "source_code": "4202",
+      "source_rule": "R4202",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4233",
+      "impl_rule": "R4233",
+      "impl_desc": "el dato ingresado en order de compra no cumple con el formato establecido",
+      "source_code": "4233",
+      "source_rule": "R4233",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4269",
+      "impl_rule": "R4269",
+      "impl_desc": "el dato ingresado como codigo de producto no cumple con el formato establecido",
+      "source_code": "4269",
+      "source_rule": "R4269",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4318",
+      "impl_rule": "R4318",
+      "impl_desc": "el dato ingresado en el campo cac taxsubtotal cbc taxamount del item no coincide con el valor calculado",
+      "source_code": "4318",
+      "source_rule": "R4318",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4320",
+      "impl_rule": "R4320",
+      "impl_desc": "el dato ingresado como unidad de medida no corresponde al valor esperado",
+      "source_code": "4320",
+      "source_rule": "R4320",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4331",
+      "impl_rule": "R4331",
+      "impl_desc": "debe consignar obligatoriamente codigo de producto sunat o codigo de producto gtin",
+      "source_code": "4331",
+      "source_rule": "R4331",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4333",
+      "impl_rule": "R4333",
+      "impl_desc": "si utiliza el estandar gs1 debe especificar el tipo de estructura gtin",
+      "source_code": "4333",
+      "source_rule": "R4333",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4334",
+      "impl_rule": "R4334",
+      "impl_desc": "el codigo de producto gs1 no cumple el estandar",
+      "source_code": "4334",
+      "source_rule": "R4334",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4335",
+      "impl_rule": "R4335",
+      "impl_desc": "el tipo de estructura gs1 no tiene un valor permitido",
+      "source_code": "4335",
+      "source_rule": "R4335",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "4254",
+      "impl_rule": "R4254",
+      "impl_desc": "el atributo listid del codigo de producto no corresponde al valor unspsc",
+      "source_code": "4254",
+      "source_rule": "R4254",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2892",
+      "impl_rule": "R2892",
+      "impl_desc": "el valor del tag no cumple con el formato establecido",
+      "source_code": "2892",
+      "source_rule": "R2892",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "2936",
+      "impl_rule": "R2936",
+      "impl_desc": "el dato ingresado como unidad de medida no corresponde al valor esperado",
+      "source_code": "2936",
+      "source_rule": "R2936",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3007",
+      "impl_rule": "R3007",
+      "impl_desc": "el dato ingresado como codigo de tributo global no corresponde al valor esperado",
+      "source_code": "3007",
+      "source_rule": "R3007",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    },
+    {
+      "impl_code": "3496",
+      "impl_rule": "R3496",
+      "impl_desc": "el codigo producto de sunat no es valido",
+      "source_code": "3496",
+      "source_rule": "R3496",
+      "match_type": "same_code",
+      "confidence": 1.0,
+      "status": "matched"
+    }
+  ],
+  "unmatched": []
+}

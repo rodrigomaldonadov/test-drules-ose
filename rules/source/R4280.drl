@@ -1,0 +1,8 @@
+rule "R4280"
+    when
+        $ctx : CpeContext(valorConceptoLineaFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4280", "El dato ingresado como valor del concepto de la linea no cumple con el formato establecido.");
+        $ctx.marcarError(4280);
+end

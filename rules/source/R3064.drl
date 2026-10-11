@@ -1,0 +1,7 @@
+rule "R3064"
+    when
+        $ctx : CpeContext( faltaValorConceptoLinea == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3064", "El XML no contiene tag o no existe informacion del valor del concepto por linea.");
+end

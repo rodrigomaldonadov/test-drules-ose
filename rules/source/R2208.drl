@@ -1,0 +1,7 @@
+rule "R2208"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2208", "El documento modificado en la Nota de debito esta registrada como rechazada");
+end

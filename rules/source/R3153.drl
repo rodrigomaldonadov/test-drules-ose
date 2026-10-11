@@ -1,0 +1,7 @@
+rule "R3153"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3153", "El XML no contiene el tag de Créditos Hipotecarios: Fecha de otorgamiento del crédito");
+end

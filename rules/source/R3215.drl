@@ -1,0 +1,7 @@
+rule "R3215"
+    when
+        $ctx : CpeContext( idPagoDuplicadoComprobanteAnticipo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3215", "El comprobante contiene un identificador de pago repetido en los comprobantes que se realizo el anticipo");
+end

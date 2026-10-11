@@ -1,0 +1,8 @@
+rule "R4013"
+    when
+        $ctx : CpeContext( tipoDocumentoReceptor == "6",
+                           rucReceptorNoActivo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4013", "El RUC del receptor no esta activo");
+end

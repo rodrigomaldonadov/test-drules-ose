@@ -1,0 +1,7 @@
+rule "R2723"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2723", "El XML no contiene el tag o no existe información del número de documento de identidad del proveedor");
+end

@@ -1,0 +1,7 @@
+rule "R2906"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2906", "El nombre comercial del proveedor no cumple con el formato establecido");
+end

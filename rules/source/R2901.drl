@@ -1,0 +1,7 @@
+rule "R2901"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2901", "El nombre comercial del emisor no cumple con el formato establecido");
+end

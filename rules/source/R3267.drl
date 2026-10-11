@@ -1,0 +1,7 @@
+rule "R3267"
+    when
+        $ctx : CpeContext( fechaCuotaAnteriorEmision == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3267", "Fecha del pago unico o de las cuotas no puede ser anterior o igual a la fecha de emision del comprobante");
+end

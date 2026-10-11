@@ -1,0 +1,8 @@
+rule "R4270"
+    when
+        $ctx : CpeContext(detalleViajeFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4270", "El dato ingresado como detalle del viaje no cumple con el formato establecido.");
+        $ctx.marcarError(4270);
+end

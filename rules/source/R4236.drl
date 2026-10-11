@@ -1,0 +1,7 @@
+rule "R4236"
+    when
+        $ctx : CpeContext( direccionCompletaInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4236", "El dato ingresado como direccion completa y detallada no cumple con el formato establecido.");
+end

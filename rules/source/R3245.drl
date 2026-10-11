@@ -1,0 +1,7 @@
+rule "R3245"
+    when
+        $ctx : CpeContext( faltaContadoOCredito == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3245", "Debe informar si el tipo de transaccion es al Contado o al Credito");
+end

@@ -1,0 +1,7 @@
+rule "R2014"
+    when
+        $ctx : CpeContext( docCliente == null || docCliente.trim().length() == 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2014", "El XML no contiene el tag o no existe informacion del numero de documento de identidad del receptor del documento");
+end

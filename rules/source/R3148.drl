@@ -1,0 +1,7 @@
+rule "R3148"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3148", "El XML no contiene el tag de Proveedores Estado: N° de Proceso de Selección");
+end

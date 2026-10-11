@@ -1,0 +1,7 @@
+rule "R3035"
+    when
+        $ctx : CpeContext( faltaMontoDetraccion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3035", "El xml no contiene el tag o no existe informacion en el monto de detraccion");
+end

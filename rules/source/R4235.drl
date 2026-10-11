@@ -1,0 +1,8 @@
+rule "R4235"
+    when
+        $ctx : CpeContext(faltaNombreConcepto == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4235", "No existe informacion en el nombre del concepto.");
+        $ctx.marcarError(4235);
+end

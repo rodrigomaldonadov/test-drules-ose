@@ -1,0 +1,7 @@
+rule "R2608"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2608", "Los montos de pago, percibidos y montos cobrados consignados para el documento relacionado no son correctos.");
+end

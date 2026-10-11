@@ -1,0 +1,11 @@
+rule "R4303"
+    when
+        $ctx : CpeContext(
+            eval( esBoleta == true || esNotaCredito == true || esNotaDebito == true ),
+            sumaMontoBaseIscLineaNoCorrespondeTotal == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4303", "La sumatoria del monto base - ISC de línea no corresponden al total.");
+        $ctx.marcarError(4303);
+end

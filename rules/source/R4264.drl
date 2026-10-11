@@ -1,0 +1,8 @@
+rule "R4264"
+    when
+        $ctx : CpeContext( tipoOperacion == "1003",
+                           tieneLeyenda2007 == false )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4264", "El XML no contiene el codigo de leyenda 2007 para el tipo de operacion IVAP");
+end

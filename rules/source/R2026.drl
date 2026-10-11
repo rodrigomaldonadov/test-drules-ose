@@ -1,0 +1,7 @@
+rule "R2026"
+    when
+        $ctx : CpeContext( faltaDescripcionItem == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2026", "El XML no contiene el tag cac:Item/cbc:Description en el detalle de los Items");
+end

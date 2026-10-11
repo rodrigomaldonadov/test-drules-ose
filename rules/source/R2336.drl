@@ -1,0 +1,7 @@
+rule "R2336"
+    when
+        $ctx : CpeContext( firmaValida == false )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2336", "Ocurrio un error en el proceso de validacion de la firma digital");
+end

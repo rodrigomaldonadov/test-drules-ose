@@ -1,0 +1,7 @@
+rule "R4092"
+    when
+        $ctx : CpeContext( nombreComercialEmisorInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4092", "El nombre comercial del emisor no cumple con el formato establecido");
+end

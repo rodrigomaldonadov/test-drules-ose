@@ -1,0 +1,7 @@
+rule "R2520"
+    when
+        $ctx : CpeContext( emisorAnticipoNoTipo6 == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2520", "El tipo documento del emisor que realiza el anticipo debe ser 6 del catalogo de tipo de documento.");
+end

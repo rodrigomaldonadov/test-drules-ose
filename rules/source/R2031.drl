@@ -1,0 +1,7 @@
+rule "R2031"
+    when
+        $ctx : CpeContext(!DecimalUtils.formatoValido(subtotal, 12, 2))
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2031", "El dato ingresado en total valor de venta no cumple con el estandar");
+end

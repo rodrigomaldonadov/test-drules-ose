@@ -1,0 +1,7 @@
+rule "R2399"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2399", "El tipo de documento modificado por la Nota de credito debe ser boleta electronica");
+end

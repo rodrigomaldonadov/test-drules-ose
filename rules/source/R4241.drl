@@ -1,0 +1,7 @@
+rule "R4241"
+    when
+        $ctx : CpeContext( distritoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4241", "El dato ingresado como distrito no cumple con el formato establecido");
+end

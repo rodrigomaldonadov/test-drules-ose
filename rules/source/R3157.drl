@@ -1,0 +1,7 @@
+rule "R3157"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3157", "El XML no contiene el tag de BVME transporte ferroviario: Agente de Viajes: Tipo de documento");
+end

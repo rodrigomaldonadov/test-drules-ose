@@ -1,0 +1,9 @@
+rule "R3205"
+    when
+        $ctx : CpeContext(
+            tipoOperacion == null || tipoOperacion.trim().length() == 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3205", "Debe consignar el tipo de operacion");
+end

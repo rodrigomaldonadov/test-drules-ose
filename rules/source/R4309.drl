@@ -1,0 +1,11 @@
+rule "R4309"
+    when
+        $ctx : CpeContext(
+            esBoleta == true,
+            sumaValorVentaIncorrecta == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4309", "La sumatoria de valor de venta no corresponde a los importes consignados.");
+        $ctx.marcarError(4309);
+end

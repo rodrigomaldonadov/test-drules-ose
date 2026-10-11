@@ -1,0 +1,7 @@
+rule "R2503"
+    when
+        $ctx : CpeContext( paidAmountAnticipoNoPositivo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2503", "PaidAmount: monto anticipado por documento debe ser mayor a cero.");
+end

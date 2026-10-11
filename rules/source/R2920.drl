@@ -1,0 +1,7 @@
+rule "R2920"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2920", "Dato no cumple con formato de acuerdo al tipo de documento");
+end

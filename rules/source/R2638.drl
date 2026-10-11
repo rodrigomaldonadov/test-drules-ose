@@ -1,0 +1,7 @@
+rule "R2638"
+    when
+        $ctx : CpeContext( tributoLineaSinTotalGlobal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2638", "Si tiene operaciones de un tributo en alguna linea, debe consignar el tag del total del tributo");
+end

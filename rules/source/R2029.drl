@@ -1,0 +1,8 @@
+rule "R2029"
+    when
+        $ctx : CpeContext( lineas != null )
+        $linea : LineaContext( precioUnitario == null ) from $ctx.getLineas()
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2029", "El XML no contiene el precio de venta unitario (PriceAmount con priceTypeCode 01)");
+end

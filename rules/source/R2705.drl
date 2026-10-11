@@ -1,0 +1,7 @@
+rule "R2705"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2705", "El dato ingresado en el Importe percibido debe ser numérico mayor a cero");
+end

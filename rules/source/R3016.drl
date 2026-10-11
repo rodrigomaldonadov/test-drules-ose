@@ -1,0 +1,7 @@
+rule "R3016"
+    when
+        $ctx : CpeContext( montoBaseCargDescGlobalInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3016", "El dato ingresado en base monto por cargo/descuento globales no cumple con el formato establecido");
+end

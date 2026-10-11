@@ -1,0 +1,10 @@
+rule "R2121"
+    when
+        $ctx : CpeContext(
+            esNotaCredito == true,
+            codigoMotivo == null || codigoMotivo.trim().length() == 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2121", "Debe consignar el ResponseCode de la Nota de Credito");
+end

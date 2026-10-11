@@ -1,0 +1,11 @@
+rule "R4294"
+    when
+        $ctx : CpeContext(
+            (esBoleta || esNotaCredito || esNotaDebito),
+            baseImponibleLineaDifiere == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4294", "La base imponible a nivel de linea difiere de la informacion consignada en el comprobante.");
+        $ctx.marcarError(4294);
+end

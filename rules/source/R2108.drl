@@ -1,0 +1,7 @@
+rule "R2108"
+    when
+        $ctx : CpeContext( PresentacionFueraDeFecha == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2108", "Presentacion fuera de fecha");
+end

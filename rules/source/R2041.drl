@@ -1,0 +1,7 @@
+rule "R2041"
+    when
+        $ctx : CpeContext( sistemaCalculoIscIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2041", "El sistema de calculo del ISC es incorrecto");
+end

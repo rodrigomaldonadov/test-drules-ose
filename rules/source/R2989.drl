@@ -1,0 +1,7 @@
+rule "R2989"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2989", "El comprobante (electronico) a la que hace referencia la nota, no se encuentra informado.");
+end

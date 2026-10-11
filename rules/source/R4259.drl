@@ -1,0 +1,7 @@
+rule "R4259"
+    when
+        $ctx : CpeContext( unidadMedidaListAgencyNameIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4259", "El dato ingresado como atributo @unitCodeListAgencyName es incorrecto.");
+end

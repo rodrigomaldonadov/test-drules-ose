@@ -1,0 +1,7 @@
+rule "R3272"
+    when
+        $ctx : CpeContext( baseImponibleLineaDifiere == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3272", "La base imponible a nivel de linea difiere de la informacion consignada en el comprobante");
+end

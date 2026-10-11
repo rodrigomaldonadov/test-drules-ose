@@ -1,0 +1,7 @@
+rule "R3203"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3203", "El tipo de nota es un dato único");
+end

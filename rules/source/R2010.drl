@@ -1,0 +1,8 @@
+rule "2010 - CPE contribuyente no esta activo"
+salience 1000
+when
+    $ctx : CpeContext(contribuyenteNoActivo == true ) 
+    $r : ResultadoValidacion()
+then
+    $r.addError("2010", "El contribuyente no esta activo");
+end

@@ -1,0 +1,7 @@
+rule "R3105"
+    when
+        $ctx : CpeContext( lineaSinTributoIgv == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3105", "El XML debe contener al menos un tributo por linea de afectacion por IGV");
+end

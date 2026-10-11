@@ -1,0 +1,7 @@
+rule "R3294"
+    when
+        $ctx : CpeContext( sumaImpuestosGlobalesIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3294", "La sumatoria de impuestos globales no corresponde al monto total de impuestos.");
+end

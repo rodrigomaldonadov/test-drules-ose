@@ -1,0 +1,7 @@
+rule "R2883"
+    when
+        $ctx : CpeContext( faltaUnidadMedidaItem == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2883", "Es obligatorio indicar la unidad de medida del item");
+end

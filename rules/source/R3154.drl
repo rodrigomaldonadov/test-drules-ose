@@ -1,0 +1,7 @@
+rule "R3154"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3154", "El XML no contiene el tag de Créditos Hipotecarios: Dirección del predio - Código de ubigeo");
+end

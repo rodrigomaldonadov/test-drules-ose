@@ -1,0 +1,7 @@
+rule "R2748"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2748", "El valor de la Moneda del monto neto pagado debe ser PEN");
+end

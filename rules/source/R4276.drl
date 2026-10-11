@@ -1,0 +1,8 @@
+rule "R4276"
+    when
+        $ctx : CpeContext(valorCargaTMFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4276", "El dato ingresado como valor de la carga en TM no cumple con el formato establecido.");
+        $ctx.marcarError(4276);
+end

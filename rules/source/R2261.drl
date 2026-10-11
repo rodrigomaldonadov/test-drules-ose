@@ -1,0 +1,7 @@
+rule "R2261"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2261", "cbc:Amount - El dato ingresado no cumple con el estandar");
+end

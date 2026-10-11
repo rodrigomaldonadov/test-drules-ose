@@ -1,0 +1,7 @@
+rule "R3219"
+    when
+        $ctx : CpeContext( comprobanteAnticipoNoAutorizado == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3219", "El comprobante que se realizo el anticipo no se encuentra autorizado");
+end

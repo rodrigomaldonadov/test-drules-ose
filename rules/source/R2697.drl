@@ -1,0 +1,7 @@
+rule "R2697"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2697", "El XML no contiene el tag o no existe información del número de cobro");
+end

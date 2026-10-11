@@ -1,0 +1,7 @@
+rule "R2897"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2897", "El valor no cumple con el formato establecido o es menor o igual a cero (0)");
+end

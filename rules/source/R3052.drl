@@ -1,0 +1,7 @@
+rule "R3052"
+    when
+        $ctx : CpeContext( factorCargDescLineaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3052", "El factor de cargo/descuento por linea no cumple con el formato establecido.");
+end

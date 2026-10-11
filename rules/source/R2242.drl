@@ -1,0 +1,7 @@
+rule "R2242"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2242", "El XML no contiene el tag DocumentTypeCode");
+end

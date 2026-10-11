@@ -1,0 +1,7 @@
+rule "R2711"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2711", "El dato ingresado en el Monto total a cobrar debe ser numérico mayor a cero");
+end

@@ -1,0 +1,8 @@
+rule "R2797"
+    when
+        $ctx : CpeContext( montoPercepcion > total,
+                           montoPercepcion > 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2797", "El Monto de percepcion no puede ser mayor al importe total del comprobante.");
+end

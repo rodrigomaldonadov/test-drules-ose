@@ -1,0 +1,7 @@
+rule "R4010"
+    when
+        $ctx : CpeContext( idDocRelacionadoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4010", "El ID de los documentos relacionados no cumplen con el estandar.");
+end

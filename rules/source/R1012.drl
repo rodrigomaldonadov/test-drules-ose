@@ -1,0 +1,7 @@
+rule "R1012"
+    when
+        $ctx : CpeContext( formatoSerieCorrelativoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1012", "ID - El dato ingresado no cumple con el patron SERIE-CORRELATIVO");
+end

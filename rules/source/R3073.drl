@@ -1,0 +1,7 @@
+rule "R3073"
+    when
+        $ctx : CpeContext( faltaCodigoMotivoCargDescItem == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3073", "El XML no contiene el tag o no existe informacion de codigo de motivo de cargo/descuento por item.");
+end

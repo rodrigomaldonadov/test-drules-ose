@@ -1,0 +1,13 @@
+rule "R2119"
+    when
+        $ctx : CpeContext(
+            esNotaCredito == true,
+            $tipoDoc : tipoDocumentoRelacionado != null
+        )
+        eval(
+            !catalogos.existeCodigo("01", $tipoDoc) 
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2119", "El tipo de documento relacionado en la Nota de Credito no es valido (catalogo nro. 01)");
+end

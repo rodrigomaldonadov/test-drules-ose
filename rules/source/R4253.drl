@@ -1,0 +1,7 @@
+rule "R4253"
+    when
+        $ctx : CpeContext( atributoListUriIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4253", "El dato ingresado como atributo @listURI es incorrecto.");
+end

@@ -1,0 +1,7 @@
+rule "R3278"
+    when
+        $ctx : CpeContext( sumaValorVentaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3278", "La sumatoria de valor de venta no corresponde a los importes consignados");
+end

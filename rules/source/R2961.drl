@@ -1,0 +1,7 @@
+rule "R2961"
+    when
+        $ctx : CpeContext( codigoTributoInternacionalIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2961", "El valor del tag codigo de tributo internacional no corresponde al esperado.");
+end

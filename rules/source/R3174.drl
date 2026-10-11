@@ -1,0 +1,7 @@
+rule "R3174"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3174", "El dato ingreso como Forma de Pago o Medio de Pago no corresponde al valor esperado (catalogo nro 59)");
+end

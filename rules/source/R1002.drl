@@ -1,0 +1,11 @@
+rule "R1002"
+    when
+        $ctx : CpeContext(
+            customizationID != null,
+            customizationID.trim().length() > 0,
+            customizationID != "2.0"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1002", "CustomizationID - El valor del tag es diferente a 2.0");
+end

@@ -1,0 +1,11 @@
+rule "R4308"
+    when
+        $ctx : CpeContext(
+            esBoleta == true,
+            sumaCargosGlobalesIncorrecta == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4308", "La sumatoria consignados en cargos globales no corresponden al total.");
+        $ctx.marcarError(4308);
+end

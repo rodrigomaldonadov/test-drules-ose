@@ -1,0 +1,8 @@
+rule "R4089"
+    when
+        $ctx : CpeContext(operacionExcluidaPercepcionPorRetencion == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4089", "La operacion con este cliente esta excluida del sistema de percepcion. Es agente de retencion.");
+        $ctx.marcarError(4089);
+end

@@ -1,0 +1,7 @@
+rule "R3246"
+    when
+        $ctx : CpeContext( tipoTransaccionIdCuotaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3246", "El tipo de transaccion o el identificador de la cuota no cumple con el formato esperado");
+end

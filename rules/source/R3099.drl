@@ -1,0 +1,7 @@
+rule "R3099"
+    when
+        $ctx : CpeContext( paisUsoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3099", "El dato ingresado como pais de uso, exploracion o aprovechamiento es incorrecto.");
+end

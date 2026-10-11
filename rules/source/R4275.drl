@@ -1,0 +1,8 @@
+rule "R4275"
+    when
+        $ctx : CpeContext(faltaValorCargaTM == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4275", "El XML no contiene el tag o no existe informacion del valor de la carga en TM.");
+        $ctx.marcarError(4275);
+end

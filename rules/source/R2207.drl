@@ -1,0 +1,7 @@
+rule "R2207"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2207", "El documento modificado en la Nota de debito se encuentra de baja");
+end

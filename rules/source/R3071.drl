@@ -1,0 +1,7 @@
+rule "R3071"
+    when
+        $ctx : CpeContext( codigoMotivoCargDescGlobalInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3071", "El dato ingresado como codigo de motivo de cargo/descuento global no es valido (catalogo nro 53)");
+end

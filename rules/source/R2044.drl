@@ -1,0 +1,7 @@
+rule "R2044"
+    when
+        $ctx : CpeContext( total == null )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2044", "PayableAmount es obligatorio");
+end

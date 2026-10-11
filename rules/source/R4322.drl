@@ -1,0 +1,7 @@
+rule "R4322"
+    when
+        $ctx : CpeContext( cargoDescGlobalDifiere == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4322", "El valor de cargo/descuento global difiere de los importes consignados");
+end

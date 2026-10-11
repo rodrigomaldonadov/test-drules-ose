@@ -1,0 +1,10 @@
+rule "R3260"
+    when
+        $ctx : CpeContext(
+	    esCredito == true,
+            ( numeroCuotas == null || numeroCuotas == 0 )
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3260", "Debe consignar al menos una cuota cuando la forma de pago es Credito");
+end

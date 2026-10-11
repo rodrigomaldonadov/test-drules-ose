@@ -1,0 +1,7 @@
+rule "CustomizationID "
+    when
+        $ctx : CpeContext( customizationID != "2.0" )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2072", "CustomizationID - La version del documento no es la correcta");
+end

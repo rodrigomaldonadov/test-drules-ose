@@ -1,0 +1,11 @@
+rule "R1019"
+    when
+        $ctx : CpeContext(
+            numero != null,
+            numero.trim().length() > 0,
+            numero not matches "^[0-9]\\d{0,7}$"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1019", "El numero de comprobante no cumple con el formato (1 a 99999999)");
+end

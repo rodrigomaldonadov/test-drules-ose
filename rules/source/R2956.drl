@@ -1,0 +1,7 @@
+rule "R2956"
+    when
+        $ctx : CpeContext( faltaTaxTotalGlobal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2956", "El Monto total de impuestos es obligatorio");
+end

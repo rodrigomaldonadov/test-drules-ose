@@ -1,0 +1,7 @@
+rule "R4093"
+    when
+        $ctx : CpeContext( ubigeoDomicilioFiscalInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4093", "El codigo de ubigeo del domicilio fiscal del emisor no es valido");
+end

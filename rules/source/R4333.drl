@@ -1,0 +1,7 @@
+rule "R4333"
+    when
+        $ctx : CpeContext( gs1SinTipoEstructura == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4333", "Si utiliza el estandar GS1 debe especificar el tipo de estructura GTIN");
+end

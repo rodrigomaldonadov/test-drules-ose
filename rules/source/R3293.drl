@@ -1,0 +1,7 @@
+rule "R3293"
+    when
+        $ctx : CpeContext( sumaVentaIvapLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3293", "La sumatoria del total valor de venta - IVAP de linea no corresponden al total");
+end

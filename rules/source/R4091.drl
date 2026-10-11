@@ -1,0 +1,8 @@
+rule "R4091"
+    when
+        $ctx : CpeContext(operacionExcluidaRetencionPorProveedor == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4091", "La operacion con este proveedor esta excluida del sistema de retencion. Es agente de percepcion, agente de retencion o buen contribuyente.");
+        $ctx.marcarError(4091);
+end

@@ -1,0 +1,7 @@
+rule "R2377"
+    when
+        $ctx : CpeContext( nameTaxTypeCodeIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2377", "El Name o TaxTypeCode debe corresponder al codigo de tributo del item");
+end

@@ -1,0 +1,7 @@
+rule "R4240"
+    when
+        $ctx : CpeContext( departamentoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4240", "El dato ingresado como departamento no cumple con el formato establecido");
+end

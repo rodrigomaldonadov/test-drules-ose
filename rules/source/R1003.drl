@@ -1,0 +1,11 @@
+rule "R1003"
+    when
+        $ctx : CpeContext(
+            tipoDocumento != null,
+            tipoDocumento.trim().length() > 0,
+            tipoArchivoDistintoXml == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1003", "InvoiceTypeCode - El valor del tipo de documento es invalido o no coincide con el nombre del archivo");
+end

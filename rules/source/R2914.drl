@@ -1,0 +1,7 @@
+rule "R2914"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2914", "El departamento del domicilio fiscal del cliente no cumple con el formato establecido");
+end

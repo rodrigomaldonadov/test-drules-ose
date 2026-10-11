@@ -1,0 +1,7 @@
+rule "R2899"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2899", "Para el tipo de seguro 3 - Otros debe consignar el numero de poliza");
+end

@@ -1,0 +1,341 @@
+// Código 0127
+rule "R0127"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("0127", "El ticket no existe");
+end
+
+
+// Código 1034
+rule "R1034"
+    when
+        $ctx : CpeContext( rucArchivoDistintoXml == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1034", "Numero de RUC del nombre del archivo no coincide con el consignado en el contenido del archivo XML");
+end
+
+
+// Código 2011
+rule "R2011"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2011", "El contribuyente no esta habido");
+end
+
+
+// Código 2072
+rule "CustomizationID "
+    when
+        $ctx : CpeContext( customizationID != "2.0" )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2072", "CustomizationID - La version del documento no es la correcta");
+end
+
+
+// Código 2074
+rule "R2074"
+when
+    $ctx : CpeContext(
+        ublVersionId  != null,
+        ublVersionId  != "2.1"
+    )
+    $res : ResultadoValidacion()
+then
+    $res.addError("2074", "UBLVersionID - La version del UBL no es correcta");
+end
+
+
+// Código 2075
+rule "R2075"
+    when
+        $ctx : CpeContext( ublVersionId  == null || ublVersionId  == "" )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2075", "El XML no contiene el tag o no existe informacion de UBLVersionID");
+end
+
+
+// Código 2105
+rule "R2105"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2105", "Comprobante a dar de baja no se encuentra registrado en SUNAT");
+end
+
+
+// Código 2220
+rule "R2220"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2220", "El ID debe coincidir con el nombre del archivo");
+end
+
+
+// Código 2228
+rule "R2228"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2228", "RegistrationName - El dato ingresado no cumple con el estandar");
+end
+
+
+// Código 2229
+rule "R2229"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2229", "El XML no contiene el tag RegistrationName del emisor del documento");
+end
+
+
+// Código 2287
+rule "R2287"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2287", "AdditionalAccountID - El dato ingresado no cumple con el estandar");
+end
+
+
+// Código 2288
+rule "R2288"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2288", "El XML no contiene el tag AdditionalAccountID del emisor del documento");
+end
+
+
+// Código 2301
+rule "R2301"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2301", "La fecha del IssueDate no debe ser mayor a la fecha de recepción");
+end
+
+
+// Código 2305
+rule "R2305"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2305", "LineID - El dato ingresado no cumple con el estandar");
+end
+
+
+// Código 2306
+rule "R2306"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2306", "LineID - El dato ingresado debe ser correlativo mayor a cero");
+end
+
+
+// Código 2307
+rule "R2307"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2307", "El tag LineID de VoidedDocumentsLine esta vacío");
+end
+
+
+// Código 2308
+rule "R2308"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2308", "DocumentTypeCode - El valor del tipo de documento es invalido");
+end
+
+
+// Código 2309
+rule "R2309"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2309", "El tag DocumentTypeCode es vacío");
+end
+
+
+// Código 2310
+rule "R2310"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2310", "El dato ingresado no cumple con el patron SERIE");
+end
+
+
+// Código 2311
+rule "R2311"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2311", "El tag DocumentSerialID es vacío");
+end
+
+
+// Código 2312
+rule "R2312"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2312", "El dato ingresado en DocumentNumberID debe ser numerico y como maximo de 8 digitos");
+end
+
+
+// Código 2313
+rule "R2313"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2313", "El tag DocumentNumberID esta vacío");
+end
+
+
+// Código 2315
+rule "R2315"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2315", "El tag VoidReasonDescription esta vacío");
+end
+
+
+// Código 2323
+rule "R2323"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2323", "Existe documento ya informado anteriormente en una comunicacion de baja");
+end
+
+
+// Código 2324
+rule "R2324"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2324", "El archivo de comunicacion de baja ya fue presentado anteriormente");
+end
+
+
+// Código 2346
+rule "R2346"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2346", "La fecha de generación del resumen debe ser igual a la fecha consignada en el nombre del archivo");
+end
+
+
+// Código 2348
+rule "R2348"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2348", "Los documentos informados en el archivo XML se encuentran duplicados");
+end
+
+
+// Código 2375
+rule "R2375"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2375", "Fecha de emision del comprobante no coincide con la fecha de emision consignada en la comunicación");
+end
+
+
+// Código 2398
+rule "R2398"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2398", "El documento a dar de baja se encuentra rechazado");
+end
+
+
+// Código 2581
+rule "R2581"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2581", "No puede dar de baja 'Recibos de servicios publicos' por SEE-Desde los sistemas del contribuyente");
+end
+
+
+// Código 2671
+rule "R2671"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2671", "La fecha de generación de la comunicación/resumen debe ser mayor o igual a la fecha de generación/emisión de los documentos");
+end
+
+
+// Código 2752
+rule "R2752"
+    when
+        $ctx : CpeContext( itemNumeroDuplicado == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2752", "El numero de item no puede estar duplicado.");
+end
+
+
+// Código 2957
+rule "R2957"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2957", "El comprobante no puede ser dado de baja por exceder el plazo desde su fecha de emision");
+end
+
+
+// Código 4203
+rule "R4203"
+    when
+        $linea : BajaLineaContext(voidReasonDescriptionFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4203", "El dato ingresado en VoidReasonDescription debe contener informacion valida");
+end

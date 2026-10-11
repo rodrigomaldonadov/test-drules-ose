@@ -1,0 +1,7 @@
+rule "R2733"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2733", "El XML no contiene el tag o no existe información del número de pago");
+end

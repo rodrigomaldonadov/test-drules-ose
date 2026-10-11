@@ -1,0 +1,7 @@
+rule "R3063"
+    when
+        $ctx : CpeContext( faltaMatriculaEmbarcacion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3063", "El XML no contiene el tag de matricula de embarcacion en Detracciones para recursos hidrobiologicos.");
+end

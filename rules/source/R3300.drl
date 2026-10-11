@@ -1,0 +1,7 @@
+rule "R3300"
+    when
+        $ctx : CpeContext( sumaDescuentosGlobalesIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3300", "La sumatoria consignada en descuentos globales no corresponden al total.");
+end

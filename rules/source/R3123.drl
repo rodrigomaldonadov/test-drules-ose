@@ -1,0 +1,7 @@
+rule "R3123"
+    when
+        $ctx : CpeContext( montoReferencialTransporteInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3123", "El dato ingresado como monto valor referencial en Detracciones - Servicios de transporte de carga no cumple con el formato establecido.");
+end

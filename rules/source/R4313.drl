@@ -1,0 +1,11 @@
+rule "R4313"
+    when
+        $ctx : CpeContext(
+            esFactura == true,
+            unidadMedidaDiasPermanenciaNoCorresponde == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4313", "El dato ingresado como unidad de medida de los dias de permanencia no corresponde al valor esperado.");
+        $ctx.marcarError(4313);
+end

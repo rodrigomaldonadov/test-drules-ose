@@ -1,0 +1,7 @@
+rule "R2746"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2746", "El dato ingresado en el Importe total a pagar (neto) debe ser numérico mayor a cero");
+end

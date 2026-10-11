@@ -1,0 +1,7 @@
+rule "R2691"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2691", "El XML no contiene el tag o no existe información del tipo de documento relacionado");
+end

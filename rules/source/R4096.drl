@@ -1,0 +1,7 @@
+rule "R4096"
+    when
+        $ctx : CpeContext( provinciaDomicilioFiscalInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4096", "La provincia del domicilio fiscal del emisor no cumple con el formato establecido");
+end

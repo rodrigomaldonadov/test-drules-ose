@@ -1,0 +1,7 @@
+rule "R2266"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2266", "Debe indicar cargos mayores o iguales a cero");
+end

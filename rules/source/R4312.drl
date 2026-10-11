@@ -1,0 +1,11 @@
+rule "R4312"
+    when
+        $ctx : CpeContext(
+            eval( esBoleta == true || esNotaCredito == true || esNotaDebito == true ),
+            totalConsistente == false
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4312", "El importe total del comprobante no coincide con el valor calculado.");
+        $ctx.marcarError(4312);
+end

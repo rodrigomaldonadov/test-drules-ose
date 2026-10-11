@@ -1,0 +1,7 @@
+rule "R2135"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2135", "cac:DiscrepancyResponse/cbc:Description - El dato ingresado no cumple con la estructura");
+end

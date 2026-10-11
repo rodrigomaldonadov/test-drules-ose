@@ -1,0 +1,7 @@
+rule "R3096"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3096", "El comprobante no debe ser editado y anulado en el mismo envío");
+end

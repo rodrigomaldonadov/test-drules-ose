@@ -1,0 +1,7 @@
+rule "R2954"
+    when
+        $ctx : CpeContext( codigoMotivoCargDescLineaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2954", "El valor ingresado como codigo de motivo de cargo/descuento por linea no es valido (catalogo 53)");
+end

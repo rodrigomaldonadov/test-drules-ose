@@ -1,0 +1,7 @@
+rule "R2792"
+    when
+        $ctx : CpeContext( monedaCargoPercepcionNoPen == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2792", "El dato ingresado en moneda del monto de cargo/descuento para percepcion debe ser PEN");
+end

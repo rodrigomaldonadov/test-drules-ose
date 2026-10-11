@@ -1,0 +1,7 @@
+rule "R2622"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2622", "La moneda del importe de pago debe ser la misma que la del documento relacionado.");
+end

@@ -1,0 +1,7 @@
+rule "R4202"
+    when
+        $ctx : CpeContext( numeroDamInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4202", "El valor ingresado como numero de DAM no cumple con el estandar");
+end

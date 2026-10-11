@@ -1,0 +1,7 @@
+rule "R4439"
+    when
+        $ctx : CpeContext( emisorNoEnPadronTasaEspecialIgv == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4439", "El emisor no se encuentra en el Padron de Tasa especial del IGV - Restaurantes y hoteles");
+end

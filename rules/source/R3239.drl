@@ -1,0 +1,7 @@
+rule "R3239"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3239", "El código de local anexo consignado no se encuentra declarado en el RUC");
+end

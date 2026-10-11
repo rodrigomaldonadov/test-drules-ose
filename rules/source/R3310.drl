@@ -1,0 +1,8 @@
+rule "R3310"
+    when
+        $ctx : CpeContext( tipoOperacion == "2001",
+                           faltaMontoTotalPercepcion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3310", "Debe consignar el Monto total incluido la percepcion");
+end

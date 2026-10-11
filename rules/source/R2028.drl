@@ -1,0 +1,7 @@
+rule "R2028"
+    when
+        $ctx : CpeContext( faltaAlternativeConditionPrice == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2028", "Debe existir el tag cac:AlternativeConditionPrice");
+end

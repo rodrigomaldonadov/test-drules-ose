@@ -1,0 +1,8 @@
+rule "R1083"
+    when
+        $ctx : CpeContext( tipoDocumentoReceptor == "6",
+                           rucReceptorNoExiste == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1083", "El numero de RUC del receptor no existe");
+end

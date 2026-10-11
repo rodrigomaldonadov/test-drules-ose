@@ -1,0 +1,7 @@
+rule "R2313"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2313", "El tag DocumentNumberID esta vacío");
+end

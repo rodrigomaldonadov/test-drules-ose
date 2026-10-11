@@ -1,0 +1,8 @@
+rule "R4281"
+    when
+        $ctx : CpeContext(cantidadConceptoLineaFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4281", "El dato ingresado como cantidad del concepto de la linea no cumple con el formato establecido.");
+        $ctx.marcarError(4281);
+end

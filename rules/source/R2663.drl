@@ -1,0 +1,7 @@
+rule "R2663"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2663", "El documento indicado no existe no puede ser modificado");
+end

@@ -1,0 +1,7 @@
+rule "R1032"
+    when
+        $ctx : CpeContext( duplicado == true, esFactura == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1032", "El comprobante ya esta informado y se encuentra con estado anulado o rechazado");
+end

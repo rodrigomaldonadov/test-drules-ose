@@ -1,0 +1,7 @@
+rule "R3209"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3209", "El tipo de moneda de la nota debe ser el mismo que el declarado en el documento que modifica");
+end

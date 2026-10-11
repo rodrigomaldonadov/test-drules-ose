@@ -1,0 +1,7 @@
+rule "R2312"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2312", "El dato ingresado en DocumentNumberID debe ser numerico y como maximo de 8 digitos");
+end

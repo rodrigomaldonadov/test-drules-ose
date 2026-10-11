@@ -1,0 +1,7 @@
+rule "R1038"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1038", "RegistrationName - El nombre o razon social del emisor no cumple con el estandar");
+end

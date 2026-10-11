@@ -1,0 +1,7 @@
+rule "R2229"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2229", "El XML no contiene el tag RegistrationName del emisor del documento");
+end

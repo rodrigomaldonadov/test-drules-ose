@@ -1,0 +1,8 @@
+rule "R4086"
+    when
+        $ctx : CpeContext(emisorYClienteSonAgentesPercepcionCombustible == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4086", "El emisor y el cliente son Agentes de percepcion de combustible en la fecha de emision.");
+        $ctx.marcarError(4086);
+end

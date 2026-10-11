@@ -1,0 +1,7 @@
+rule "R3037"
+    when
+        $ctx : CpeContext( montoDetraccionFormatoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3037", "El dato ingresado en monto de detraccion no cumple con el formato establecido");
+end

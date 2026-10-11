@@ -1,0 +1,12 @@
+rule "R1018"
+    when
+        $ctx : CpeContext(
+            esBoleta == true,
+            serie != null,
+            serie.trim().length() > 0,
+            serie not matches "^[Bb]\\d{3}$"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1018", "La serie del comprobante no cumple con el formato para Boleta (Bxxx)");
+end

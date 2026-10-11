@@ -1,0 +1,11 @@
+rule "R4304"
+    when
+        $ctx : CpeContext(
+            eval( esBoleta == true || esNotaCredito == true || esNotaDebito == true ),
+            sumaMontoBaseOtrosTributosLineaNoCorrespondeTotal == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4304", "La sumatoria del monto base - Otros tributos de línea no corresponden al total.");
+        $ctx.marcarError(4304);
+end

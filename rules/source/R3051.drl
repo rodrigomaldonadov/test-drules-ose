@@ -1,0 +1,7 @@
+rule "R3051"
+    when
+        $ctx : CpeContext( nombreTributoIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3051", "Nombre de tributo no corresponde al codigo de tributo de la linea.");
+end

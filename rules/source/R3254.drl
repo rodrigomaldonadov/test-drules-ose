@@ -1,0 +1,7 @@
+rule "R3254"
+    when
+        $ctx : CpeContext( cuotaSinMonto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3254", "Si se consigna informacion de la cuota de pago, debe indicarse el monto de la cuota");
+end

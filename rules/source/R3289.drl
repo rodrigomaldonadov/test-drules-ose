@@ -1,0 +1,8 @@
+rule "R3289"
+    when
+        $ctx : CpeContext( tieneLeyenda2008 == true,
+                           totalValorVentaExoneradas <= 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3289", "Si se utiliza la leyenda con codigo 2008, el total de operaciones exoneradas debe ser mayor a 0.00");
+end

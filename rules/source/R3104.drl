@@ -1,0 +1,7 @@
+rule "R3104"
+    when
+        $ctx : CpeContext( factorIscLineaCero == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3104", "El factor de afectacion de ISC por linea debe ser diferente a 0.00.");
+end

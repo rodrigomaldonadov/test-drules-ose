@@ -1,0 +1,7 @@
+rule "R2138"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2138", "CreditedQuantity/@unitCode - El dato ingresado no cumple con el estandar");
+end

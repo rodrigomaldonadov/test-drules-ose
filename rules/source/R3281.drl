@@ -1,0 +1,7 @@
+rule "R3281"
+    when
+        $ctx : CpeContext( emisorNoInscritoRea == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3281", "El emisor electronico no se encuentra inscrito en el Registro de Establecimientos Autorizados (REA)");
+end

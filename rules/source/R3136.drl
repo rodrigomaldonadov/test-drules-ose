@@ -1,0 +1,7 @@
+rule "R3136"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3136", "El XML no contiene el tag de numero de documentos del huesped.");
+end

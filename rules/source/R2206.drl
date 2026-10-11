@@ -1,0 +1,10 @@
+rule "R2206"
+    when
+        $ctx : CpeContext(
+            esNotaDebito == true,
+            ( documentoRelacionado == null || documentoRelacionado.trim().length() == 0 )
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2206", "Debe indicar los documentos afectados por la Nota de Debito");
+end

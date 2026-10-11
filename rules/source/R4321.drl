@@ -1,0 +1,7 @@
+rule "R4321"
+    when
+        $ctx : CpeContext( sumaIcbperLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4321", "La sumatoria del total del importe del tributo ICBPER de línea no corresponden al total");
+end

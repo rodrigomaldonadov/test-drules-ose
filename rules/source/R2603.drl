@@ -1,0 +1,7 @@
+rule "R2603"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2603", "La tasa de percepción enviada no corresponde con el régimen de percepción.");
+end

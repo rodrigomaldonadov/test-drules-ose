@@ -1,0 +1,7 @@
+rule "R3301"
+    when
+        $ctx : CpeContext( sumaCargosGlobalesIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3301", "La sumatoria consignados en cargos globales no corresponden al total");
+end

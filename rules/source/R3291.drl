@@ -1,0 +1,11 @@
+rule "R3291"
+    when
+        $ctx : CpeContext(
+            		
+            totalIGV != null,
+            igvConsistente == false
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3291", "El calculo del IGV es Incorrecto");
+end

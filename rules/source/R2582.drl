@@ -1,0 +1,7 @@
+rule "R2582"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2582", "Solo se debe incluir el tag de Comprobante de referencia cuando se trata de una nota de credito o debito");
+end

@@ -1,0 +1,11 @@
+rule "R4297"
+    when
+        $ctx : CpeContext(
+            (esBoleta || esNotaCredito || esNotaDebito),
+            sumaVentaExoneradasLineaIncorrecta == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4297", "La sumatoria del total valor de venta - operaciones exoneradas de linea no corresponden al total.");
+        $ctx.marcarError(4297);
+end

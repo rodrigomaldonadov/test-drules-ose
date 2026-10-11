@@ -1,0 +1,7 @@
+rule "R2136"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2136", "El XML no contiene el tag o no existe informacion de cac:DiscrepancyResponse/cbc:Description");
+end

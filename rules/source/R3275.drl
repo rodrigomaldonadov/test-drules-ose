@@ -1,0 +1,7 @@
+rule "R3275"
+    when
+        $ctx : CpeContext( sumaVentaExoneradasLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3275", "La sumatoria del total valor de venta - operaciones exoneradas de linea no corresponden al total");
+end

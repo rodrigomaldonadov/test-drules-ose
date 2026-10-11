@@ -1,0 +1,7 @@
+rule "R4252"
+    when
+        $ctx : CpeContext( atributoListNameIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4252", "El dato ingresado como atributo @listName es incorrecto.");
+end

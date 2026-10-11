@@ -1,0 +1,7 @@
+rule "R3014"
+    when
+        $ctx : CpeContext( codigoLeyendaRepetido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3014", "El codigo de leyenda no debe repetirse en el comprobante.");
+end

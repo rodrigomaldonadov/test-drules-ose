@@ -1,0 +1,11 @@
+rule "R4311"
+    when
+        $ctx : CpeContext(
+            eval( esBoleta == true || esNotaDebito == true ),
+            sumaIgvGratuitasLineaIncorrecta == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4311", "La sumatoria de los IGV de operaciones gratuitas de la línea (codigo tributo 9996) no corresponden al total.");
+        $ctx.marcarError(4311);
+end

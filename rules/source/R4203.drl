@@ -1,0 +1,7 @@
+rule "R4203"
+    when
+        $linea : BajaLineaContext(voidReasonDescriptionFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4203", "El dato ingresado en VoidReasonDescription debe contener informacion valida");
+end

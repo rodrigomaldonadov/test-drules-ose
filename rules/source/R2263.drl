@@ -1,0 +1,7 @@
+rule "R2263"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2263", "ChargeIndicator - El dato ingresado no cumple con el estandar");
+end

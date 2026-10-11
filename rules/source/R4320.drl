@@ -1,0 +1,7 @@
+rule "R4320"
+    when
+        $ctx : CpeContext( unidadMedidaNoCorresponde == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4320", "El dato ingresado como unidad de medida no corresponde al valor esperado");
+end

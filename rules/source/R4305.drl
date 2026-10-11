@@ -1,0 +1,11 @@
+rule "R4305"
+    when
+        $ctx : CpeContext(
+            eval( esBoleta == true || esNotaCredito == true || esNotaDebito == true ),
+            sumaMontoIscLineaNoCorrespondeTotal == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4305", "La sumatoria del total del importe del tributo ISC de línea no corresponden al total.");
+        $ctx.marcarError(4305);
+end

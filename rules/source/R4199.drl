@@ -1,0 +1,7 @@
+rule "R4199"
+    when
+        $ctx : CpeContext( codigoLocalAnexoNoDeclarado == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4199", "El codigo de local anexo consignado no se encuentra declarado en el RUC");
+end

@@ -1,0 +1,7 @@
+rule "R4269"
+    when
+        $ctx : CpeContext( codigoProductoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4269", "El dato ingresado como codigo de producto no cumple con el formato establecido.");
+end

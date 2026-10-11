@@ -1,0 +1,7 @@
+rule "R4366"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4366", "El XML no contiene tag o no existe información de la fecha del concepto por linea");
+end

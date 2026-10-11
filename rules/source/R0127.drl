@@ -1,0 +1,7 @@
+rule "R0127"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("0127", "El ticket no existe");
+end

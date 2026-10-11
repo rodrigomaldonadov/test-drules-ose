@@ -1,0 +1,7 @@
+rule "R3303"
+    when
+        $ctx : CpeContext( redondeoImporteTotalExcede == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3303", "El monto para el redondeo del Importe Total excede el valor permitido");
+end

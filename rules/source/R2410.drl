@@ -1,0 +1,7 @@
+rule "R2410"
+    when
+        $ctx : CpeContext( priceTypeCodeInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2410", "Se ha consignado un valor invalido en el campo cbc:PriceTypeCode");
+end

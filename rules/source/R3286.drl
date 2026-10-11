@@ -1,0 +1,7 @@
+rule "R3286"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3286", "El monto total de la nota de credito debe ser menor o igual al monto del documento que modifica");
+end

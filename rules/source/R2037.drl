@@ -1,0 +1,7 @@
+rule "R2037"
+    when
+        $ctx : CpeContext( faltaTaxSchemeIdLinea == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2037", "El XML no contiene el tag cac:TaxCategory/cac:TaxScheme/cbc:ID del Item");
+end

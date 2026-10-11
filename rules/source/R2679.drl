@@ -1,0 +1,7 @@
+rule "R2679"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2679", "El XML no contiene el tag o no existe información del número de documento de identidad del cliente");
+end

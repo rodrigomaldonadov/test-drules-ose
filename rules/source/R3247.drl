@@ -1,0 +1,7 @@
+rule "R3247"
+    when
+        $ctx : CpeContext( transaccionContadoYCredito == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3247", "El tipo de transaccion no puede ser a la vez al Contado y al Credito");
+end

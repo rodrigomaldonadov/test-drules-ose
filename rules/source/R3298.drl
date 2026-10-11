@@ -1,0 +1,11 @@
+rule "sumatoria del total del importe del tributo ISC "
+    when
+
+        $ctx : CpeContext(
+            totalISC != null,
+            totalISC.compareTo( java.math.BigDecimal.ZERO ) > 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3298", "La sumatoria del total del importe del tributo ISC de linea no corresponden al total");
+end

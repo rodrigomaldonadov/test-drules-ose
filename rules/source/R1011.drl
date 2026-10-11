@@ -1,0 +1,7 @@
+rule "R1011"
+    when
+        $ctx : CpeContext( faltaIssueDateGlobal == false, issueDateValorInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1011", "IssueDate- El dato ingresado no es valido");
+end

@@ -1,0 +1,7 @@
+rule "R2521"
+    when
+        $ctx : CpeContext( anticipoSerieCorrelativoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2521", "El dato ingresado debe indicar SERIE-CORRELATIVO del documento que se realizo el anticipo.");
+end

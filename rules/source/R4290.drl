@@ -1,0 +1,12 @@
+rule "R4290"
+    when
+        $ctx : CpeContext(
+            (esBoleta || esNotaCredito || esNotaDebito),
+            igvCalculoIncorrecto == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4290", "El calculo del IGV es Incorrecto.");
+        $ctx.marcarError(4290);
+end
+

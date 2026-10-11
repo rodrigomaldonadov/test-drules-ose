@@ -1,0 +1,7 @@
+rule "R2713"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2713", "El valor de la moneda del Monto total a cobrar debe ser PEN");
+end

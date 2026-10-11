@@ -1,0 +1,7 @@
+rule "R2133"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2133", "RegistrationName - El dato ingresado no cumple con el estandar");
+end

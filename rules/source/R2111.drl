@@ -1,0 +1,7 @@
+rule "R2111"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2111", "El XML no contiene el tag o no existe informacion de UBLVersionID");
+end

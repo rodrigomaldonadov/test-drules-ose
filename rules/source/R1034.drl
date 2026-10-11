@@ -1,0 +1,7 @@
+rule "R1034"
+    when
+        $ctx : CpeContext( rucArchivoDistintoXml == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1034", "Numero de RUC del nombre del archivo no coincide con el consignado en el contenido del archivo XML");
+end

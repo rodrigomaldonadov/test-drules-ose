@@ -1,0 +1,7 @@
+rule "R2068"
+    when
+        $ctx : CpeContext( faltaPriceAmountItem == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2068", "El XML no contiene el tag cac:Price/cbc:PriceAmount en el detalle de los Items");
+end

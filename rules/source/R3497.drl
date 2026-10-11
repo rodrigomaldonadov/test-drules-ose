@@ -1,0 +1,7 @@
+rule "R3497"
+    when
+        $ctx : CpeContext( tipoContratoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3497", "El tipo de contrato debe ser 1-ventas o 2-adquisiciones");
+end

@@ -1,0 +1,7 @@
+rule "R3498"
+    when
+        $ctx : CpeContext( multiplesContratosColaboracion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3498", "No se permite mas de un numero de contrato de colaboracion empresarial");
+end

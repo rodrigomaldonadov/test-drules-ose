@@ -1,0 +1,7 @@
+rule "R3160"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3160", "El XML no contiene el tag de BVME transporte ferroviario: Pasajero - Tipo de documento de identidad");
+end

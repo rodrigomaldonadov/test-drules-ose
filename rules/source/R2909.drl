@@ -1,0 +1,7 @@
+rule "R2909"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2909", "El departamento del domicilio fiscal del proveedor no cumple con el formato establecido");
+end

@@ -1,0 +1,7 @@
+rule "R2987"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2987", "El comprobante ya fue informado y se encuentra anulado o rechazado.");
+end

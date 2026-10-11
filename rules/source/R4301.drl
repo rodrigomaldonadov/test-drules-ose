@@ -1,0 +1,11 @@
+rule "R4301"
+    when
+        $ctx : CpeContext(
+            (esBoleta || esNotaCredito || esNotaDebito),
+            sumaImpuestosGlobalesIncorrecta == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4301", "La sumatoria de impuestos globales no corresponde al monto total de impuestos.");
+        $ctx.marcarError(4301);
+end

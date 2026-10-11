@@ -1,0 +1,7 @@
+rule "R4207"
+    when
+        $linea : ResumenLineaContext(dniFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4207", "El DNI debe tener 8 caracteres numericos en la linea " + $linea.getLineId());
+end

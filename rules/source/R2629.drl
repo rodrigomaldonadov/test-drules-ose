@@ -1,0 +1,7 @@
+rule "R2629"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2629", "Importe total pagado debe ser igual a la suma de los importes pagados por cada documento relacionado.");
+end

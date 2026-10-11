@@ -1,0 +1,7 @@
+rule "R2271"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2271", "El XML no contiene el tag TaxScheme Name de impuesto");
+end

@@ -1,0 +1,7 @@
+rule "R3270"
+    when
+        $ctx : CpeContext( precioUnitarioDifiere == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3270", "El precio unitario de la operacion que esta informando difiere de los calculos realizados en base a la informacion remitida");
+end

@@ -1,0 +1,7 @@
+rule "R3220"
+    when
+        $ctx : CpeContext( anticipoSinTotalAnticipos == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3220", "Si consigna montos de anticipo debe informar el Total de Anticipos");
+end

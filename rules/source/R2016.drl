@@ -1,0 +1,7 @@
+rule "R2016"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2016", "El dato ingresado en el tipo de documento de identidad del receptor no cumple con el estandar o no esta permitido.");
+end

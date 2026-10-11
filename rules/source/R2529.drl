@@ -1,0 +1,7 @@
+rule "R2529"
+    when
+        $ctx : CpeContext( rucEmisorAnticipoNoExiste == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2529", "RUC que emitio documento de anticipo no existe.");
+end

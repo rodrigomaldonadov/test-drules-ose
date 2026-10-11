@@ -1,0 +1,7 @@
+rule "R3194"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3194", "Solo es permitido registrar un documento que modifica.");
+end

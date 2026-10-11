@@ -1,0 +1,10 @@
+rule "R2174"
+    when
+        $ctx : CpeContext(
+            esNotaDebito == true,
+            codigoMotivo == null || codigoMotivo.trim().length() == 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2174", "Debe consignar el ResponseCode de la Nota de Debito");
+end

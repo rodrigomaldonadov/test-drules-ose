@@ -1,0 +1,7 @@
+rule "R4334"
+    when
+        $ctx : CpeContext( codigoProductoGs1Invalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4334", "El codigo de producto GS1 no cumple el estandar");
+end

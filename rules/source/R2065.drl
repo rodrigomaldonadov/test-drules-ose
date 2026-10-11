@@ -1,0 +1,7 @@
+rule "R2065"
+    when
+        $ctx : CpeContext( totalDescuentosFormatoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2065", "El dato ingresado en el campo Total Descuentos no cumple con el formato establecido");
+end

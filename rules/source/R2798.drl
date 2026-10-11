@@ -1,0 +1,7 @@
+rule "R2798"
+    when
+        $ctx : CpeContext( montoPercepcionIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2798", "El Monto de percepcion no tiene el valor correcto segun el tipo de percepcion.");
+end

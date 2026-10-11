@@ -1,0 +1,10 @@
+rule "R2024"
+    when
+        $ctx : CpeContext( lineas != null )
+        $linea : LineaContext(
+            cantidad == null || cantidad.compareTo( java.math.BigDecimal.ZERO ) <= 0
+        ) from $ctx.getLineas()
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2024", "El XML no contiene el tag InvoicedQuantity en el detalle de los Items o es cero (0)");
+end

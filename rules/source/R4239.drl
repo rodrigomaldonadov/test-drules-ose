@@ -1,0 +1,7 @@
+rule "R4239"
+    when
+        $ctx : CpeContext( provinciaInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4239", "El dato ingresado como provincia no cumple con el formato establecido");
+end

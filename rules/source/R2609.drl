@@ -1,0 +1,7 @@
+rule "R2609"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2609", "El comprobante electrónico enviado no se encuentra registrado en la SUNAT.");
+end

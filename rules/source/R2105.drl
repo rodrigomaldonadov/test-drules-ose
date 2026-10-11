@@ -1,0 +1,7 @@
+rule "R2105"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2105", "Comprobante a dar de baja no se encuentra registrado en SUNAT");
+end

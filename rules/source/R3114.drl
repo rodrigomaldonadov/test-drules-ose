@@ -1,0 +1,7 @@
+rule "R3114"
+    when
+        $ctx : CpeContext( indicadorCargDescIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3114", "El dato ingresado como indicador de cargo/descuento no corresponde al valor esperado.");
+end

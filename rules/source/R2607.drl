@@ -1,0 +1,7 @@
+rule "R2607"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2607", "La moneda del importe de cobro debe ser la misma que la del documento relacionado.");
+end

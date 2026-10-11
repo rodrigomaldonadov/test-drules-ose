@@ -1,0 +1,7 @@
+rule "R2668"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2668", "Importe total cobrado debe ser igual a la suma de los importes cobrados por cada documento relacionado.");
+end

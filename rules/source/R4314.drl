@@ -1,0 +1,11 @@
+rule "R4314"
+    when
+        $ctx : CpeContext(
+            eval( esBoleta == true || esNotaCredito == true || esNotaDebito == true ),
+            redondeoImporteTotalExcede == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4314", "El monto para el redondeo del Importe Total excede el valor permitido.");
+        $ctx.marcarError(4314);
+end

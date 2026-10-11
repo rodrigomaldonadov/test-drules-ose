@@ -1,0 +1,7 @@
+rule "R3020"
+    when
+        $ctx : CpeContext(!DecimalUtils.formatoValido(taxamuntGlobal, 12, 2) )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3020", "El dato ingresado en el monto total de impuestos no cumple con el formato establecido");
+end

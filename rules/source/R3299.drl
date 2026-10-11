@@ -1,0 +1,7 @@
+rule "R3299"
+    when
+        $ctx : CpeContext( sumaOtrosTributosLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3299", "La sumatoria del total del importe del tributo Otros tributos de linea no corresponden al total");
+end

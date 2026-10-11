@@ -1,0 +1,7 @@
+rule "R2287"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2287", "AdditionalAccountID - El dato ingresado no cumple con el estandar");
+end

@@ -1,0 +1,9 @@
+rule "R3093"
+    when
+        $ctx : CpeContext( operacionSujetaPercepcion == true,
+                           formaPagoContado == true,
+                           sinCargoPercepcion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3093", "Si operacion es sujeta a percepcion y la forma de pago es Contado, debe ingresar cargo para Percepcion");
+end

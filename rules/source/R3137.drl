@@ -1,0 +1,7 @@
+rule "R3137"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3137", "El XML no contiene el tag de tipo de documentos del huesped.");
+end

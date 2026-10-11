@@ -1,0 +1,12 @@
+rule "R2800"
+    when
+        $ctx : CpeContext(
+            tipoOperacion != null,
+            tipoOperacion matches "0200|0201|0202|0203|0204|0205|0206|0207|0208|0401",
+            tipoDocCliente != null,
+            tipoDocCliente != "6"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2800", "El dato ingresado en el tipo de documento de identidad del receptor no esta permitido.");
+end

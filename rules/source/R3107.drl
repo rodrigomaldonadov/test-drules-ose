@@ -1,0 +1,7 @@
+rule "R3107"
+    when
+        $ctx : CpeContext( codigoTributoGlobalInvalidoOperacion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3107", "El dato ingresado como codigo de tributo global es invalido para tipo de operacion.");
+end

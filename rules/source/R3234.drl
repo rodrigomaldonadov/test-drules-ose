@@ -1,0 +1,7 @@
+rule "R3234"
+    when
+        $ctx : CpeContext( codigoPrecio02NoGratuita == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3234", "El codigo de precio '02' es solo para operaciones gratuitas");
+end

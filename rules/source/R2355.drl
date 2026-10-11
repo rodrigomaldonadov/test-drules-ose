@@ -1,0 +1,7 @@
+rule "R2355"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2355", "Debe consignar solo un elemento cac:TaxTotal a nivel de item por codigo de tributo");
+end

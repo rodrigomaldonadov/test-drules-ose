@@ -1,0 +1,7 @@
+rule "R3210"
+    when
+        $ctx : CpeContext( sistemaCalculoEnNoIsc == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3210", "Solo debe consignar sistema de calculo si el tributo es ISC");
+end

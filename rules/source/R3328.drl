@@ -1,0 +1,7 @@
+rule "R3328"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3328", "La boleta de venta relacionada tiene monto informado de percepción.");
+end

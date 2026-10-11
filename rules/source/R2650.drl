@@ -1,0 +1,8 @@
+rule "R2650"
+    when
+        $ctx : CpeContext( tipoOperacion == "1003",
+                           totalIsc > 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2650", "Factura de operacion sujeta al IVAP , no debe consignar valor para ISC o debe ser 0");
+end

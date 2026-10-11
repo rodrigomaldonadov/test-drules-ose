@@ -1,0 +1,11 @@
+rule "R2127"
+    when
+        $ctx : CpeContext(
+            esNotaCredito == true,
+            motivoNota != null,
+            motivoNota not matches "0[1-9]|1[0-3]"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2127", "ResponseCode - El dato ingresado no cumple con la estructura");
+end

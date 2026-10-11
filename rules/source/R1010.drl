@@ -1,0 +1,7 @@
+rule "R1010"
+    when
+        $ctx : CpeContext( faltaIssueDateGlobal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1010", "El XML no contiene el tag IssueDate");
+end

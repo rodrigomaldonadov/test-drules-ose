@@ -1,0 +1,7 @@
+rule "R2752"
+    when
+        $ctx : CpeContext( itemNumeroDuplicado == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2752", "El numero de item no puede estar duplicado.");
+end

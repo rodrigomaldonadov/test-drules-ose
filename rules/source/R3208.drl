@@ -1,0 +1,7 @@
+rule "R3208"
+    when
+        $ctx : CpeContext( monedaDetraccionNoPen == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3208", "La moneda del monto de la detraccion debe ser PEN");
+end

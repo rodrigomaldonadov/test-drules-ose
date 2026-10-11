@@ -1,0 +1,7 @@
+rule "R2604"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2604", "El Cliente no puede ser el mismo que el Emisor del comprobante de percepción.");
+end

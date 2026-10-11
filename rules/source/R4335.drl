@@ -1,0 +1,7 @@
+rule "R4335"
+    when
+        $ctx : CpeContext( tipoEstructuraGs1Invalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4335", "El tipo de estructura GS1 no tiene un valor permitido");
+end

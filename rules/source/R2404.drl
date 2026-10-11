@@ -1,0 +1,7 @@
+rule "R2404"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2404", "Documento afectado por la nota electronica no se encuentra autorizado");
+end

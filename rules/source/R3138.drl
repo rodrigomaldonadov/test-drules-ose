@@ -1,0 +1,7 @@
+rule "R3138"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3138", "El XML no contiene el tag de codigo de pais de emision del documento de identidad");
+end

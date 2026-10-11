@@ -1,0 +1,7 @@
+rule "R3195"
+    when
+        $ctx : CpeContext( faltaTaxTotalLinea == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3195", "El xml no contiene el tag de impuesto por linea (TaxtTotal).");
+end

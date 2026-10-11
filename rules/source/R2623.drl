@@ -1,0 +1,7 @@
+rule "R2623"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2623", "Los montos de pago, retenidos y montos pagados consignados para el documento relacionado no son correctos.");
+end

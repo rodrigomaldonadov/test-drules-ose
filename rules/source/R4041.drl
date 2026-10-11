@@ -1,0 +1,8 @@
+rule "R4041"
+    when
+        $ctx : CpeContext( codigoPais != null,
+                           codigoPais != "PE" )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4041", "El codigo de pais debe ser PE");
+end

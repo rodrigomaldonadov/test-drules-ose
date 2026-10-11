@@ -1,0 +1,7 @@
+rule "R2220"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2220", "El ID debe coincidir con el nombre del archivo");
+end

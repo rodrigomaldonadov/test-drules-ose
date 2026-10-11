@@ -1,0 +1,7 @@
+rule "R3312"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3312", "El documento relacionado tiene monto informado de percepción");
+end

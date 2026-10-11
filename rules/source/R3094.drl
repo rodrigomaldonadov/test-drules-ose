@@ -1,0 +1,7 @@
+rule "R3094"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3094", "El comprobante más \"código de operación del ítem\" no debe repetirse");
+end

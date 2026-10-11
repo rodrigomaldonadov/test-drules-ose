@@ -1,0 +1,7 @@
+rule "R4338"
+    when
+        $ctx : CpeContext( registrationNameEmisorInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4338", "RegistrationName - El nombre o razon social del emisor no cumple con el estandar");
+end

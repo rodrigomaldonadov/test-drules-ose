@@ -1,0 +1,7 @@
+rule "R2269"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2269", "El XML no contiene el tag TaxScheme ID de Información acerca del importe total de un tipo particular de impuesto");
+end

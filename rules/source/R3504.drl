@@ -1,0 +1,7 @@
+rule "R3504"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3504", "La tasa del tributo de la línea no corresponde al valor esperado");
+end

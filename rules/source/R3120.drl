@@ -1,0 +1,7 @@
+rule "R3120"
+    when
+        $ctx : CpeContext( faltaDetalleViajeTransporte == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3120", "El XML no contiene el tag o no existe informacion del Detalle del viaje en Detracciones - Servicio de transporte de carga.");
+end

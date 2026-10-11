@@ -1,0 +1,7 @@
+rule "R2254"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2254", "PaidAmount - El dato ingresado no cumple con el estandar");
+end

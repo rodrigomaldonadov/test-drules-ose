@@ -1,0 +1,8 @@
+rule "R4084"
+    when
+        $ctx : CpeContext(descripcionItemFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4084", "Descripcion del Item - El dato ingresado no cumple con el formato establecido.");
+        $ctx.marcarError(4084);
+end

@@ -1,0 +1,7 @@
+rule "R2371"
+    when
+        $ctx : CpeContext( faltaTaxExemptionReasonCode == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2371", "El XML no contiene el tag cbc:TaxExemptionReasonCode de Afectacion al IGV");
+end

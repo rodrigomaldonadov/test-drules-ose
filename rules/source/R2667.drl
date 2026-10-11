@@ -1,0 +1,7 @@
+rule "R2667"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2667", "Importe total percibido debe ser igual a la suma de los importes percibidos por cada documento relacionado.");
+end

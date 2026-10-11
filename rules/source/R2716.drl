@@ -1,0 +1,7 @@
+rule "R2716"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2716", "El dato ingresado en el tipo de cambio debe ser numérico mayor a cero");
+end

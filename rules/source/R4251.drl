@@ -1,0 +1,7 @@
+rule "R4251"
+    when
+        $ctx : CpeContext( atributoListAgencyNameIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4251", "El dato ingresado como atributo @listAgencyName es incorrecto.");
+end

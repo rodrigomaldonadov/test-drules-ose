@@ -1,0 +1,7 @@
+rule "R2626"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2626", "El Nro. de documento con el número de pago ya se encuentra en la Relación de Documentos Relacionados agregados.");
+end

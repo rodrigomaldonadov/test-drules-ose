@@ -1,0 +1,7 @@
+rule "R3320"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3320", "El monto neto pendiente de pago debe ser menor o igual al monto de la factura");
+end

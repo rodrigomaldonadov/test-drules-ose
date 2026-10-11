@@ -1,0 +1,7 @@
+rule "R3000"
+    when
+        $ctx : CpeContext( impuestoOperacionesGratuitasDistintoCero == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3000", "El monto total del impuestos sobre el valor de venta de operaciones gratuitas/inafectas/exoneradas debe ser igual a 0.00");
+end

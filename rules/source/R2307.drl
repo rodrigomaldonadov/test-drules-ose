@@ -1,0 +1,7 @@
+rule "R2307"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2307", "El tag LineID de VoidedDocumentsLine esta vacío");
+end

@@ -1,0 +1,11 @@
+rule "R3050"
+    when
+        $ctx : CpeContext(
+            porcentajeDetraccion != null,
+            ( porcentajeDetraccion.compareTo( new java.math.BigDecimal("1.00") ) < 0 ||
+              porcentajeDetraccion.compareTo( new java.math.BigDecimal("15.00") ) > 0 )
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3050", "Afectacion de IGV no corresponde al codigo de tributo de la linea.");
+end

@@ -1,0 +1,7 @@
+rule "R2329"
+    when
+        $ctx : CpeContext( fechaEmisionFueraLimite == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2329", "La fecha de emision se encuentra fuera del limite permitido");
+end

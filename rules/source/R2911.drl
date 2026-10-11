@@ -1,0 +1,7 @@
+rule "R2911"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2911", "El nombre comercial del cliente no cumple con el formato establecido");
+end

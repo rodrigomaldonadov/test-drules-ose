@@ -1,0 +1,10 @@
+rule "R3280"
+    when
+        $ctx : CpeContext(
+            total != null,
+            totalConsistente == false
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3280", "El importe total del comprobante no coincide con el valor calculado");
+end

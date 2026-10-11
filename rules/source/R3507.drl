@@ -1,0 +1,7 @@
+rule "R3507"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3507", "Las penalidades son operaciones inafectas del IGV");
+end

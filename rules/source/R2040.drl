@@ -1,0 +1,7 @@
+rule "R2040"
+    when
+        $ctx : CpeContext( tipoAfectacionIgvIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2040", "El tipo de afectacion del IGV es incorrecto");
+end

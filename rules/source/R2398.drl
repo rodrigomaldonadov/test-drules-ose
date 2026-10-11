@@ -1,0 +1,7 @@
+rule "R2398"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2398", "El documento a dar de baja se encuentra rechazado");
+end

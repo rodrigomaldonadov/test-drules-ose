@@ -1,0 +1,7 @@
+rule "R2205"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2205", "La serie o numero del documento modificado por la Nota de Debito no cumple con el formato establecido");
+end

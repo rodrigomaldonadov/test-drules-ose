@@ -1,0 +1,7 @@
+rule "R2884"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2884", "Los comprobantes modificados por la nota deben ser del mismo tipo");
+end

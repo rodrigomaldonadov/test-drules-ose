@@ -1,0 +1,8 @@
+rule "R2644"
+    when
+        $ctx : CpeContext( tipoOperacion == "1003",
+                           ivapConAfectacionIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2644", "Comprobante operacion sujeta IVAP solo debe tener items con codigo de afectacion del IGV igual a 17");
+end

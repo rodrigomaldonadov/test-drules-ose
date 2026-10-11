@@ -1,0 +1,7 @@
+rule "R3264"
+    when
+        $ctx : CpeContext( baseRetencionMayorTotal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3264", "El importe total de la operacion (base imponible de retencion) no puede ser mayor al importe total del comprobante.");
+end

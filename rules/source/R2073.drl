@@ -1,0 +1,7 @@
+rule "R2073"
+    when
+        $ctx : CpeContext( customizationID == null || customizationID.trim().length() == 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2073", "El XML no existe informacion de CustomizationID");
+end

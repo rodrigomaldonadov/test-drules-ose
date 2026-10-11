@@ -1,0 +1,7 @@
+rule "R4198"
+    when
+        $ctx : CpeContext( faltaCodigoLocalAnexo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4198", "El XML no contiene el tag o no existe informacion del codigo de local anexo del emisor");
+end

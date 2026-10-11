@@ -1,0 +1,8 @@
+rule "R3265"
+    when
+        $ctx : CpeContext( montoNetoPendiente > total,
+                           montoNetoPendiente > 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3265", "El Monto neto pendiente de pago debe ser menor o igual al Importe total del comprobante");
+end

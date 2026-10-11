@@ -1,0 +1,9 @@
+rule "R2021"
+    when
+        $ctx : CpeContext(
+            nombreCliente == null || nombreCliente.trim().length() == 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2021", "El XML no contiene el tag o no existe informacion de RegistrationName del receptor del documento");
+end

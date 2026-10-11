@@ -1,0 +1,7 @@
+rule "R3233"
+    when
+        $ctx : CpeContext( cargoPercepcionSinMontoBase == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3233", "Para cargo Percepcion, debe ingresar monto base y debe ser mayor a 0.00");
+end

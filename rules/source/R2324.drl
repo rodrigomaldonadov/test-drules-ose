@@ -1,0 +1,7 @@
+rule "R2324"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2324", "El archivo de comunicacion de baja ya fue presentado anteriormente");
+end

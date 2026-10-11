@@ -1,0 +1,7 @@
+rule "R4331"
+    when
+        $ctx : CpeContext( faltaCodigoProductoSunatOGtin == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4331", "Debe consignar obligatoriamente Codigo de producto SUNAT o Codigo de producto GTIN");
+end

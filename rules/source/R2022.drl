@@ -1,0 +1,10 @@
+rule "R2022"
+    when
+        $ctx : CpeContext(
+            nombreCliente != null,
+            ( nombreCliente.trim().length() < 3 || nombreCliente.trim().length() > 1500 )
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2022", "RegistrationName - El dato ingresado no cumple con el estandar");
+end

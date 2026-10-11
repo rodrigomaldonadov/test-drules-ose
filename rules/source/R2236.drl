@@ -1,0 +1,7 @@
+rule "R2236"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2236", "La fecha del IssueDate no debe ser mayor a la fecha de recepción");
+end

@@ -1,0 +1,7 @@
+rule "R2618"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2618", "El régimen retención enviado no corresponde con su condición de Agente de retención.");
+end

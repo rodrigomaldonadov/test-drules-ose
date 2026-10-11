@@ -1,0 +1,11 @@
+rule "R2017"
+    when
+        $ctx : CpeContext(
+            tipoDocCliente == "6",
+            docCliente != null,
+            docCliente not matches "\\d{11}"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2017", "El numero de documento de identidad del receptor debe ser RUC");
+end

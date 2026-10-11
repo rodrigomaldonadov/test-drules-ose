@@ -1,0 +1,8 @@
+rule "R4266"
+    when
+        $ctx : CpeContext( esVentaItinerante == true,
+                           tieneLeyenda2005 == false )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4266", "El XML no contiene el codigo de leyenda 2005 para el tipo de operacion Venta itinerante");
+end

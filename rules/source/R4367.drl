@@ -1,0 +1,7 @@
+rule "R4367"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4367", "El tipo de nota de crédito 04, 05 y 08 no debería estar vinculado a una boleta");
+end

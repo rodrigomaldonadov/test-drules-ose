@@ -1,0 +1,12 @@
+rule "R2123"
+    when
+        $ctx : CpeContext(
+            ( esNotaCredito == true || esNotaDebito == true ),
+            fechaDocumentoRelacionado != null,
+            fechaEmision != null,
+            fechaDocumentoRelacionado.isAfter( fechaEmision )
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2123", "La fecha del documento relacionado no puede ser posterior a la fecha de emision de la nota");
+end

@@ -1,0 +1,10 @@
+rule "R2074"
+when
+    $ctx : CpeContext(
+        ublVersionId  != null,
+        ublVersionId  != "2.1"
+    )
+    $res : ResultadoValidacion()
+then
+    $res.addError("2074", "UBLVersionID - La version del UBL no es correcta");
+end

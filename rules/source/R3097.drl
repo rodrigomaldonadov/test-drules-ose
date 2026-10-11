@@ -1,0 +1,7 @@
+rule "R3097"
+    when
+        $ctx : CpeContext( emisorNoHabilitadoExportadores == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3097", "El emisor a la fecha no se encuentra registrado o habilitado en el Registro de exportadores de servicios SUNAT");
+end

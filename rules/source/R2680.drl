@@ -1,0 +1,7 @@
+rule "R2680"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2680", "El valor ingresado como documento de identidad del cliente es incorrecto");
+end

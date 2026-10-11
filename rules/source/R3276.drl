@@ -1,0 +1,7 @@
+rule "R3276"
+    when
+        $ctx : CpeContext( sumaVentaGratuitasLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3276", "La sumatoria del total valor de venta - operaciones gratuitas de linea no corresponden al total");
+end

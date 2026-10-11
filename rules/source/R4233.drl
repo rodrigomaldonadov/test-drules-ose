@@ -1,0 +1,7 @@
+rule "R4233"
+    when
+        $ctx : CpeContext( ordenCompraInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4233", "El dato ingresado en order de compra no cumple con el formato establecido.");
+end

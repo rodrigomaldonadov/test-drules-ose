@@ -1,0 +1,10 @@
+rule "R3034"
+    when
+        $ctx : CpeContext( lineas != null )
+        $linea : LineaContext(
+            tipoAfectacionIGV == null || tipoAfectacionIGV.trim().length() == 0
+        ) from $ctx.getLineas()
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3034", "El xml no contiene el tag o no existe informacion en el nro de cuenta de detraccion");
+end

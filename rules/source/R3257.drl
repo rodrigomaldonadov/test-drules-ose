@@ -1,0 +1,7 @@
+rule "R3257"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3257", "Para el tipo de nota de credito 13 debe consignar información de la operación al credito");
+end

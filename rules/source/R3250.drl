@@ -1,0 +1,7 @@
+rule "R3250"
+    when
+        $ctx : CpeContext( montoNetoPendienteInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3250", "El Monto neto pendiente de pago no cumple el formato definido");
+end

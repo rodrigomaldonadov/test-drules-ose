@@ -1,0 +1,7 @@
+rule "R3098"
+    when
+        $ctx : CpeContext( faltaPaisUso == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3098", "El XML no contiene el tag o no existe informacion del pais de uso, exploracion o aprovechamiento");
+end

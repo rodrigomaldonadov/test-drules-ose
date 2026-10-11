@@ -1,0 +1,7 @@
+rule "R4318"
+    when
+        $ctx : CpeContext( taxAmountItemNoCoincide == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4318", "El dato ingresado en el campo cac:TaxSubtotal/cbc:TaxAmount del item no coincide con el valor calculado");
+end

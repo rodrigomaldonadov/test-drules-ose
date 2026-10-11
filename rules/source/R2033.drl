@@ -1,0 +1,7 @@
+rule "R2033"
+    when
+        $ctx : CpeContext( taxAmountLineaFormatoInvalido == true )   // <-- corregido
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2033", "El dato ingresado en TaxAmount de la linea no cumple con el formato establecido");
+end

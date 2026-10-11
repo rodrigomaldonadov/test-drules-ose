@@ -1,0 +1,8 @@
+rule "R4212"
+    when
+        $ctx : CpeContext(faltaTotalValorVenta == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4212", "Debe consignar el Total Valor de Venta");
+        $ctx.marcarError(4212);
+end

@@ -1,0 +1,8 @@
+rule "R4272"
+    when
+        $ctx : CpeContext(valorReferenciaTramoVirtualFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4272", "El dato ingresado como valor referencia del tramo virtual no cumple con el formato establecido.");
+        $ctx.marcarError(4272);
+end

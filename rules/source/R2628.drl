@@ -1,0 +1,7 @@
+rule "R2628"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2628", "Importe total retenido debe ser igual a la suma de los importes retenidos por cada documento relacionado.");
+end

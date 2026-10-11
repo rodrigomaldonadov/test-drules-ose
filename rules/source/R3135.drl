@@ -1,0 +1,7 @@
+rule "R3135"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3135", "El XML no contiene tag de la cantidad del concepto por linea.");
+end

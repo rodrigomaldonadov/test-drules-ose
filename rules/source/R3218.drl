@@ -1,0 +1,7 @@
+rule "R3218"
+    when
+        $ctx : CpeContext( comprobanteAnticipoNoExiste == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3218", "El comprobante que se realizo el anticipo no existe");
+end

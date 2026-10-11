@@ -1,0 +1,7 @@
+rule "R3325"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3325", "Se permite emitir comprobante de percepción excepcional cuando el documento de referencia es al contado.");
+end

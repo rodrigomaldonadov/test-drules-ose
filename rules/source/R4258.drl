@@ -1,0 +1,7 @@
+rule "R4258"
+    when
+        $ctx : CpeContext( unidadMedidaListIDIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4258", "El dato ingresado como atributo @unitCodeListID es incorrecto.");
+end

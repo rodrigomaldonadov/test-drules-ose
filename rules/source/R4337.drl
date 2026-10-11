@@ -1,0 +1,7 @@
+rule "R4337"
+    when
+        $ctx : CpeContext( codigoProductoSunatNivelJerarquicoInsuficiente == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4337", "El Codigo de producto SUNAT debe especificarse como minimo al tercer nivel jerarquico (a nivel de clase del codigo UNSPSC)");
+end

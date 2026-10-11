@@ -1,0 +1,7 @@
+rule "R2310"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2310", "El dato ingresado no cumple con el patron SERIE");
+end

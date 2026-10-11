@@ -1,0 +1,7 @@
+rule "R2409"
+    when
+        $ctx : CpeContext( alternativeConditionPriceDuplicado == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2409", "Existe mas de un tag cac:AlternativeConditionPrice con el mismo cbc:PriceTypeCode");
+end

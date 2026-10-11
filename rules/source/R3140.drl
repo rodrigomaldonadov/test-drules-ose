@@ -1,0 +1,7 @@
+rule "R3140"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3140", "El XML no contiene el tag de codigo del pais de residencia.");
+end

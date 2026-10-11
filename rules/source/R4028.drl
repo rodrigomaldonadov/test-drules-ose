@@ -1,0 +1,8 @@
+rule "R4028"
+    when
+        $ctx : CpeContext(montoNotaCreditoMayorDocumentoModifica == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4028", "El monto total de la nota de credito debe ser menor o igual al monto del documento que modifica");
+        $ctx.marcarError(4028);
+end

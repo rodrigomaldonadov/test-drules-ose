@@ -1,0 +1,7 @@
+rule "R3236"
+    when
+        $ctx : CpeContext( baseUnitMeasureNoCorresponde == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3236", "El valor ingresado en el campo cac:TaxSubtotal/cbc:BaseUnitMeasure no corresponde al valor esperado");
+end

@@ -1,0 +1,7 @@
+rule "R3130"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3130", "El XML no contiene el tag de nombre de embarcación en Detracciones para recursos hidrobiologicos.");
+end

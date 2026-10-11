@@ -1,0 +1,7 @@
+rule "R2891"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2891", "La tasa de percepción no existe en el catálogo");
+end

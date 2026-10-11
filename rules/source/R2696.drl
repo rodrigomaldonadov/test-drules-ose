@@ -1,0 +1,7 @@
+rule "R2696"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2696", "El dato ingresado en el importe total documento relacionado debe ser numérico mayor a cero");
+end

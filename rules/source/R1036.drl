@@ -1,0 +1,7 @@
+rule "R1036"
+    when
+        $ctx : CpeContext( numeroArchivoDistintoXml == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1036", "Numero de documento en el nombre del archivo no coincide con el consignado en el contenido del XML");
+end

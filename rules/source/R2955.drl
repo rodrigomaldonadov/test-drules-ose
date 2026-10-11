@@ -1,0 +1,7 @@
+rule "R2955"
+    when
+        $ctx : CpeContext( formatoAmountCargDescLineaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2955", "El formato ingresado en el tag cac:InvoiceLine/cac:Allowancecharge/cbc:Amount no cumple con el formato establecido");
+end

@@ -1,0 +1,7 @@
+rule "R2715"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2715", "El valor de la moneda objetivo para la Tasa de Cambio debe ser PEN");
+end

@@ -1,0 +1,7 @@
+rule "R3496"
+    when
+        $ctx : CpeContext( codigoProductoSunatInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3496", "El Codigo producto de SUNAT no es valido");
+end

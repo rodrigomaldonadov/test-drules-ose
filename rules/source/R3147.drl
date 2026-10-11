@@ -1,0 +1,7 @@
+rule "R3147"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3147", "El XML no contiene el tag de Proveedores Estado: Código de Unidad Ejecutora");
+end

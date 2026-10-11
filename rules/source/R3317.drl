@@ -1,0 +1,8 @@
+rule "R3317"
+    when
+        $ctx : CpeContext( tieneRetencion2daCategoria == true,
+                           tipoOperacion != "2002" )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3317", "Si consigna infomacion de la retencion de segunda categoria, el tipo de operacion debe ser 2002");
+end

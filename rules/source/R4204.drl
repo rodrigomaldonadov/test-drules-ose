@@ -1,0 +1,8 @@
+rule "R4204"
+    when
+        $ctx : CpeContext(comprobanteFisicoNoAutorizadoContingencia == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4204", "Comprobante fisico no se encuentra autorizado como comprobante de contingencia");
+        $ctx.marcarError(4204);
+end

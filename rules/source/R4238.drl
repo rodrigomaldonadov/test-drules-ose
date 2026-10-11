@@ -1,0 +1,7 @@
+rule "R4238"
+    when
+        $ctx : CpeContext( urbanizacionInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4238", "El dato ingresado como urbanizacion no cumple con el formato establecido");
+end

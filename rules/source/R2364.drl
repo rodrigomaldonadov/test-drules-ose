@@ -1,0 +1,7 @@
+rule "R2364"
+    when
+        $ctx : CpeContext( guiaRemisionRepetida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2364", "El comprobante contiene un tipo y numero de Guia de Remision repetido");
+end

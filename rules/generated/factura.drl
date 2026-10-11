@@ -1,0 +1,4206 @@
+// Código 1001
+rule "R1001"
+    when
+        $ctx : CpeContext( formatoSerieCorrelativoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1001", "ID - El dato SERIE-CORRELATIVO no cumple con el formato de acuerdo al tipo de comprobante");
+end
+
+
+// Código 1002
+rule "R1002"
+    when
+        $ctx : CpeContext(
+            customizationID != null,
+            customizationID.trim().length() > 0,
+            customizationID != "2.0"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1002", "CustomizationID - El valor del tag es diferente a 2.0");
+end
+
+
+// Código 1003
+rule "R1003"
+    when
+        $ctx : CpeContext(
+            tipoDocumento != null,
+            tipoDocumento.trim().length() > 0,
+            tipoArchivoDistintoXml == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1003", "InvoiceTypeCode - El valor del tipo de documento es invalido o no coincide con el nombre del archivo");
+end
+
+
+// Código 1004
+rule "R1004"
+    when
+        $ctx : CpeContext( tipoDocumento == null || tipoDocumento.trim().length() == 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1004", "El XML no contiene el tag o no existe informacion de InvoiceTypeCode");
+end
+
+
+// Código 1007
+rule "R1007"
+    when
+        $ctx : CpeContext(
+            schemeIdEmisor != null,
+            schemeIdEmisor.trim().length() > 0,
+            schemeIdEmisor != "6"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1007", "El dato ingresado no cumple con el estandar");
+end
+
+
+// Código 1008
+rule "R1008"
+    when
+        $ctx : CpeContext(
+            schemeIdEmisor == null || schemeIdEmisor.trim().length() == 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1008", "El XML no contiene el tag o no existe informacion en tipo de documento del emisor.");
+end
+
+
+// Código 1010
+rule "R1010"
+    when
+        $ctx : CpeContext( faltaIssueDateGlobal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1010", "El XML no contiene el tag IssueDate");
+end
+
+
+// Código 1011
+rule "R1011"
+    when
+        $ctx : CpeContext( faltaIssueDateGlobal == false, issueDateValorInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1011", "IssueDate- El dato ingresado no es valido");
+end
+
+
+// Código 1012
+rule "R1012"
+    when
+        $ctx : CpeContext( formatoSerieCorrelativoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1012", "ID - El dato ingresado no cumple con el patron SERIE-CORRELATIVO");
+end
+
+
+// Código 1017
+rule "R1017"
+    when
+        $ctx : CpeContext( serie == null || serie.trim().length() == 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1017", "El XML no contiene el tag ID o la serie esta vacia");
+end
+
+
+// Código 1018
+rule "R1018"
+    when
+        $ctx : CpeContext(
+            esBoleta == true,
+            serie != null,
+            serie.trim().length() > 0,
+            serie not matches "^[Bb]\\d{3}$"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1018", "La serie del comprobante no cumple con el formato para Boleta (Bxxx)");
+end
+
+
+// Código 1019
+rule "R1019"
+    when
+        $ctx : CpeContext(
+            numero != null,
+            numero.trim().length() > 0,
+            numero not matches "^[0-9]\\d{0,7}$"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1019", "El numero de comprobante no cumple con el formato (1 a 99999999)");
+end
+
+
+// Código 1032
+rule "R1032"
+    when
+        $ctx : CpeContext( duplicado == true, esFactura == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1032", "El comprobante ya esta informado y se encuentra con estado anulado o rechazado");
+end
+
+
+// Código 1033
+rule "R1033"
+    when
+        $ctx : CpeContext( duplicado == true, esFactura == false )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1033", "El comprobante fue registrado previamente con otros datos");
+end
+
+
+// Código 1034
+rule "R1034"
+    when
+        $ctx : CpeContext( rucArchivoDistintoXml == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1034", "Numero de RUC del nombre del archivo no coincide con el consignado en el contenido del archivo XML");
+end
+
+
+// Código 1035
+rule "R1035"
+    when
+        $ctx : CpeContext( serieArchivoDistintaXml == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1035", "Numero de Serie del nombre del archivo no coincide con el consignado en el contenido del archivo XML");
+end
+
+
+// Código 1036
+rule "R1036"
+    when
+        $ctx : CpeContext( numeroArchivoDistintoXml == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1036", "Numero de documento en el nombre del archivo no coincide con el consignado en el contenido del XML");
+end
+
+
+// Código 1037
+rule "R1037"
+    when
+        $ctx : CpeContext(
+            razonSocialEmisor == null || razonSocialEmisor.trim().length() == 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1037", "El XML no contiene el tag o no existe informacion de RegistrationName del emisor del documento");
+end
+
+
+// Código 1078
+rule "R1078"
+    when
+        $ctx : CpeContext( emisorObligadoSeeSol == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1078", "El emisor no se encuentra autorizado a emitir en el SEE-Desde los sistemas del contribuyente");
+end
+
+
+// Código 1080
+rule "R1080"
+    when
+        $ctx : CpeContext( tipoOperacion != null,
+                           tipoOperacion in ("2100","2101","2102","2103","2104","0112"),
+                           emisorAfiliadoEmpresasSupervisadas == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1080", "Debe enviar su comprobante por el SEE-Empresas supervisadas");
+end
+
+
+// Código 1083
+rule "R1083"
+    when
+        $ctx : CpeContext( tipoDocumentoReceptor == "6",
+                           rucReceptorNoExiste == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1083", "El numero de RUC del receptor no existe");
+end
+
+
+// Código 1086
+rule "R1086"
+    when
+        $ctx : CpeContext( emisorEsSsco == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1086", "El emisor electronico es un Sujeto sin capacidad operativa (SSCO)");
+end
+
+
+// Código 2010
+rule "2010 - CPE contribuyente no esta activo"
+salience 1000
+when
+    $ctx : CpeContext(contribuyenteNoActivo == true ) 
+    $r : ResultadoValidacion()
+then
+    $r.addError("2010", "El contribuyente no esta activo");
+end
+
+
+// Código 2011
+rule "R2011"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2011", "El contribuyente no esta habido");
+end
+
+
+// Código 2014
+rule "R2014"
+    when
+        $ctx : CpeContext( docCliente == null || docCliente.trim().length() == 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2014", "El XML no contiene el tag o no existe informacion del numero de documento de identidad del receptor del documento");
+end
+
+
+// Código 2015
+rule "R2015"
+    when
+        $ctx : CpeContext( tipoDocCliente == null || tipoDocCliente.trim().length() == 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2015", "El XML no contiene el tag o no existe informacion del tipo de documento de identidad del receptor del documento");
+end
+
+
+// Código 2017
+rule "R2017"
+    when
+        $ctx : CpeContext(
+            tipoDocCliente == "6",
+            docCliente != null,
+            docCliente not matches "\\d{11}"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2017", "El numero de documento de identidad del receptor debe ser RUC");
+end
+
+
+// Código 2021
+rule "R2021"
+    when
+        $ctx : CpeContext(
+            nombreCliente == null || nombreCliente.trim().length() == 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2021", "El XML no contiene el tag o no existe informacion de RegistrationName del receptor del documento");
+end
+
+
+// Código 2022
+rule "R2022"
+    when
+        $ctx : CpeContext(
+            nombreCliente != null,
+            ( nombreCliente.trim().length() < 3 || nombreCliente.trim().length() > 1500 )
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2022", "RegistrationName - El dato ingresado no cumple con el estandar");
+end
+
+
+// Código 2023
+rule "R2023"
+    when
+        $linea : LineaContext( numeroItem == null || numeroItem <= 0 || numeroItem != posicionLinea )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2023", "El Numero de orden del item no cumple con el formato establecido");
+end
+
+
+// Código 2024
+rule "R2024"
+    when
+        $ctx : CpeContext( lineas != null )
+        $linea : LineaContext(
+            cantidad == null || cantidad.compareTo( java.math.BigDecimal.ZERO ) <= 0
+        ) from $ctx.getLineas()
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2024", "El XML no contiene el tag InvoicedQuantity en el detalle de los Items o es cero (0)");
+end
+
+
+// Código 2025
+rule "R2025"
+    when
+        $ctx : CpeContext( lineas != null )
+        $linea : LineaContext(!DecimalUtils.formatoValido(cantidad, 12, 10)) from $ctx.getLineas()
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2025", "InvoicedQuantity El dato ingresado no cumple con el estandar");
+end
+
+
+// Código 2026
+rule "R2026"
+    when
+        $ctx : CpeContext( lineas != null )
+        $linea : LineaContext(
+            descripcion == null || descripcion.trim().length() == 0
+        ) from $ctx.getLineas()
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2026", "El XML no contiene el tag cac:Item/cbc:Description en el detalle de los Items");
+end
+
+
+// Código 2027
+rule "R2027"
+    when
+        $ctx : CpeContext(lineas != null )
+        $linea : LineaContext( descripcion == null, descripcion.trim().length() > 500 ) from $ctx.getLineas()
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2027", "El XML no contiene el tag o no existe informacion de cac:Item/cbc:Description del item");
+end
+
+
+// Código 2028
+rule "R2028"
+    when
+        $ctx : CpeContext( faltaAlternativeConditionPrice == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2028", "Debe existir el tag cac:AlternativeConditionPrice");
+end
+
+
+// Código 2029
+rule "R2029"
+    when
+        $ctx : CpeContext( lineas != null )
+        $linea : LineaContext( precioUnitario == null ) from $ctx.getLineas()
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2029", "El XML no contiene el precio de venta unitario (PriceAmount con priceTypeCode 01)");
+end
+
+
+// Código 2031
+rule "R2031"
+    when
+        $ctx : CpeContext(!DecimalUtils.formatoValido(subtotal, 12, 2))
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2031", "El dato ingresado en total valor de venta no cumple con el estandar");
+end
+
+
+// Código 2033
+rule "R2033"
+    when
+        $ctx : CpeContext( taxAmountLineaFormatoInvalido == true )   // <-- corregido
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2033", "El dato ingresado en TaxAmount de la linea no cumple con el formato establecido");
+end
+
+
+// Código 2036
+rule "R2036"
+    when
+        $ctx : CpeContext( codigoTributoLineaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2036", "El codigo del tributo es invalido");
+end
+
+
+// Código 2037
+rule "R2037"
+    when
+        $ctx : CpeContext( faltaTaxSchemeIdLinea == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2037", "El XML no contiene el tag cac:TaxCategory/cac:TaxScheme/cbc:ID del Item");
+end
+
+
+// Código 2040
+rule "R2040"
+    when
+        $ctx : CpeContext( tipoAfectacionIgvIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2040", "El tipo de afectacion del IGV es incorrecto");
+end
+
+
+// Código 2041
+rule "R2041"
+    when
+        $ctx : CpeContext( sistemaCalculoIscIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2041", "El sistema de calculo del ISC es incorrecto");
+end
+
+
+// Código 2044
+rule "R2044"
+    when
+        $ctx : CpeContext( total == null )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2044", "PayableAmount es obligatorio");
+end
+
+
+// Código 2048
+rule "R2048"
+    when
+        $ctx : CpeContext(!DecimalUtils.formatoValido(taxamuntGlobal, 12, 2) )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2048", "El dato ingresado en TaxAmount no cumple con el formato establecido");
+end
+
+
+// Código 2052
+rule "R2052"
+    when
+        $ctx : CpeContext( faltaCodigoTributoInternacionalGlobal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2052", "El XML no contiene el tag codigo de tributo internacional de impuestos globales");
+end
+
+
+// Código 2054
+rule "R2054"
+    when
+        $ctx : CpeContext( faltaTaxSchemeNameGlobal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2054", "El XML no contiene el tag TaxScheme Name de impuestos globales");
+end
+
+
+// Código 2062
+rule "R2062"
+    when
+        $ctx : CpeContext(!DecimalUtils.formatoValido(total, 12, 2))
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2062", "El dato ingresado en PayableAmount no cumple con el formato establecido");
+end
+
+
+// Código 2064
+rule "R2064"
+    when
+        $ctx : CpeContext( chargeTotalAmountFormatoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2064", "El dato ingresado en ChargeTotalAmount no cumple con el formato establecido");
+end
+
+
+// Código 2065
+rule "R2065"
+    when
+        $ctx : CpeContext( totalDescuentosFormatoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2065", "El dato ingresado en el campo Total Descuentos no cumple con el formato establecido");
+end
+
+
+// Código 2068
+rule "R2068"
+    when
+        $ctx : CpeContext( lineas != null )
+        $linea : LineaContext( valorUnitario == null ) from $ctx.getLineas()
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2068", "El XML no contiene el tag cac:Price/cbc:PriceAmount en el detalle de los Items");
+end
+
+
+// Código 2070
+rule "R2070"
+    when
+        $ctx : CpeContext( moneda == null || moneda.trim().length() == 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2070", "El XML no contiene el tag o no existe informacion de DocumentCurrencyCode");
+end
+
+
+// Código 2071
+rule "R2071"
+    when
+        $ctx : CpeContext( monedaInconsistente == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2071", "La moneda debe ser la misma en todo el documento. Salvo las percepciones que solo son en moneda nacional");
+end
+
+
+// Código 2072
+rule "CustomizationID "
+    when
+        $ctx : CpeContext( customizationID != "2.0" )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2072", "CustomizationID - La version del documento no es la correcta");
+end
+
+
+// Código 2073
+rule "R2073"
+    when
+        $ctx : CpeContext( customizationID == null || customizationID.trim().length() == 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2073", "El XML no existe informacion de CustomizationID");
+end
+
+
+// Código 2074
+rule "R2074"
+when
+    $ctx : CpeContext(
+        ublVersionId  != null,
+        ublVersionId  != "2.1"
+    )
+    $res : ResultadoValidacion()
+then
+    $res.addError("2074", "UBLVersionID - La version del UBL no es correcta");
+end
+
+
+// Código 2075
+rule "R2075"
+    when
+        $ctx : CpeContext( ublVersionId  == null || ublVersionId  == "" )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2075", "El XML no contiene el tag o no existe informacion de UBLVersionID");
+end
+
+
+// Código 2108
+rule "R2108"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2108", "Presentacion fuera de fecha");
+end
+
+
+// Código 2109
+rule "R2109"
+    when
+        $ctx : CpeContext(
+            fechaVencimiento != null,
+            fechaEmision != null,
+            fechaVencimiento.isBefore( fechaEmision )
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2109", "La fecha de vencimiento no puede ser anterior a la fecha de emision");
+end
+
+
+// Código 2118
+rule "R2118"
+    when
+        $ctx : CpeContext(
+            esNotaCredito == true,
+            ( documentoRelacionado == null || documentoRelacionado.trim().length() == 0 )
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2118", "Debe indicar las facturas relacionadas a la Nota de Credito");
+end
+
+
+// Código 2122
+rule "R2122"
+    when
+        $ctx : CpeContext(
+            ( esNotaCredito == true || esNotaDebito == true ),
+            fechaDocumentoRelacionado == null
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2122", "Debe consignar la fecha del documento relacionado en la nota");
+end
+
+
+// Código 2123
+rule "R2123"
+    when
+        $ctx : CpeContext(
+            ( esNotaCredito == true || esNotaDebito == true ),
+            fechaDocumentoRelacionado != null,
+            fechaEmision != null,
+            fechaDocumentoRelacionado.isAfter( fechaEmision )
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2123", "La fecha del documento relacionado no puede ser posterior a la fecha de emision de la nota");
+end
+
+
+// Código 2127
+rule "R2127"
+    when
+        $ctx : CpeContext(
+            esNotaCredito == true,
+            motivoNota != null,
+            motivoNota not matches "0[1-9]|1[0-3]"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2127", "ResponseCode - El dato ingresado no cumple con la estructura");
+end
+
+
+// Código 2173
+rule "R2173"
+    when
+        $ctx : CpeContext(
+            esNotaDebito == true,
+            motivoNota == null || motivoNota.trim().length() == 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2173", "Debe consignar el motivo de la Nota de Debito (DiscrepancyResponse/Description)");
+end
+
+
+// Código 2174
+rule "R2174"
+    when
+        $ctx : CpeContext(
+            esNotaDebito == true,
+            codigoMotivo == null || codigoMotivo.trim().length() == 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2174", "Debe consignar el ResponseCode de la Nota de Debito");
+end
+
+
+// Código 2206
+rule "R2206"
+    when
+        $ctx : CpeContext(
+            esNotaDebito == true,
+            ( documentoRelacionado == null || documentoRelacionado.trim().length() == 0 )
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2206", "Debe indicar los documentos afectados por la Nota de Debito");
+end
+
+
+// Código 2329
+rule "R2329"
+    when
+        $ctx : CpeContext(
+            fechaEmision != null,
+            fechaEmision.isAfter( LocalDate.now().plusDays(2) )
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2329", "La fecha de emision se encuentra fuera del limite permitido");
+end
+
+
+// Código 2336
+rule "R2336"
+    when
+        $ctx : CpeContext( firmaValida == false )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2336", "Ocurrio un error en el proceso de validacion de la firma digital");
+end
+
+
+// Código 2364
+rule "R2364"
+    when
+        $ctx : CpeContext( guiaRemisionRepetida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2364", "El comprobante contiene un tipo y numero de Guia de Remision repetido");
+end
+
+
+// Código 2365
+rule "R2365"
+    when
+        $ctx : CpeContext( documentoRelacionadoRepetido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2365", "El comprobante contiene un tipo y numero de Documento Relacionado repetido");
+end
+
+
+// Código 2367
+rule "R2367"
+    when
+    	$ctx : CpeContext(priceAmountVentaFormatoInvalido == true )
+    	$res : ResultadoValidacion()
+
+    then
+        $res.addError("2367", "El dato ingresado en PriceAmount del Precio de venta unitario por item no cumple con el formato establecido");
+end
+
+
+// Código 2369
+rule "R2369"
+    when
+    	$ctx : CpeContext(priceAmountValorFormatoInvalido == true )
+    	$res : ResultadoValidacion()
+    then
+        $res.addError("2369", "El dato ingresado en PriceAmount del Valor de venta unitario por item no cumple con el formato establecido");
+end
+
+
+// Código 2370
+rule "R2370"
+    when
+        $ctx : CpeContext( lineExtensionAmountItemInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2370", "El dato ingresado en LineExtensionAmount del item no cumple con el formato establecido");
+end
+
+
+// Código 2371
+rule "R2371"
+    when
+        $ctx : CpeContext( faltaTaxExemptionReasonCode == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2371", "El XML no contiene el tag cbc:TaxExemptionReasonCode de Afectacion al IGV");
+end
+
+
+// Código 2373
+rule "R2373"
+    when
+        $ctx : CpeContext( iscSinSistemaCalculo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2373", "Si existe monto de ISC en el ITEM debe especificar el sistema de calculo");
+end
+
+
+// Código 2377
+rule "R2377"
+    when
+        $ctx : CpeContext( nameTaxTypeCodeIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2377", "El Name o TaxTypeCode debe corresponder al codigo de tributo del item");
+end
+
+
+// Código 2409
+rule "R2409"
+    when
+        $ctx : CpeContext( alternativeConditionPriceDuplicado == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2409", "Existe mas de un tag cac:AlternativeConditionPrice con el mismo cbc:PriceTypeCode");
+end
+
+
+// Código 2410
+rule "R2410"
+    when
+        $ctx : CpeContext( priceTypeCodeInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2410", "Se ha consignado un valor invalido en el campo cbc:PriceTypeCode");
+end
+
+
+// Código 2416
+rule "R2416"
+    when
+        $ctx : CpeContext( leyendaTransferenciaGratuita == true,
+                           totalValorVentaGratuitas <= 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2416", "Si existe leyenda Transferencia Gratuita debe consignar Total Valor de Venta de Operaciones Gratuitas");
+end
+
+
+// Código 2503
+rule "R2503"
+    when
+        $ctx : CpeContext( paidAmountAnticipoNoPositivo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2503", "PaidAmount: monto anticipado por documento debe ser mayor a cero.");
+end
+
+
+// Código 2505
+rule "R2505"
+    when
+        $ctx : CpeContext( tipoDocReferenciaAnticipoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2505", "Codigo de documento de referencia debe ser 02 o 03.");
+end
+
+
+// Código 2509
+rule "R2509"
+    when
+        $ctx : CpeContext( totalAnticiposDifiere == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2509", "Total de anticipos diferente a los montos anticipados por documento.");
+end
+
+
+// Código 2520
+rule "R2520"
+    when
+        $ctx : CpeContext( emisorAnticipoNoTipo6 == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2520", "El tipo documento del emisor que realiza el anticipo debe ser 6 del catalogo de tipo de documento.");
+end
+
+
+// Código 2521
+rule "R2521"
+    when
+        $ctx : CpeContext( anticipoSerieCorrelativoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2521", "El dato ingresado debe indicar SERIE-CORRELATIVO del documento que se realizo el anticipo.");
+end
+
+
+// Código 2529
+rule "R2529"
+    when
+        $ctx : CpeContext( rucEmisorAnticipoNoExiste == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2529", "RUC que emitio documento de anticipo no existe.");
+end
+
+
+// Código 2638
+rule "R2638"
+    when
+        $ctx : CpeContext( tributoLineaSinTotalGlobal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2638", "Si tiene operaciones de un tributo en alguna linea, debe consignar el tag del total del tributo");
+end
+
+
+// Código 2640
+rule "R2640"
+    when
+        $ctx : CpeContext( operacionGratuitaMasDeUnMonto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2640", "Operacion gratuita, solo debe consignar un monto referencial");
+end
+
+
+// Código 2641
+rule "R2641"
+    when
+        $ctx : CpeContext( esOperacionGratuita == true,
+                           totalValorVentaGratuitas <= 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2641", "Operacion gratuita, debe consignar Total valor venta - operaciones gratuitas mayor a cero");
+end
+
+
+// Código 2642
+rule "R2642"
+    when
+        $ctx : CpeContext( tieneLineasExportacion == true,
+                           exportacionConAfectacionIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2642", "Operaciones de exportacion, deben consignar Tipo Afectacion igual a 40");
+end
+
+
+// Código 2644
+rule "R2644"
+    when
+        $ctx : CpeContext( tipoOperacion == "1003",
+                           ivapConAfectacionIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2644", "Comprobante operacion sujeta IVAP solo debe tener items con codigo de afectacion del IGV igual a 17");
+end
+
+
+// Código 2650
+rule "R2650"
+    when
+        $ctx : CpeContext( tipoOperacion == "1003",
+                           totalIsc > 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2650", "Factura de operacion sujeta al IVAP , no debe consignar valor para ISC o debe ser 0");
+end
+
+
+// Código 2752
+rule "R2752"
+    when
+        $ctx : CpeContext( itemNumeroDuplicado == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2752", "El numero de item no puede estar duplicado.");
+end
+
+
+// Código 2788
+rule "R2788"
+    when
+        $ctx : CpeContext( monedaPercepcionNoPen == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2788", "El dato ingresado en moneda debe ser PEN");
+end
+
+
+// Código 2792
+rule "R2792"
+    when
+        $ctx : CpeContext( monedaCargoPercepcionNoPen == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2792", "El dato ingresado en moneda del monto de cargo/descuento para percepcion debe ser PEN");
+end
+
+
+// Código 2797
+rule "R2797"
+    when
+        $ctx : CpeContext( montoPercepcion > total,
+                           montoPercepcion > 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2797", "El Monto de percepcion no puede ser mayor al importe total del comprobante.");
+end
+
+
+// Código 2798
+rule "R2798"
+    when
+        $ctx : CpeContext( montoPercepcionIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2798", "El Monto de percepcion no tiene el valor correcto segun el tipo de percepcion.");
+end
+
+
+// Código 2800
+rule "R2800"
+    when
+        $ctx : CpeContext(
+            tipoOperacion != null,
+            tipoOperacion matches "0200|0201|0202|0203|0204|0205|0206|0207|0208|0401",
+            tipoDocCliente != null,
+            tipoDocCliente != "6"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2800", "El dato ingresado en el tipo de documento de identidad del receptor no esta permitido.");
+end
+
+
+// Código 2801
+rule "R2801"
+    when
+        $ctx : CpeContext(
+            tipoDocCliente == "1",
+            docCliente != null,
+            docCliente not matches "\\d{8}"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2801", "El DNI ingresado no cumple con el estandar.");
+end
+
+
+// Código 2802
+rule "R2802"
+    when
+        $ctx : CpeContext( tipoDocumentoReceptor in ("4","7","0","A","B","C","D","E","G"),
+                           numeroDocumentoReceptor != null,
+                           numeroDocumentoReceptor not matches "^[a-zA-Z0-9]{1,15}$" )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2802", "El dato ingresado como numero de documento de identidad del receptor no cumple con el formato establecido");
+end
+
+
+// Código 2883
+rule "R2883"
+    when
+        $ctx : CpeContext( faltaUnidadMedidaItem == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2883", "Es obligatorio indicar la unidad de medida del item");
+end
+
+
+// Código 2892
+rule "R2892"
+    when
+        $ctx : CpeContext( valorTagFormatoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2892", "El valor del tag no cumple con el formato establecido");
+end
+
+
+// Código 2898
+rule "R2898"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2898", "Para los tipos de seguro 1 y 2, debe consignar el numero de poliza, la fecha de cobertura y el monto asegurado");
+end
+
+
+// Código 2899
+rule "R2899"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2899", "Para el tipo de seguro 3 - Otros debe consignar el numero de poliza");
+end
+
+
+// Código 2936
+rule "R2936"
+    when
+        $ctx : CpeContext( unidadMedidaNoEsperada == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2936", "El dato ingresado como unidad de medida no corresponde al valor esperado");
+end
+
+
+// Código 2949
+rule "R2949"
+    when
+        $ctx : CpeContext( icbperNoVigente == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2949", "El impuesto ICBPER no se encuentra vigente");
+end
+
+
+// Código 2954
+rule "R2954"
+    when
+        $ctx : CpeContext( codigoMotivoCargDescLineaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2954", "El valor ingresado como codigo de motivo de cargo/descuento por linea no es valido (catalogo 53)");
+end
+
+
+// Código 2955
+rule "R2955"
+    when
+        $ctx : CpeContext( formatoAmountCargDescLineaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2955", "El formato ingresado en el tag cac:InvoiceLine/cac:Allowancecharge/cbc:Amount no cumple con el formato establecido");
+end
+
+
+// Código 2956
+rule "R2956"
+    when
+        $ctx : CpeContext( taxamuntGlobal == null )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2956", "El Monto total de impuestos es obligatorio");
+end
+
+
+// Código 2961
+rule "R2961"
+    when
+        $ctx : CpeContext( codigoTributoInternacionalIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2961", "El valor del tag codigo de tributo internacional no corresponde al esperado.");
+end
+
+
+// Código 2964
+rule "R2964"
+    when
+        $ctx : CpeContext( nombreTributoIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2964", "El valor del tag nombre del tributo no corresponde al esperado.");
+end
+
+
+// Código 2968
+rule "R2968"
+    when
+        $ctx : CpeContext( allowanceChargeAmountFormatoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2968", "El dato ingresado en cac:AllowanceCharge/cbc:Amount no cumple con el formato establecido.");
+end
+
+
+// Código 2992
+rule "R2992"
+    when
+        $ctx : CpeContext( faltaTasaTributoLinea == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2992", "El XML no contiene el tag de la tasa del tributo de la linea");
+end
+
+
+// Código 2993
+rule "R2993"
+    when
+        $ctx : CpeContext( factorIgvLineaCero == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2993", "El factor de afectacion de IGV por linea debe ser diferente a 0.00.");
+end
+
+
+// Código 2996
+rule "R2996"
+    when
+        $ctx : CpeContext( faltaNombreTributoLinea == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2996", "El XML no contiene el tag o no existe informacion del nombre de tributo de la linea");
+end
+
+
+// Código 2999
+rule "R2999"
+    when
+        $ctx : CpeContext(
+	    totalValorVentaGlobalesFormatoInvalido == true 
+	    || !DecimalUtils.formatoValido(total, 12, 2))
+
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2999", "El dato ingresado en el total valor de venta globales no cumple con el formato establecido");
+end
+
+
+// Código 3000
+rule "R3000"
+    when
+        $ctx : CpeContext( impuestoOperacionesGratuitasDistintoCero == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3000", "El monto total del impuestos sobre el valor de venta de operaciones gratuitas/inafectas/exoneradas debe ser igual a 0.00");
+end
+
+
+// Código 3003
+rule "R3003"
+    when
+        $ctx : CpeContext( faltaTotalValorVentaGlobales == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3003", "El XML no contiene el tag o no existe informacion de total valor de venta globales");
+end
+
+
+// Código 3006
+rule "R3006"
+    when
+        $ctx : CpeContext( descripcionLeyendaInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3006", "El dato ingresado en descripcion de leyenda no cumple con el formato establecido.");
+end
+
+
+// Código 3007
+rule "R3007"
+    when
+        $ctx : CpeContext( codigoTributoGlobalNoEsperado == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3007", "El dato ingresado como codigo de tributo global no corresponde al valor esperado.");
+end
+
+
+// Código 3014
+rule "R3014"
+    when
+        $ctx : CpeContext( codigoLeyendaRepetido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3014", "El codigo de leyenda no debe repetirse en el comprobante.");
+end
+
+
+// Código 3016
+rule "R3016"
+    when
+        $ctx : CpeContext( montoBaseCargDescGlobalInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3016", "El dato ingresado en base monto por cargo/descuento globales no cumple con el formato establecido");
+end
+
+
+// Código 3019
+rule "R3019"
+    when
+       	$ctx : CpeContext(!DecimalUtils.formatoValido(total, 12, 2)  )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3019", "El dato ingresado en total precio de venta no cumple con el formato establecido");
+end
+
+
+// Código 3020
+rule "R3020"
+    when
+        $ctx : CpeContext(!DecimalUtils.formatoValido(taxamuntGlobal, 12, 2) )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3020", "El dato ingresado en el monto total de impuestos no cumple con el formato establecido");
+end
+
+
+// Código 3021
+rule "R3021"
+    when
+        $ctx : CpeContext( montoTotalImpuestosLineaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3021", "El dato ingresado en el monto total de impuestos por linea no cumple con el formato establecido");
+end
+
+
+// Código 3024
+rule "R3024"
+    when
+        $ctx : CpeContext( taxTotalRepetidoTotales == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3024", "El tag cac:TaxTotal no debe repetirse a nivel de totales");
+end
+
+
+// Código 3025
+rule "R3025"
+    when
+        $ctx : CpeContext( factorCargDescGlobalInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3025", "El dato ingresado en factor de cargo o descuento global no cumple con el formato establecido.");
+end
+
+
+// Código 3026
+rule "R3026"
+    when
+        $ctx : CpeContext( taxTotalRepetidoItem == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3026", "El tag cac:TaxTotal no debe repetirse a nivel de Item");
+end
+
+
+// Código 3027
+rule "R3027"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3027", "El valor del atributo no se encuentra en el catálogo");
+end
+
+
+// Código 3030
+rule "R3030"
+    when
+        $ctx : CpeContext( faltaCodigoLocalAnexoEmisor == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3030", "El XML no contiene el tag o no existe informacion del codigo de local anexo del emisor");
+end
+
+
+// Código 3031
+rule "R3031"
+    when
+        $ctx : CpeContext( taxableAmountLineaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3031", "El dato ingresado en TaxableAmount de la linea no cumple con el formato establecido");
+end
+
+
+// Código 3033
+rule "R3033"
+    when
+        $ctx : CpeContext( codigoBienServicioDetraccionInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3033", "El codigo de bien o servicio sujeto a detraccion no existe en el listado.");
+end
+
+
+// Código 3034
+rule "R3034"
+    when
+        $ctx : CpeContext( lineas != null )
+        $linea : LineaContext(
+            tipoAfectacionIGV == null || tipoAfectacionIGV.trim().length() == 0
+        ) from $ctx.getLineas()
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3034", "El xml no contiene el tag o no existe informacion en el nro de cuenta de detraccion");
+end
+
+
+// Código 3035
+rule "R3035"
+    when
+        $ctx : CpeContext( lineas != null )
+        $linea : LineaContext(
+            tipoAfectacionIGV != null,
+            tipoAfectacionIGV not matches "10|11|12|13|14|15|16|17|20|21|30|31|32|33|34|35|36|40"
+        ) from $ctx.getLineas()
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3035", "El xml no contiene el tag o no existe informacion en el monto de detraccion");
+end
+
+
+// Código 3037
+rule "R3037"
+    when
+        $ctx : CpeContext( montoDetraccionFormatoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3037", "El dato ingresado en monto de detraccion no cumple con el formato establecido");
+end
+
+
+// Código 3050
+rule "R3050"
+    when
+        $ctx : CpeContext(
+            porcentajeDetraccion != null,
+            ( porcentajeDetraccion.compareTo( new java.math.BigDecimal("1.00") ) < 0 ||
+              porcentajeDetraccion.compareTo( new java.math.BigDecimal("15.00") ) > 0 )
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3050", "Afectacion de IGV no corresponde al codigo de tributo de la linea.");
+end
+
+
+// Código 3051
+rule "R3051"
+    when
+        $ctx : CpeContext(
+            detraccionConsistente == false,
+            codigoDetraccion != null
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3051", "Nombre de tributo no corresponde al codigo de tributo de la linea.");
+end
+
+
+// Código 3052
+rule "R3052"
+    when
+        $ctx : CpeContext( factorCargDescLineaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3052", "El factor de cargo/descuento por linea no cumple con el formato establecido.");
+end
+
+
+// Código 3053
+rule "R3053"
+    when
+        $ctx : CpeContext( montoBaseCargDescLineaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3053", "El Monto base de cargo/descuento por linea no cumple con el formato establecido.");
+end
+
+
+// Código 3059
+rule "R3059"
+    when
+        $ctx : CpeContext( faltaCodigoTributo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3059", "El XML no contiene el tag o no existe informacion de codigo de tributo.");
+end
+
+
+// Código 3063
+rule "R3063"
+    when
+        $ctx : CpeContext( faltaMatriculaEmbarcacion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3063", "El XML no contiene el tag de matricula de embarcacion en Detracciones para recursos hidrobiologicos.");
+end
+
+
+// Código 3064
+rule "R3064"
+    when
+        $ctx : CpeContext( faltaValorConceptoLinea == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3064", "El XML no contiene tag o no existe informacion del valor del concepto por linea.");
+end
+
+
+// Código 3065
+rule "R3065"
+    when
+        $ctx : CpeContext( faltaFechaConceptoLinea == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3065", "El XML no contiene tag de la fecha del concepto por linea.");
+end
+
+
+// Código 3067
+rule "R3067"
+    when
+        $ctx : CpeContext( codigoTributoRepetidoItem == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3067", "El codigo de tributo no debe repetirse a nivel de item");
+end
+
+
+// Código 3068
+rule "R3068"
+    when
+        $ctx : CpeContext( codigoTributoRepetidoTotales == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3068", "El codigo de tributo no debe repetirse a nivel de totales");
+end
+
+
+// Código 3071
+rule "R3071"
+    when
+        $ctx : CpeContext( codigoMotivoCargDescGlobalInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3071", "El dato ingresado como codigo de motivo de cargo/descuento global no es valido (catalogo nro 53)");
+end
+
+
+// Código 3072
+rule "R3072"
+    when
+        $ctx : CpeContext( faltaCodigoMotivoCargDescGlobal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3072", "El XML no contiene el tag o no existe informacion de codigo de motivo de cargo/descuento global.");
+end
+
+
+// Código 3073
+rule "R3073"
+    when
+        $ctx : CpeContext( faltaCodigoMotivoCargDescItem == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3073", "El XML no contiene el tag o no existe informacion de codigo de motivo de cargo/descuento por item.");
+end
+
+
+// Código 3074
+rule "R3074"
+    when
+        $ctx : CpeContext( montoCargoFiseCero == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3074", "El monto del cargo para el para FISE debe ser igual mayor a 0.00");
+end
+
+
+// Código 3088
+rule "R3088"
+    when
+        $ctx : CpeContext(
+            moneda != null,
+            moneda.trim().length() > 0,
+            moneda not matches "PEN|USD|EUR|GBP|JPY|CAD|CHF|AUD|BRL|MXN|CLP|COP|ARS|BOB|PYG|UYU|VES"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3088", "El valor ingresado como moneda del comprobante no es valido (catalogo nro 02).");
+end
+
+
+// Código 3089
+rule "R3089"
+    when
+        $ctx : CpeContext( multiplesTagsNumDocEmisor == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3089", "El XML contiene mas de un tag como elemento de numero de documento del emisor");
+end
+
+
+// Código 3090
+rule "R3090"
+    when
+        $ctx : CpeContext( multiplesTagsNumDocReceptor == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3090", "El XML contiene mas de un tag como elemento de numero de documento del receptor.");
+end
+
+
+// Código 3092
+rule "R3092"
+    when
+        $ctx : CpeContext( cargoFiseSinMontoBase == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3092", "Para cargo/descuento FISE, debe ingresar monto base y debe ser mayor a 0.00");
+end
+
+
+// Código 3093
+rule "R3093"
+    when
+        $ctx : CpeContext( operacionSujetaPercepcion == true,
+                           formaPagoContado == true,
+                           sinCargoPercepcion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3093", "Si operacion es sujeta a percepcion y la forma de pago es Contado, debe ingresar cargo para Percepcion");
+end
+
+
+// Código 3097
+rule "R3097"
+    when
+        $ctx : CpeContext( emisorNoHabilitadoExportadores == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3097", "El emisor a la fecha no se encuentra registrado o habilitado en el Registro de exportadores de servicios SUNAT");
+end
+
+
+// Código 3098
+rule "R3098"
+    when
+        $ctx : CpeContext( faltaPaisUso == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3098", "El XML no contiene el tag o no existe informacion del pais de uso, exploracion o aprovechamiento");
+end
+
+
+// Código 3099
+rule "R3099"
+    when
+        $ctx : CpeContext( paisUsoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3099", "El dato ingresado como pais de uso, exploracion o aprovechamiento es incorrecto.");
+end
+
+
+// Código 3102
+rule "R3102"
+    when
+        $ctx : CpeContext( factorAfectacionLineaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3102", "El dato ingresado como factor de afectacion por linea no cumple con el formato establecido.");
+end
+
+
+// Código 3103
+rule "R3103"
+    when
+        $ctx : CpeContext( factorBaseIgvNoCorresponde == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3103", "El producto del factor y monto base de la afectacion del IGV/IVAP no corresponde al monto de afectacion de linea.");
+end
+
+
+// Código 3104
+rule "R3104"
+    when
+        $ctx : CpeContext( factorIscLineaCero == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3104", "El factor de afectacion de ISC por linea debe ser diferente a 0.00.");
+end
+
+
+// Código 3105
+rule "R3105"
+    when
+        $ctx : CpeContext( lineaSinTributoIgv == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3105", "El XML debe contener al menos un tributo por linea de afectacion por IGV");
+end
+
+
+// Código 3107
+rule "R3107"
+    when
+        $ctx : CpeContext( codigoTributoGlobalInvalidoOperacion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3107", "El dato ingresado como codigo de tributo global es invalido para tipo de operacion.");
+end
+
+
+// Código 3108
+rule "R3108"
+    when
+        $ctx : CpeContext( factorBaseIscNoCorresponde == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3108", "El producto del factor y monto base de la afectacion del ISC no corresponde al monto de afectacion de linea.");
+end
+
+
+// Código 3109
+rule "R3109"
+    when
+        $ctx : CpeContext( factorBaseOtrosTributosNoCorresponde == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3109", "El producto del factor y monto base de la afectacion de otros tributos no corresponde al monto de afectacion de linea.");
+end
+
+
+// Código 3110
+rule "R3110"
+    when
+        $ctx : CpeContext( igvLineaDebeSerCero == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3110", "El monto de afectacion de IGV por linea debe ser igual a 0.00 para Exoneradas, Inafectas, Exportacion, Gratuitas de exoneradas o Gratuitas de inafectas.");
+end
+
+
+// Código 3111
+rule "R3111"
+    when
+        $ctx : CpeContext( igvLineaDebeSerDistintoCero == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3111", "El monto de afectacion de IGV por linea debe ser diferente a 0.00.");
+end
+
+
+// Código 3114
+rule "R3114"
+    when
+        $ctx : CpeContext( indicadorCargDescIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3114", "El dato ingresado como indicador de cargo/descuento no corresponde al valor esperado.");
+end
+
+
+// Código 3115
+rule "R3115"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3115", "El dato ingresado como unidad de medida de cantidad de especie vendidas no corresponde al valor esperado.");
+end
+
+
+// Código 3116
+rule "R3116"
+    when
+        $ctx : CpeContext( faltaUbigeoOrigenTransporte == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3116", "El XML no contiene el tag o no existe informacion del ubigeo de punto de origen en Detracciones - Servicio de transporte de carga.");
+end
+
+
+// Código 3117
+rule "R3117"
+    when
+        $ctx : CpeContext( faltaDireccionOrigenTransporte == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3117", "El XML no contiene el tag o no existe informacion de la direccion del punto de origen en Detracciones - Servicio de transporte de carga.");
+end
+
+
+// Código 3118
+rule "R3118"
+    when
+        $ctx : CpeContext( faltaUbigeoDestinoTransporte == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3118", "El XML no contiene el tag o no existe informacion del ubigeo de punto de destino en Detracciones - Servicio de transporte de carga.");
+end
+
+
+// Código 3119
+rule "R3119"
+    when
+        $ctx : CpeContext( faltaDireccionDestinoTransporte == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3119", "El XML no contiene el tag o no existe informacion de la direccion del punto de destino en Detracciones - Servicio de transporte de carga.");
+end
+
+
+// Código 3120
+rule "R3120"
+    when
+        $ctx : CpeContext( faltaDetalleViajeTransporte == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3120", "El XML no contiene el tag o no existe informacion del Detalle del viaje en Detracciones - Servicio de transporte de carga.");
+end
+
+
+// Código 3122
+rule "R3122"
+    when
+        $ctx : CpeContext( faltaMontoReferencialTransporte == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3122", "El XML no contiene el tag o no existe informacion del monto del valor referencial en Detracciones - Servicios de transporte de carga.");
+end
+
+
+// Código 3123
+rule "R3123"
+    when
+        $ctx : CpeContext( montoReferencialTransporteInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3123", "El dato ingresado como monto valor referencial en Detracciones - Servicios de transporte de carga no cumple con el formato establecido.");
+end
+
+
+// Código 3124
+rule "R3124"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3124", "Detracciones - Servicio de transporte de carga, debe tener un (y solo uno) Valor Referencial del Servicio de Transporte.");
+end
+
+
+// Código 3125
+rule "R3125"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3125", "Detracciones - Servicio de transporte de carga, debe tener un (y solo uno) Valor Referencial sobre la carga efectiva.");
+end
+
+
+// Código 3126
+rule "R3126"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3126", "Detracciones - Servicio de transporte de carga, debe tener un (y solo uno) Valor Referencial sobre la carga util nominal.");
+end
+
+
+// Código 3127
+rule "R3127"
+    when
+        $ctx : CpeContext( faltaCodigoBbssDetraccion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3127", "El XML no contiene el tag o no existe informacion del Codigo de BBSS de detraccion para el tipo de operacion.");
+end
+
+
+// Código 3128
+rule "R3128"
+    when
+        $ctx : CpeContext( codigoBbssDetraccionNoCorresponde == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3128", "El XML contiene informacion de codigo de bien y servicio de detraccion que no corresponde al tipo de operacion.");
+end
+
+
+// Código 3129
+rule "R3129"
+    when
+        $ctx : CpeContext( codigoBbssDetraccionInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3129", "El dato ingresado como codigo de BBSS de detraccion no corresponde al valor esperado.");
+end
+
+
+// Código 3130
+rule "R3130"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3130", "El XML no contiene el tag de nombre de embarcación en Detracciones para recursos hidrobiologicos.");
+end
+
+
+// Código 3131
+rule "R3131"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3131", "El XML no contiene el tag de tipo de especie vendidas en Detracciones para recursos hidrobiologicos.");
+end
+
+
+// Código 3132
+rule "R3132"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3132", "El XML no contiene el tag de lugar de descarga en Detracciones para recursos hidrobiologicos.");
+end
+
+
+// Código 3133
+rule "R3133"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3133", "El XML no contiene el tag de cantidad de especies vendidas en Detracciones para recursos hidrobiologicos.");
+end
+
+
+// Código 3134
+rule "R3134"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3134", "El XML no contiene el tag de fecha de descarga en Detracciones para recursos hidrobiologicos.");
+end
+
+
+// Código 3135
+rule "R3135"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3135", "El XML no contiene tag de la cantidad del concepto por linea.");
+end
+
+
+// Código 3136
+rule "R3136"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3136", "El XML no contiene el tag de numero de documentos del huesped.");
+end
+
+
+// Código 3137
+rule "R3137"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3137", "El XML no contiene el tag de tipo de documentos del huesped.");
+end
+
+
+// Código 3138
+rule "R3138"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3138", "El XML no contiene el tag de codigo de pais de emision del documento de identidad");
+end
+
+
+// Código 3139
+rule "R3139"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3139", "El XML no contiene el tag de apellidos y nombres del huesped.");
+end
+
+
+// Código 3140
+rule "R3140"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3140", "El XML no contiene el tag de codigo del pais de residencia.");
+end
+
+
+// Código 3141
+rule "R3141"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3141", "El XML no contiene el tag de fecha de ingreso del pais.");
+end
+
+
+// Código 3142
+rule "R3142"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3142", "El XML no contiene el tag de fecha de ingreso al establecimiento.");
+end
+
+
+// Código 3143
+rule "R3143"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3143", "El XML no contiene el tag de fecha de salida del establecimiento.");
+end
+
+
+// Código 3144
+rule "R3144"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3144", "El XML no contiene el tag de fecha de consumo.");
+end
+
+
+// Código 3145
+rule "R3145"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3145", "El XML no contiene el tag de numero de dias de permanencia.");
+end
+
+
+// Código 3146
+rule "R3146"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3146", "El XML no contiene el tag de Proveedores Estado: Número de Expediente");
+end
+
+
+// Código 3147
+rule "R3147"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3147", "El XML no contiene el tag de Proveedores Estado: Código de Unidad Ejecutora");
+end
+
+
+// Código 3148
+rule "R3148"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3148", "El XML no contiene el tag de Proveedores Estado: N° de Proceso de Selección");
+end
+
+
+// Código 3149
+rule "R3149"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3149", "El XML no contiene el tag de Proveedores Estado: N° de Contrato");
+end
+
+
+// Código 3150
+rule "R3150"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3150", "El XML no contiene el tag de Créditos Hipotecarios: Tipo de préstamo");
+end
+
+
+// Código 3151
+rule "R3151"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3151", "El XML no contiene el tag de Créditos Hipotecarios: Partida Registral");
+end
+
+
+// Código 3152
+rule "R3152"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3152", "El XML no contiene el tag de Créditos Hipotecarios: Número de contrato");
+end
+
+
+// Código 3153
+rule "R3153"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3153", "El XML no contiene el tag de Créditos Hipotecarios: Fecha de otorgamiento del crédito");
+end
+
+
+// Código 3154
+rule "R3154"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3154", "El XML no contiene el tag de Créditos Hipotecarios: Dirección del predio - Código de ubigeo");
+end
+
+
+// Código 3155
+rule "R3155"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3155", "El XML no contiene el tag de Créditos Hipotecarios: Dirección del predio - Dirección completa");
+end
+
+
+// Código 3156
+rule "R3156"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3156", "El XML no contiene el tag de BVME transporte ferroviario: Agente de Viajes: Numero de Ruc");
+end
+
+
+// Código 3157
+rule "R3157"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3157", "El XML no contiene el tag de BVME transporte ferroviario: Agente de Viajes: Tipo de documento");
+end
+
+
+// Código 3158
+rule "R3158"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3158", "El dato ingresado como Agente de Viajes-Tipo de documento no corresponde al valor esperado.");
+end
+
+
+// Código 3159
+rule "R3159"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3159", "El XML no contiene el tag de BVME transporte ferroviario: Pasajero - Apellidos y Nombres");
+end
+
+
+// Código 3160
+rule "R3160"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3160", "El XML no contiene el tag de BVME transporte ferroviario: Pasajero - Tipo de documento de identidad");
+end
+
+
+// Código 3161
+rule "R3161"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3161", "El XML no contiene el tag de BVME transporte ferroviario: Servicio transporte: Ciudad o lugar de origen - Código de ubigeo");
+end
+
+
+// Código 3162
+rule "R3162"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3162", "El XML no contiene el tag de BVME transporte ferroviario: Servicio transporte: Ciudad o lugar de origen - Dirección detallada");
+end
+
+
+// Código 3163
+rule "R3163"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3163", "El XML no contiene el tag de BVME transporte ferroviario: Servicio transporte: Ciudad o lugar de destino - Código de ubigeo");
+end
+
+
+// Código 3164
+rule "R3164"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3164", "El XML no contiene el tag de BVME transporte ferroviario: Servicio transporte: Ciudad o lugar de destino - Dirección detallada");
+end
+
+
+// Código 3165
+rule "R3165"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3165", "El XML no contiene el tag de BVME transporte ferroviario: Servicio transporte:Número de asiento");
+end
+
+
+// Código 3166
+rule "R3166"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3166", "El XML no contiene el tag de BVME transporte ferroviario: Servicio transporte: Hora programada de inicio de viaje");
+end
+
+
+// Código 3167
+rule "R3167"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3167", "El XML no contiene el tag de BVME transporte ferroviario: Servicio transporte: Fecha programada de inicio de viaje");
+end
+
+
+// Código 3168
+rule "R3168"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3168", "El XML no contiene el tag de Carta Porte Aéreo: Lugar de origen - Código de ubigeo");
+end
+
+
+// Código 3169
+rule "R3169"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3169", "El XML no contiene el tag de Carta Porte Aéreo: Lugar de origen - Dirección detallada");
+end
+
+
+// Código 3170
+rule "R3170"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3170", "El XML no contiene el tag de Carta Porte Aéreo: Lugar de destino - Código de ubigeo");
+end
+
+
+// Código 3171
+rule "R3171"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3171", "El XML no contiene el tag de Carta Porte Aéreo: Lugar de destino - Dirección detallada");
+end
+
+
+// Código 3172
+rule "R3172"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3172", "El XML no contiene tag de la Hora del concepto por linea.");
+end
+
+
+// Código 3173
+rule "R3173"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3173", "El XML no contiene el tag de BVME transporte ferroviario: Servicio transporte: Forma de Pago");
+end
+
+
+// Código 3174
+rule "R3174"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3174", "El dato ingreso como Forma de Pago o Medio de Pago no corresponde al valor esperado (catalogo nro 59)");
+end
+
+
+// Código 3175
+rule "R3175"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3175", "El XML no contiene el tag de BVME transporte ferroviario: Servicio de transporte: Número de autorización de la transacción");
+end
+
+
+// Código 3181
+rule "R3181"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3181", "El dato ingresado como Codigo de producto SUNAT no corresponde al valor esperado para tipo de operación.");
+end
+
+
+// Código 3195
+rule "R3195"
+    when
+        $ctx : CpeContext( faltaTaxTotalLinea == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3195", "El xml no contiene el tag de impuesto por linea (TaxtTotal).");
+end
+
+
+// Código 3204
+rule "R3204"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3204", "El XML no contiene el tag de BVME transporte ferroviario: Pasajero - Número de documento de identidad");
+end
+
+
+// Código 3205
+rule "R3205"
+    when
+        $ctx : CpeContext(
+            tipoOperacion == null || tipoOperacion.trim().length() == 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3205", "Debe consignar el tipo de operacion");
+end
+
+
+// Código 3206
+rule "R3206"
+    when
+        $ctx : CpeContext(
+            tipoOperacion != null,
+            tipoOperacion.trim().length() > 0,
+            tipoOperacion not matches "0101|0102|0103|0104|0105|0106|0107|0108|0109|0110|0111|0112|0113|0120|0121|0200|0201|0202|0203|0204|0205|0206|0207|0208|0301|0302|0401|1001|1002|1003|1004|2001|2002|2003|2004|2100|2101|2102|2103|2104|2106"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3206", "El dato ingresado como tipo de operacion no corresponde a un valor esperado (catalogo nro. 51)");
+end
+
+
+// Código 3207
+rule "R3207"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3207", "Comprobante físico no se encuentra autorizado");
+end
+
+
+// Código 3208
+rule "R3208"
+    when
+        $ctx : CpeContext( monedaDetraccionNoPen == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3208", "La moneda del monto de la detraccion debe ser PEN");
+end
+
+
+// Código 3210
+rule "R3210"
+    when
+        $ctx : CpeContext( sistemaCalculoEnNoIsc == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3210", "Solo debe consignar sistema de calculo si el tributo es ISC");
+end
+
+
+// Código 3211
+rule "R3211"
+    when
+        $ctx : CpeContext( faltaIdPagoAnticipo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3211", "Falta identificador del pago del Monto de anticipo para relacionarlo con el comprobante que se realizo el anticipo");
+end
+
+
+// Código 3212
+rule "R3212"
+    when
+        $ctx : CpeContext( idPagoDuplicadoAnticipo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3212", "El comprobante contiene un identificador de pago repetido en los montos anticipados");
+end
+
+
+// Código 3213
+rule "R3213"
+    when
+        $ctx : CpeContext( pagoAnticipadoSinDocumento == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3213", "El comprobante contiene un pago anticipado pero no se ha consignado el documento que se realizo el anticipo");
+end
+
+
+// Código 3214
+rule "R3214"
+    when
+        $ctx : CpeContext( sinMontoAnticipadoDocumento == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3214", "No existe informacion del Monto Anticipado para el comprobante que se realizo el anticipo");
+end
+
+
+// Código 3215
+rule "R3215"
+    when
+        $ctx : CpeContext( idPagoDuplicadoComprobanteAnticipo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3215", "El comprobante contiene un identificador de pago repetido en los comprobantes que se realizo el anticipo");
+end
+
+
+// Código 3216
+rule "R3216"
+    when
+        $ctx : CpeContext( faltaIdPagoComprobanteAnticipo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3216", "Falta identificador del pago del comprobante para relacionarlo con el monto de anticipo");
+end
+
+
+// Código 3217
+rule "R3217"
+    when
+        $ctx : CpeContext( faltaRucEmisorAnticipo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3217", "Debe consignar de RUC del emisor del comprobante de anticipo");
+end
+
+
+// Código 3218
+rule "R3218"
+    when
+        $ctx : CpeContext( comprobanteAnticipoNoExiste == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3218", "El comprobante que se realizo el anticipo no existe");
+end
+
+
+// Código 3219
+rule "R3219"
+    when
+        $ctx : CpeContext( comprobanteAnticipoNoAutorizado == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3219", "El comprobante que se realizo el anticipo no se encuentra autorizado");
+end
+
+
+// Código 3220
+rule "R3220"
+    when
+        $ctx : CpeContext( anticipoSinTotalAnticipos == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3220", "Si consigna montos de anticipo debe informar el Total de Anticipos");
+end
+
+
+// Código 3223
+rule "R3223"
+    when
+        $ctx : CpeContext( combinacionTributosNoPermitida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3223", "La combinacion de tributos no es permitida");
+end
+
+
+// Código 3224
+rule "R3224"
+    when
+        $ctx : CpeContext( valorReferencialNoOnerosasinGratuita == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3224", "Si existe 'Valor referencial unitario en operac. no onerosas' con monto mayor a cero, la operacion debe ser gratuita (codigo de tributo 9996)");
+end
+
+
+// Código 3233
+rule "R3233"
+    when
+        $ctx : CpeContext( cargoPercepcionSinMontoBase == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3233", "Para cargo Percepcion, debe ingresar monto base y debe ser mayor a 0.00");
+end
+
+
+// Código 3234
+rule "R3234"
+    when
+        $ctx : CpeContext( codigoPrecio02NoGratuita == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3234", "El codigo de precio '02' es solo para operaciones gratuitas");
+end
+
+
+// Código 3236
+rule "R3236"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3236", "El valor ingresado en el campo cac:TaxSubtotal/cbc:BaseUnitMeasure no corresponde al valor esperado");
+end
+
+
+// Código 3237
+rule "R3237"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3237", "Debe consignar el campo cac:TaxSubtotal/cbc:BaseUnitMeasure a nivel de ítem");
+end
+
+
+// Código 3238
+rule "R3238"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3238", "El valor ingresado en el campo cac:TaxSubtotal/cbc:PerUnitAmount del ítem no corresponde al valor esperado");
+end
+
+
+// Código 3239
+rule "R3239"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3239", "El código de local anexo consignado no se encuentra declarado en el RUC");
+end
+
+
+// Código 3241
+rule "R3241"
+    when
+        $ctx : CpeContext(
+            tipoDocumentoReceptor != null,
+            totalExonerado.compareTo( java.math.BigDecimal.ZERO ) < 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3241", "Para el tipo de operacion 2100, 2101 y 2102 (Creditos) debe consignar Numero de contrato, Fecha de otorgamiento y Monto del credito otorgado (capital)");
+end
+
+
+// Código 3242
+rule "Para el tipo de operacion 2104 - Empresas del sistema de seguros, debe consignar Informacion adicional a nivel de item"
+    when
+        $ctx : CpeContext(
+            totalGratuito != null,
+            totalGratuito.compareTo( java.math.BigDecimal.ZERO ) < 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3242", "Para el tipo de operacion 2104 - Empresas del sistema de seguros, debe consignar Informacion adicional a nivel de item");
+end
+
+
+// Código 3243
+rule "El XML no contiene tag o no existe informacion de la fecha del concepto por linea"
+    when
+        $ctx : CpeContext(
+            esFactura == true,
+            tipoDocCliente != null,
+            tipoDocCliente != "6"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3243", "El XML no contiene tag o no existe informacion de la fecha del concepto por linea");
+end
+
+
+// Código 3244
+rule "R3244"
+    when
+        $ctx : CpeContext( faltaTipoTransaccion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3244", "Debe consignar la informacion del tipo de transaccion del comprobante");
+end
+
+
+// Código 3245
+rule "R3245"
+    when
+        $ctx : CpeContext( faltaContadoOCredito == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3245", "Debe informar si el tipo de transaccion es al Contado o al Credito");
+end
+
+
+// Código 3246
+rule "R3246"
+    when
+        $ctx : CpeContext( tipoTransaccionIdCuotaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3246", "El tipo de transaccion o el identificador de la cuota no cumple con el formato esperado");
+end
+
+
+// Código 3247
+rule "R3247"
+    when
+        $ctx : CpeContext( transaccionContadoYCredito == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3247", "El tipo de transaccion no puede ser a la vez al Contado y al Credito");
+end
+
+
+// Código 3248
+rule "R3248"
+    when
+        $ctx : CpeContext( tipoTransaccionRepetido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3248", "El tipo de transaccion o el identificador de la cuota no debe repetirse en el comprobante");
+end
+
+
+// Código 3249
+rule "R3249"
+    when
+        $ctx : CpeContext( esCredito == true,
+                           sinCuotasDePago == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3249", "Si el tipo de transaccion es al Credito debe existir al menos informacion de una cuota de pago");
+end
+
+
+// Código 3250
+rule "R3250"
+    when
+        $ctx : CpeContext( montoNetoPendienteInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3250", "El Monto neto pendiente de pago no cumple el formato definido");
+end
+
+
+// Código 3251
+rule "R3251"
+    when
+        $ctx : CpeContext( esCredito == true,
+                           faltaMontoNetoPendiente == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3251", "Si el tipo de transaccion es al Credito debe consignarse el Monto neto pendiente de pago");
+end
+
+
+// Código 3252
+rule "R3252"
+    when
+        $ctx : CpeContext( cuotasSinTipoCredito == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3252", "Si existe informacion de cuota de pago, el tipo de transaccion debe ser al credito");
+end
+
+
+// Código 3253
+rule "R3253"
+    when
+        $ctx : CpeContext( montoCuotaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3253", "El Monto del pago unico o de las cuotas no cumple el formato definido");
+end
+
+
+// Código 3254
+rule "R3254"
+    when
+        $ctx : CpeContext( cuotaSinMonto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3254", "Si se consigna informacion de la cuota de pago, debe indicarse el monto de la cuota");
+end
+
+
+// Código 3255
+rule "R3255"
+    when
+        $ctx : CpeContext( fechaCuotaInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3255", "Fecha del pago unico o de las cuotas no cumple el formato definido");
+end
+
+
+// Código 3256
+rule "R3256"
+    when
+        $ctx : CpeContext( cuotaSinFecha == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3256", "Si se consigna informacion de la cuota de pago, debe indicarse la fecha del pago unico o de las cuotas");
+end
+
+
+// Código 3258
+rule "R3258"
+    when
+        $ctx : CpeContext(
+            formaPago != null,
+            formaPago.trim().length() > 0,
+            formaPago not matches "Contado|Credito"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3258", "El valor de la forma de pago no es valido (Contado o Credito)");
+end
+
+
+// Código 3262
+rule "R3262"
+    when
+        $ctx : CpeContext( tieneRetencionIgv == true,
+                           receptorNoEsAgenteRetencion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3262", "Si existe retencion de IGV en el comprobante, el receptor debe ser un Agente de Retencion");
+end
+
+
+// Código 3263
+rule "R3263"
+    when
+        $ctx : CpeContext( importeRetencionIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3263", "El Importe de la retencion no tiene el valor correcto");
+end
+
+
+// Código 3264
+rule "R3264"
+    when
+        $ctx : CpeContext( baseRetencionMayorTotal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3264", "El importe total de la operacion (base imponible de retencion) no puede ser mayor al importe total del comprobante.");
+end
+
+
+// Código 3265
+rule "R3265"
+    when
+        $ctx : CpeContext( montoNetoPendiente > total,
+                           montoNetoPendiente > 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3265", "El Monto neto pendiente de pago debe ser menor o igual al Importe total del comprobante");
+end
+
+
+// Código 3266
+rule "R3266"
+    when
+        $ctx : CpeContext( montoCuotaMayorTotal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3266", "El Monto del pago unico o de las cuotas debe ser menor o igual al Importe total del comprobante");
+end
+
+
+// Código 3267
+rule "R3267"
+    when
+        $ctx : CpeContext( fechaCuotaAnteriorEmision == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3267", "Fecha del pago unico o de las cuotas no puede ser anterior o igual a la fecha de emision del comprobante");
+end
+
+
+// Código 3269
+rule "R3269"
+    when
+        $ctx : CpeContext( tieneRetencionIgv == true,
+                           emisorEsAgenteRetencion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3269", "Si existe retencion de IGV en el comprobante, el emisor no debe ser un Agente de Retencion");
+end
+
+
+// Código 3270
+rule "R3270"
+    when
+        $ctx : CpeContext( precioUnitarioDifiere == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3270", "El precio unitario de la operacion que esta informando difiere de los calculos realizados en base a la informacion remitida");
+end
+
+
+// Código 3271
+rule "R3271"
+    when
+        $ctx : CpeContext( valorVentaItemDifiere == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3271", "El valor de venta por item difiere de los importes consignados.");
+end
+
+
+// Código 3272
+rule "R3272"
+    when
+        $ctx : CpeContext( baseImponibleLineaDifiere == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3272", "La base imponible a nivel de linea difiere de la informacion consignada en el comprobante");
+end
+
+
+// Código 3273
+rule "R3273"
+    when
+        $ctx : CpeContext( sumaVentaExportacionesLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3273", "La sumatoria del total valor de venta - Exportaciones de linea no corresponden al total");
+end
+
+
+// Código 3274
+rule "R3274"
+    when
+        $ctx : CpeContext( sumaVentaInafectasLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3274", "La sumatoria del total valor de venta - operaciones inafectas de linea no corresponden al total");
+end
+
+
+// Código 3275
+rule "R3275"
+    when
+        $ctx : CpeContext( sumaVentaExoneradasLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3275", "La sumatoria del total valor de venta - operaciones exoneradas de linea no corresponden al total");
+end
+
+
+// Código 3276
+rule "R3276"
+    when
+        $ctx : CpeContext( sumaVentaGratuitasLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3276", "La sumatoria del total valor de venta - operaciones gratuitas de linea no corresponden al total");
+end
+
+
+// Código 3277
+rule "R3277"
+    when
+        $ctx : CpeContext( sumaVentaGravadasLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3277", "La sumatoria del total valor de venta - operaciones gravadas de linea no corresponden al total");
+end
+
+
+// Código 3278
+rule "R3278"
+    when
+        $ctx : CpeContext( sumaValorVentaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3278", "La sumatoria de valor de venta no corresponde a los importes consignados");
+end
+
+
+// Código 3279
+rule "R3279"
+    when
+        $ctx : CpeContext( valorVentaImpuestosNoConcuerda == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3279", "La sumatoria del Total del valor de venta mas los impuestos no concuerda con la base imponible");
+end
+
+
+// Código 3280
+rule "R3280"
+    when
+        $ctx : CpeContext(
+            total != null,
+            totalConsistente == false
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3280", "El importe total del comprobante no coincide con el valor calculado");
+end
+
+
+// Código 3281
+rule "R3281"
+    when
+        $ctx : CpeContext( emisorNoInscritoRea == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3281", "El emisor electronico no se encuentra inscrito en el Registro de Establecimientos Autorizados (REA)");
+end
+
+
+// Código 3282
+rule "R3282"
+    when
+        $ctx : CpeContext( descuentosAnticipoSinTotalAnticipos == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3282", "Si se informa descuentos globales por anticipo debe existir 'Total de anticipos' con monto mayor a cero");
+end
+
+
+// Código 3283
+rule "R3283"
+    when
+        $ctx : CpeContext( tieneLeyenda2001 == true,
+                           totalValorVentaExoneradas <= 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3283", "Si se utiliza la leyenda con codigo 2001, el total de operaciones exoneradas debe ser mayor a 0.00");
+end
+
+
+// Código 3284
+rule "R3284"
+    when
+        $ctx : CpeContext( tieneLeyenda2002 == true,
+                           totalValorVentaExoneradas <= 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3284", "Si se utiliza la leyenda con codigo 2002, el total de operaciones exoneradas debe ser mayor a 0.00");
+end
+
+
+// Código 3285
+rule "R3285"
+    when
+        $ctx : CpeContext( tieneLeyenda2003 == true,
+                           totalValorVentaExoneradas <= 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3285", "Si se utiliza la leyenda con codigo 2003, el total de operaciones exoneradas debe ser mayor a 0.00");
+end
+
+
+// Código 3287
+rule "R3287"
+    when
+        $ctx : CpeContext( totalAnticiposSinDescuentosGlobales == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3287", "Si se informa 'Total de anticipos' debe consignar los descuentos globales por anticipo con monto mayor a cero");
+end
+
+
+// Código 3288
+rule "R3288"
+    when
+        $ctx : CpeContext( subtotal == null )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3288", "Debe consignar el Total Valor de Venta");
+end
+
+
+// Código 3289
+rule "R3289"
+    when
+        $ctx : CpeContext( tieneLeyenda2008 == true,
+                           totalValorVentaExoneradas <= 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3289", "Si se utiliza la leyenda con codigo 2008, el total de operaciones exoneradas debe ser mayor a 0.00");
+end
+
+
+// Código 3290
+rule "R3290"
+    when
+        $ctx : CpeContext( cargoDescItemDifiere == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3290", "El valor de cargo/descuento por item difiere de los importes consignados.");
+end
+
+
+// Código 3291
+rule "R3291"
+    when
+        $ctx : CpeContext(
+            		
+            totalIGV != null,
+            igvConsistente == false
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3291", "El calculo del IGV es Incorrecto");
+end
+
+
+// Código 3292
+rule "R3292"
+    when
+        $ctx : CpeContext( totalImpuestosLineaNoCoincide == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3292", "El importe total de impuestos por linea no coincide con la sumatoria de los impuestos por linea.");
+end
+
+
+// Código 3293
+rule "R3293"
+    when
+        $ctx : CpeContext( sumaVentaIvapLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3293", "La sumatoria del total valor de venta - IVAP de linea no corresponden al total");
+end
+
+
+// Código 3294
+rule "R3294"
+    when
+        $ctx : CpeContext( sumaImpuestosGlobalesIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3294", "La sumatoria de impuestos globales no corresponde al monto total de impuestos.");
+end
+
+
+// Código 3295
+rule "R3295"
+    when
+        $ctx : CpeContext( importeIvapNoCorresponde == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3295", "El importe del IVAP no corresponden al determinado por la informacion consignada.");
+end
+
+
+// Código 3296
+rule "R3296"
+    when
+        $ctx : CpeContext(
+            totalISC != null,
+            totalISC.compareTo( java.math.BigDecimal.ZERO ) < 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3296", "La sumatoria del monto base - ISC de linea no corresponden al total");
+end
+
+
+// Código 3297
+rule "R3297"
+    when
+        $ctx : CpeContext(
+            totalOtrosTributos != null,
+            totalOtrosTributos.compareTo( java.math.BigDecimal.ZERO ) < 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3297", "La sumatoria del monto base - Otros tributos de linea no corresponden al total");
+end
+
+
+// Código 3298
+rule "sumatoria del total del importe del tributo ISC "
+    when
+
+        $ctx : CpeContext(
+            totalISC != null,
+            totalISC.compareTo( java.math.BigDecimal.ZERO ) > 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3298", "La sumatoria del total del importe del tributo ISC de linea no corresponden al total");
+end
+
+
+// Código 3299
+rule "R3299"
+    when
+        $ctx : CpeContext( sumaOtrosTributosLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3299", "La sumatoria del total del importe del tributo Otros tributos de linea no corresponden al total");
+end
+
+
+// Código 3300
+rule "R3300"
+    when
+        $ctx : CpeContext( sumaDescuentosGlobalesIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3300", "La sumatoria consignada en descuentos globales no corresponden al total.");
+end
+
+
+// Código 3301
+rule "R3301"
+    when
+        $ctx : CpeContext( sumaCargosGlobalesIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3301", "La sumatoria consignados en cargos globales no corresponden al total");
+end
+
+
+// Código 3302
+rule "R3302"
+    when
+        $ctx : CpeContext( sumaIgvGratuitasLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3302", "La sumatoria de los IGV de operaciones gratuitas de la linea (codigo tributo 9996) no corresponden al total");
+end
+
+
+// Código 3303
+rule "R3303"
+    when
+        $ctx : CpeContext( redondeoImporteTotalExcede == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3303", "El monto para el redondeo del Importe Total excede el valor permitido");
+end
+
+
+// Código 3305
+rule "R3305"
+    when
+        $ctx : CpeContext( faltaTotalPrecioVenta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3305", "Debe consignar el Total Precio de Venta");
+end
+
+
+// Código 3306
+rule "R3306"
+    when
+        $ctx : CpeContext( sumaIcbperLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3306", "La sumatoria del total del importe del tributo ICBPER de linea no corresponden al total");
+end
+
+
+// Código 3307
+rule "R3307"
+    when
+        $ctx : CpeContext( cargoDescGlobalDifiere == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3307", "El valor de cargo/descuento global difiere de los importes consignados");
+end
+
+
+// Código 3308
+rule "R3308"
+    when
+        $ctx : CpeContext( tienePercepcion == true,
+                           tipoOperacion != "2001" )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3308", "Solo debe consignar informacion de percepciones si el tipo de operacion es 2001-Operacion sujeta a Percepcion");
+end
+
+
+// Código 3309
+rule "R3309"
+    when
+        $ctx : CpeContext( tipoOperacion == "2001",
+                           formaPagoContado == true,
+                           sinPaymentTermsPercepcion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3309", "Si forma de pago es Contado debe consignar un Payment Terms con indicador Percepcion");
+end
+
+
+// Código 3310
+rule "R3310"
+    when
+        $ctx : CpeContext( tipoOperacion == "2001",
+                           faltaMontoTotalPercepcion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3310", "Debe consignar el Monto total incluido la percepcion");
+end
+
+
+// Código 3311
+rule "R3311"
+    when
+        $ctx : CpeContext( montoTotalPercepcionInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3311", "El Monto total incluido la percepcion no cumple con el formato establecido");
+end
+
+
+// Código 3316
+rule "R3316"
+    when
+        $ctx : CpeContext( tipoOperacion == "2002",
+                           faltaDatosRetencion2daCategoria == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3316", "Si el tipo de operacion es 2002, debe informar los datos de la retencion de segunda categoria");
+end
+
+
+// Código 3317
+rule "R3317"
+    when
+        $ctx : CpeContext( tieneRetencion2daCategoria == true,
+                           tipoOperacion != "2002" )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3317", "Si consigna infomacion de la retencion de segunda categoria, el tipo de operacion debe ser 2002");
+end
+
+
+// Código 3318
+rule "R3318"
+    when
+        $ctx : CpeContext( faltaBaseRetencion2da == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3318", "Debe consignar la base de la retencion de segunda categoria");
+end
+
+
+// Código 3319
+rule "R3319"
+    when
+        $ctx : CpeContext( sumaCuotasDistintaMontoNeto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3319", "La suma de las cuotas debe ser igual al Monto neto pendiente de pago.");
+end
+
+
+// Código 3330
+rule "R3330"
+    when
+        $ctx : CpeContext( tienePercepcion == true,
+                           formaPagoContado == false )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3330", "Solo debe consignar informacion de percepciones si la forma de pago es 'Contado'");
+end
+
+
+// Código 3461
+rule "R3461"
+    when
+        $ctx : CpeContext( formaPagoCuotaMismoPaymentTerms == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3461", "La forma de pago y/o numero de cuota no pueden estar contenidos en el mismo cac:PaymentTerms");
+end
+
+
+// Código 3462
+rule "R3462"
+    when
+        $ctx : CpeContext( tasaIgvDiferenteONoVigente == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3462", "La tasa del IGV debe ser la misma en todas las lineas o items del documento y debe corresponder con una tasa vigente.");
+end
+
+
+// Código 3496
+rule "R3496"
+    when
+        $ctx : CpeContext( codigoProductoSunatInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3496", "El Codigo producto de SUNAT no es valido");
+end
+
+
+// Código 3497
+rule "R3497"
+    when
+        $ctx : CpeContext( tipoContratoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3497", "El tipo de contrato debe ser 1-ventas o 2-adquisiciones");
+end
+
+
+// Código 3498
+rule "R3498"
+    when
+        $ctx : CpeContext( multiplesContratosColaboracion == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3498", "No se permite mas de un numero de contrato de colaboracion empresarial");
+end
+
+
+// Código 3499
+rule "R3499"
+    when
+        $ctx : CpeContext( contratoSinDatosComplementarios == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3499", "Si informa Numero de contrato, debe consignar el Tipo de contrato, la Descripcion de contrato y el Porcentaje de participacion");
+end
+
+
+// Código 3500
+rule "R3500"
+    when
+        $ctx : CpeContext( porcentajeParticipacionInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3500", "El Porcentaje de participacion no cumple con el formato o longitud especificada");
+end
+
+
+// Código 3501
+rule "R3501"
+    when
+        $ctx : CpeContext( numeroContratoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3501", "El Numero del contrato de colaboracion empresarial no cumple el formato o longitud establecida");
+end
+
+
+// Código 3502
+rule "R3502"
+    when
+        $ctx : CpeContext( descripcionContratoInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3502", "La Descripcion del contrato de colaboracion empresarial no cumple el formato o longitud establecida");
+end
+
+
+// Código 4005
+rule "R4005"
+    when
+        $ctx : CpeContext( documentTypeCodeGuiaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4005", "El DocumentTypeCode de las guias debe ser 09 o 31");
+end
+
+
+// Código 4006
+rule "R4006"
+    when
+        $ctx : CpeContext( idGuiaSinSerieNumero == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4006", "El ID de las guias debe tener informacion de la SERIE-NUMERO de guia.");
+end
+
+
+// Código 4008
+rule "R4008"
+    when
+        $ctx : CpeContext(
+            tipoOperacion != null,
+            tipoOperacion matches "1001|1002|1003|1004|2001|2002|2003|2004",
+            ( codigoDetraccion == null || codigoDetraccion.trim().length() == 0 )
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4008", "El tipo de operacion informado requiere datos de detraccion");
+end
+
+
+// Código 4009
+rule "R4009"
+    when
+        $ctx : CpeContext( documentTypeCodeDocRelacionadoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4009", "El DocumentTypeCode de Otros documentos relacionados tiene valores incorrectos.");
+end
+
+
+// Código 4010
+rule "R4010"
+    when
+        $ctx : CpeContext( idDocRelacionadoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4010", "El ID de los documentos relacionados no cumplen con el estandar.");
+end
+
+
+// Código 4013
+rule "R4013"
+    when
+        $ctx : CpeContext( tipoDocumentoReceptor == "6",
+                           rucReceptorNoActivo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4013", "El RUC del receptor no esta activo");
+end
+
+
+// Código 4014
+rule "R4014"
+    when
+        $ctx : CpeContext( tipoDocumentoReceptor == "6",
+                           rucReceptorNoHabido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4014", "El RUC del receptor no esta habido");
+end
+
+
+// Código 4041
+rule "R4041"
+    when
+        $ctx : CpeContext( codigoPais != null,
+                           codigoPais != "PE" )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4041", "El codigo de pais debe ser PE");
+end
+
+
+// Código 4052
+rule "R4052"
+    when
+        $ctx : CpeContext( guiaReferencia != null )
+        $guia : String(
+            this != null,
+            !this.matches("^[Tt]\\d{3}-\\d{1,8}$")
+        ) from $ctx.getGuiaReferencia()
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4052", "El ID de la guia de remision referenciada no cumple con el formato (Txxx-xxxxxxxx)");
+end
+
+
+// Código 4092
+rule "R4092"
+    when
+        $ctx : CpeContext( nombreComercialEmisorInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4092", "El nombre comercial del emisor no cumple con el formato establecido");
+end
+
+
+// Código 4093
+rule "R4093"
+    when
+        $ctx : CpeContext( ubigeoDomicilioFiscalInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4093", "El codigo de ubigeo del domicilio fiscal del emisor no es valido");
+end
+
+
+// Código 4094
+rule "R4094"
+    when
+        $ctx : CpeContext( direccionDomicilioFiscalInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4094", "La direccion completa y detallada del domicilio fiscal del emisor no cumple con el formato establecido");
+end
+
+
+// Código 4095
+rule "R4095"
+    when
+        $ctx : CpeContext( urbanizacionDomicilioFiscalInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4095", "La urbanizacion del domicilio fiscal del emisor no cumple con el formato establecido");
+end
+
+
+// Código 4096
+rule "R4096"
+    when
+        $ctx : CpeContext( provinciaDomicilioFiscalInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4096", "La provincia del domicilio fiscal del emisor no cumple con el formato establecido");
+end
+
+
+// Código 4097
+rule "R4097"
+    when
+        $ctx : CpeContext( departamentoDomicilioFiscalInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4097", "El departamento del domicilio fiscal del emisor no cumple con el formato establecido");
+end
+
+
+// Código 4098
+rule "R4098"
+    when
+        $ctx : CpeContext( distritoDomicilioFiscalInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4098", "El distrito del domicilio fiscal del emisor no cumple con el formato establecido");
+end
+
+
+// Código 4198
+rule "R4198"
+    when
+        $ctx : CpeContext( faltaCodigoLocalAnexo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4198", "El XML no contiene el tag o no existe informacion del codigo de local anexo del emisor");
+end
+
+
+// Código 4199
+rule "R4199"
+    when
+        $ctx : CpeContext( codigoLocalAnexoNoDeclarado == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4199", "El codigo de local anexo consignado no se encuentra declarado en el RUC");
+end
+
+
+// Código 4200
+rule "R4200"
+    when
+        $ctx : CpeContext( valorNoEnCatalogo13 == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4200", "Debe corresponder a algun valor valido establecido en el catalogo 13");
+end
+
+
+// Código 4202
+rule "R4202"
+    when
+        $ctx : CpeContext( numeroDamInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4202", "El valor ingresado como numero de DAM no cumple con el estandar");
+end
+
+
+// Código 4204
+rule "R4204"
+    when
+        $ctx : CpeContext(comprobanteFisicoNoAutorizadoContingencia == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4204", "Comprobante fisico no se encuentra autorizado como comprobante de contingencia");
+        $ctx.marcarError(4204);
+end
+
+// Código 4231
+rule "R4231"
+    when
+        $ctx : CpeContext( codigoUbigeoNoExiste == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4231", "El codigo de Ubigeo no existe en el listado.");
+end
+
+
+// Código 4233
+rule "R4233"
+    when
+        $ctx : CpeContext( ordenCompraInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4233", "El dato ingresado en order de compra no cumple con el formato establecido.");
+end
+
+
+// Código 4235
+rule "R4235"
+    when
+        $ctx : CpeContext(faltaNombreConcepto == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4235", "No existe informacion en el nombre del concepto.");
+        $ctx.marcarError(4235);
+end
+
+// Código 4236
+rule "R4236"
+    when
+        $ctx : CpeContext( direccionCompletaInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4236", "El dato ingresado como direccion completa y detallada no cumple con el formato establecido.");
+end
+
+
+// Código 4237
+rule "R4237"
+    when
+        $ctx : CpeContext( tasaTributoLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4237", "La tasa del tributo de la linea no corresponde al valor esperado");
+end
+
+
+// Código 4238
+rule "R4238"
+    when
+        $ctx : CpeContext( urbanizacionInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4238", "El dato ingresado como urbanizacion no cumple con el formato establecido");
+end
+
+
+// Código 4239
+rule "R4239"
+    when
+        $ctx : CpeContext( provinciaInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4239", "El dato ingresado como provincia no cumple con el formato establecido");
+end
+
+
+// Código 4240
+rule "R4240"
+    when
+        $ctx : CpeContext( departamentoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4240", "El dato ingresado como departamento no cumple con el formato establecido");
+end
+
+
+// Código 4241
+rule "R4241"
+    when
+        $ctx : CpeContext( distritoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4241", "El dato ingresado como distrito no cumple con el formato establecido");
+end
+
+
+// Código 4242
+rule "R4242"
+    when
+        $ctx : CpeContext( localAnexoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4242", "El dato ingresado como local anexo no cumple con el formato establecido");
+end
+
+
+// Código 4251
+rule "R4251"
+    when
+        $ctx : CpeContext( atributoListAgencyNameIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4251", "El dato ingresado como atributo @listAgencyName es incorrecto.");
+end
+
+
+// Código 4252
+rule "R4252"
+    when
+        $ctx : CpeContext( atributoListNameIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4252", "El dato ingresado como atributo @listName es incorrecto.");
+end
+
+
+// Código 4253
+rule "R4253"
+    when
+        $ctx : CpeContext( atributoListUriIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4253", "El dato ingresado como atributo @listURI es incorrecto.");
+end
+
+
+// Código 4254
+rule "R4254"
+    when
+        $ctx : CpeContext( atributoListIdProductoIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4254", "El atributo @listID del codigo de producto no corresponde al valor UNSPSC");
+end
+
+
+// Código 4255
+rule "R4255"
+    when
+        $ctx : CpeContext( atributoSchemeNameIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4255", "El dato ingresado como atributo @schemeName es incorrecto.");
+end
+
+
+// Código 4256
+rule "R4256"
+    when
+        $ctx : CpeContext( atributoSchemeAgencyNameIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4256", "El dato ingresado como atributo @schemeAgencyName es incorrecto.");
+end
+
+
+// Código 4257
+rule "R4257"
+    when
+        $ctx : CpeContext( atributoSchemeUriIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4257", "El dato ingresado como atributo @schemeURI es incorrecto.");
+end
+
+
+// Código 4258
+rule "R4258"
+    when
+        $ctx : CpeContext( atributoUnitCodeListIdIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4258", "El dato ingresado como atributo @unitCodeListID es incorrecto.");
+end
+
+
+// Código 4259
+rule "R4259"
+    when
+        $ctx : CpeContext( atributoUnitCodeListAgencyNameIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4259", "El dato ingresado como atributo @unitCodeListAgencyName es incorrecto.");
+end
+
+
+// Código 4260
+rule "R4260"
+    when
+        $ctx : CpeContext( atributoNameIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4260", "El dato ingresado como atributo @name es incorrecto.");
+end
+
+
+// Código 4261
+rule "R4261"
+    when
+        $ctx : CpeContext( atributoListSchemeUriIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4261", "El dato ingresado como atributo @listSchemeURI es incorrecto.");
+end
+
+
+// Código 4264
+rule "R4264"
+    when
+        $ctx : CpeContext( tipoOperacion == "1003",
+                           tieneLeyenda2007 == false )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4264", "El XML no contiene el codigo de leyenda 2007 para el tipo de operacion IVAP");
+end
+
+
+// Código 4265
+rule "R4265"
+    when
+        $ctx : CpeContext( esOperacionConDetraccion == true,
+                           tieneLeyenda2006 == false )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4265", "El XML no contiene el codigo de leyenda 2006 para tipo de operacion de detracciones");
+end
+
+
+// Código 4266
+rule "R4266"
+    when
+        $ctx : CpeContext( esVentaItinerante == true,
+                           tieneLeyenda2005 == false )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4266", "El XML no contiene el codigo de leyenda 2005 para el tipo de operacion Venta itinerante");
+end
+
+
+// Código 4268
+rule "R4268"
+    when
+        $ctx : CpeContext( cargoDescInvalidoNivelItem == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4268", "El dato ingresado como cargo/descuento no es valido a nivel de item.");
+end
+
+
+// Código 4269
+rule "R4269"
+    when
+        $ctx : CpeContext( codigoProductoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4269", "El dato ingresado como codigo de producto no cumple con el formato establecido.");
+end
+
+
+// Código 4270
+rule "R4270"
+    when
+        $ctx : CpeContext(detalleViajeFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4270", "El dato ingresado como detalle del viaje no cumple con el formato establecido.");
+        $ctx.marcarError(4270);
+end
+
+
+// Código 4271
+rule "R4271"
+    when
+        $ctx : CpeContext(descripcionTramoFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4271", "El dato ingresado como descripcion del tramo no cumple con el formato establecido.");
+        $ctx.marcarError(4271);
+end
+
+// Código 4272
+rule "R4272"
+    when
+        $ctx : CpeContext(valorReferenciaTramoVirtualFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4272", "El dato ingresado como valor referencia del tramo virtual no cumple con el formato establecido.");
+        $ctx.marcarError(4272);
+end
+
+
+// Código 4273
+rule "R4273"
+    when
+        $ctx : CpeContext(configuracionVehicularFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4273", "El dato ingresado como configuracion vehicular no cumple con el formato establecido.");
+        $ctx.marcarError(4273);
+end
+
+// Código 4274
+rule "R4274"
+    when
+        $ctx : CpeContext(tipoCargaUtilIncorrecto == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4274", "El dato ingresado como tipo de carga util es incorrecto.");
+        $ctx.marcarError(4274);
+end
+
+// Código 4275
+rule "R4275"
+    when
+        $ctx : CpeContext(faltaValorCargaTM == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4275", "El XML no contiene el tag o no existe informacion del valor de la carga en TM.");
+        $ctx.marcarError(4275);
+end
+
+// Código 4276
+rule "R4276"
+    when
+        $ctx : CpeContext(valorCargaTMFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4276", "El dato ingresado como valor de la carga en TM no cumple con el formato establecido.");
+        $ctx.marcarError(4276);
+end
+
+// Código 4277
+rule "R4277"
+    when
+        $ctx : CpeContext(unidadMedidaCargaVehiculoNoCorresponde == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4277", "El dato ingresado como unidad de medida de la carga del vehiculo no corresponde al valor esperado.");
+        $ctx.marcarError(4277);
+end
+
+
+// Código 4278
+rule "R4278"
+    when
+        $ctx : CpeContext(valorReferencialCargaUtilNominalFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4278", "El dato ingresado como valor referencial de carga util nominal no cumple con el formato establecido.");
+        $ctx.marcarError(4278);
+end
+
+
+// Código 4280
+rule "R4280"
+    when
+        $ctx : CpeContext(valorConceptoLineaFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4280", "El dato ingresado como valor del concepto de la linea no cumple con el formato establecido.");
+        $ctx.marcarError(4280);
+end
+
+
+// Código 4281
+rule "R4281"
+    when
+        $ctx : CpeContext(cantidadConceptoLineaFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4281", "El dato ingresado como cantidad del concepto de la linea no cumple con el formato establecido.");
+        $ctx.marcarError(4281);
+end
+
+
+// Código 4282
+rule "R4282"
+    when
+        $ctx : CpeContext(esFactura == true, fechaIngresoMayorFechaSalidaEstablecimiento == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4282", "La fecha de ingreso al establecimiento es mayor a la fecha de salida al establecimiento.");
+        $ctx.marcarError(4282);
+end
+
+
+// Código 4291
+rule "R4291"
+    when
+        $ctx : CpeContext( cargoDescInvalidoNivelGlobal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4291", "El dato ingresado como cargo/descuento no es valido a nivel global.");
+end
+
+
+// Código 4313
+rule "R4313"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4313", "El dato ingresado como unidad de medida de los dias de permanencia no corresponde al valor esperado.");
+end
+
+
+// Código 4318
+rule "R4318"
+    when
+        $ctx : CpeContext( taxAmountItemNoCoincide == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4318", "El dato ingresado en el campo cac:TaxSubtotal/cbc:TaxAmount del item no coincide con el valor calculado");
+end
+
+
+// Código 4320
+rule "R4320"
+    when
+        $ctx : CpeContext( unidadMedidaNoCorresponde == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4320", "El dato ingresado como unidad de medida no corresponde al valor esperado");
+end
+
+
+// Código 4331
+rule "R4331"
+    when
+        $ctx : CpeContext( faltaCodigoProductoSunatOGtin == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4331", "Debe consignar obligatoriamente Codigo de producto SUNAT o Codigo de producto GTIN");
+end
+
+
+// Código 4332
+rule "R4332"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4332", "El Código producto de SUNAT no es válido");
+end
+
+
+// Código 4333
+rule "R4333"
+    when
+        $ctx : CpeContext( gs1SinTipoEstructura == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4333", "Si utiliza el estandar GS1 debe especificar el tipo de estructura GTIN");
+end
+
+
+// Código 4334
+rule "R4334"
+    when
+        $ctx : CpeContext( codigoProductoGs1Invalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4334", "El codigo de producto GS1 no cumple el estandar");
+end
+
+
+// Código 4335
+rule "R4335"
+    when
+        $ctx : CpeContext( tipoEstructuraGs1Invalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4335", "El tipo de estructura GS1 no tiene un valor permitido");
+end
+
+
+// Código 4337
+rule "R4337"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4337", "El Codigo de producto SUNAT debe especificarse como minimo al tercer nivel jerarquico (a nivel de clase del codigo UNSPSC)");
+end
+
+
+// Código 4338
+rule "R4338"
+    when
+        $ctx : CpeContext( registrationNameEmisorInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4338", "RegistrationName - El nombre o razon social del emisor no cumple con el estandar");
+end
+
+
+// Código 4366
+rule "R4366"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4366", "El XML no contiene tag o no existe información de la fecha del concepto por linea");
+end
+
+
+// Código 4439
+rule "R4439"
+    when
+        $ctx : CpeContext( emisorNoEnPadronTasaEspecialIgv == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4439", "El emisor no se encuentra en el Padron de Tasa especial del IGV - Restaurantes y hoteles");
+end
+

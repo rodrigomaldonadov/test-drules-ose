@@ -1,0 +1,7 @@
+rule "R1078"
+    when
+        $ctx : CpeContext( emisorObligadoSeeSol == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1078", "El emisor no se encuentra autorizado a emitir en el SEE-Desde los sistemas del contribuyente");
+end

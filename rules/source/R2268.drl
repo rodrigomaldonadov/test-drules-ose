@@ -1,0 +1,7 @@
+rule "R2268"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2268", "El codigo del tributo es invalido");
+end

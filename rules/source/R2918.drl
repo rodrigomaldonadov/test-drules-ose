@@ -1,0 +1,7 @@
+rule "R2918"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2918", "La dirección completa y detallada del domicilio fiscal del proveedor no cumple con el formato establecido");
+end

@@ -1,0 +1,7 @@
+rule "R3292"
+    when
+        $ctx : CpeContext( totalImpuestosLineaNoCoincide == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3292", "El importe total de impuestos por linea no coincide con la sumatoria de los impuestos por linea.");
+end

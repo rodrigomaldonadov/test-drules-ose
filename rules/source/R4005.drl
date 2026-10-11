@@ -1,0 +1,7 @@
+rule "R4005"
+    when
+        $ctx : CpeContext( guiasRemisionTipoDocValido == false )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4005", "El DocumentTypeCode de las guias de remision debe ser 09 o 31");
+end

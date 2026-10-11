@@ -1,0 +1,8 @@
+rule "R2642"
+    when
+        $ctx : CpeContext( tieneLineasExportacion == true,
+                           exportacionConAfectacionIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2642", "Operaciones de exportacion, deben consignar Tipo Afectacion igual a 40");
+end

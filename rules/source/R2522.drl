@@ -1,0 +1,7 @@
+rule "R2522"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2522", "No existe información del documento del anticipo.");
+end

@@ -1,0 +1,7 @@
+rule "R3141"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3141", "El XML no contiene el tag de fecha de ingreso del pais.");
+end

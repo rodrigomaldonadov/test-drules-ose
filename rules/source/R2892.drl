@@ -1,0 +1,7 @@
+rule "R2892"
+    when
+        $ctx : CpeContext( formatoIcbperInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2892", "El valor del tag no cumple con el formato establecido");
+end

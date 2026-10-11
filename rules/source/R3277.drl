@@ -1,0 +1,7 @@
+rule "R3277"
+    when
+        $ctx : CpeContext( sumaVentaGravadasLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3277", "La sumatoria del total valor de venta - operaciones gravadas de linea no corresponden al total");
+end

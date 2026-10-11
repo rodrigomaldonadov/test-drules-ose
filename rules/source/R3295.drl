@@ -1,0 +1,7 @@
+rule "R3295"
+    when
+        $ctx : CpeContext( importeIvapNoCorresponde == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3295", "El importe del IVAP no corresponden al determinado por la informacion consignada.");
+end

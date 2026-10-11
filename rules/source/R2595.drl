@@ -1,0 +1,7 @@
+rule "R2595"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2595", "Falta consignar informacion del CUSPP");
+end

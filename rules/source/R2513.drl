@@ -1,0 +1,7 @@
+rule "R2513"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2513", "Dato no cumple con formato de acuerdo al tipo de documento");
+end

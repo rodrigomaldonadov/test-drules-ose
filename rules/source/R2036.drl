@@ -1,0 +1,7 @@
+rule "R2036"
+    when
+        $ctx : CpeContext( codigoTributoLineaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2036", "El codigo del tributo es invalido");
+end

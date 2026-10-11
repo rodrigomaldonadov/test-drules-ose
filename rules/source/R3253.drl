@@ -1,0 +1,7 @@
+rule "R3253"
+    when
+        $ctx : CpeContext( montoCuotaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3253", "El Monto del pago unico o de las cuotas no cumple el formato definido");
+end

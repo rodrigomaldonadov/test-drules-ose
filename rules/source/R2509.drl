@@ -1,0 +1,7 @@
+rule "R2509"
+    when
+        $ctx : CpeContext( totalAnticiposDifiere == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2509", "Total de anticipos diferente a los montos anticipados por documento.");
+end

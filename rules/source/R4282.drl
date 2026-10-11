@@ -1,0 +1,8 @@
+rule "R4282"
+    when
+        $ctx : CpeContext(esFactura == true, fechaIngresoMayorFechaSalidaEstablecimiento == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4282", "La fecha de ingreso al establecimiento es mayor a la fecha de salida al establecimiento.");
+        $ctx.marcarError(4282);
+end

@@ -1,0 +1,7 @@
+rule "R2512"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2512", "No existe información de serie o número.");
+end

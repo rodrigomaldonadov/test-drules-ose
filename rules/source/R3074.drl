@@ -1,0 +1,7 @@
+rule "R3074"
+    when
+        $ctx : CpeContext( montoCargoFiseCero == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3074", "El monto del cargo para el para FISE debe ser igual mayor a 0.00");
+end

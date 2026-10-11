@@ -1,0 +1,8 @@
+rule "R2641"
+    when
+        $ctx : CpeContext( esOperacionGratuita == true,
+                           totalValorVentaGratuitas <= 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2641", "Operacion gratuita, debe consignar Total valor venta - operaciones gratuitas mayor a cero");
+end

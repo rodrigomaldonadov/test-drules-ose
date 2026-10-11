@@ -1,0 +1,7 @@
+rule "R3067"
+    when
+        $ctx : CpeContext( codigoTributoRepetidoItem == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3067", "El codigo de tributo no debe repetirse a nivel de item");
+end

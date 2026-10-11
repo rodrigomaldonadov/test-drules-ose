@@ -1,0 +1,8 @@
+rule "R4285"
+    when
+        $ctx : CpeContext(emisorNoRegistradoHabilitadoAgentePercepcion == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4285", "El emisor a la fecha no se encuentra registrado o habilitado con la condicion de Agente de percepcion.");
+        $ctx.marcarError(4285);
+end

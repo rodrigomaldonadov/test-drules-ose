@@ -1,0 +1,11 @@
+rule "R4052"
+    when
+        $ctx : CpeContext( guiaReferencia != null )
+        $guia : String(
+            this != null,
+            !this.matches("^[Tt]\\d{3}-\\d{1,8}$")
+        ) from $ctx.getGuiaReferencia()
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4052", "El ID de la guia de remision referenciada no cumple con el formato (Txxx-xxxxxxxx)");
+end

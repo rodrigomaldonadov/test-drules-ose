@@ -1,0 +1,7 @@
+rule "R2619"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2619", "La tasa de retención enviada no corresponde con el régimen de retención.");
+end

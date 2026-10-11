@@ -1,0 +1,7 @@
+rule "R3213"
+    when
+        $ctx : CpeContext( pagoAnticipadoSinDocumento == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3213", "El comprobante contiene un pago anticipado pero no se ha consignado el documento que se realizo el anticipo");
+end

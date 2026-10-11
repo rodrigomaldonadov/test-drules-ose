@@ -1,0 +1,7 @@
+rule "R3207"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3207", "Comprobante físico no se encuentra autorizado");
+end

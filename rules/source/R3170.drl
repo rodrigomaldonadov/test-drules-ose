@@ -1,0 +1,7 @@
+rule "R3170"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3170", "El XML no contiene el tag de Carta Porte Aéreo: Lugar de destino - Código de ubigeo");
+end

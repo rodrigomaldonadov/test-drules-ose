@@ -1,0 +1,7 @@
+rule "R3116"
+    when
+        $ctx : CpeContext( faltaUbigeoOrigenTransporte == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3116", "El XML no contiene el tag o no existe informacion del ubigeo de punto de origen en Detracciones - Servicio de transporte de carga.");
+end

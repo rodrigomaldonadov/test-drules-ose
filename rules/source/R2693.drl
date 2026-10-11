@@ -1,0 +1,7 @@
+rule "R2693"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2693", "El XML no contiene el tag o no existe información del número de documento relacionado");
+end

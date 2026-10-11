@@ -1,0 +1,8 @@
+rule "R2025"
+    when
+        $ctx : CpeContext( lineas != null )
+        $linea : LineaContext(!DecimalUtils.formatoValido(cantidad, 12, 10)) from $ctx.getLineas()
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2025", "InvoicedQuantity El dato ingresado no cumple con el estandar");
+end

@@ -1,0 +1,9 @@
+rule "R2802"
+    when
+        $ctx : CpeContext( tipoDocumentoReceptor in ("4","7","0","A","B","C","D","E","G"),
+                           numeroDocumentoReceptor != null,
+                           numeroDocumentoReceptor not matches "^[a-zA-Z0-9]{1,15}$" )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2802", "El dato ingresado como numero de documento de identidad del receptor no cumple con el formato establecido");
+end

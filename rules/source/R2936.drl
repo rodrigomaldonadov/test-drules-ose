@@ -1,0 +1,7 @@
+rule "R2936"
+    when
+        $ctx : CpeContext( unidadMedidaNoEsperada == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2936", "El dato ingresado como unidad de medida no corresponde al valor esperado");
+end

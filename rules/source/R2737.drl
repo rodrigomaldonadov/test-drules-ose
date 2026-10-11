@@ -1,0 +1,7 @@
+rule "R2737"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2737", "El XML no contiene el tag o no existe información de la fecha de pago del documento Relacionado");
+end

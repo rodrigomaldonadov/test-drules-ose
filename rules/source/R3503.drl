@@ -1,0 +1,7 @@
+rule "R3503"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3503", "El monto consignado supera al importe documento que modifica");
+end

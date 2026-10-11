@@ -1,0 +1,7 @@
+rule "R2112"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2112", "CustomizationID - La version del documento no es correcta");
+end

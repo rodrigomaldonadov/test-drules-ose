@@ -1,0 +1,7 @@
+rule "R4254"
+    when
+        $ctx : CpeContext( atributoListIDMonedaIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4254", "El dato ingresado como atributo @listID es incorrecto.");
+end

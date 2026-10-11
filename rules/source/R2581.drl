@@ -1,0 +1,7 @@
+rule "R2581"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2581", "No puede dar de baja 'Recibos de servicios publicos' por SEE-Desde los sistemas del contribuyente");
+end

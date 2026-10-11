@@ -1,0 +1,7 @@
+rule "R3221"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3221", "El dato ingresado como codigo de tributo global es invalido para tipo de nota");
+end

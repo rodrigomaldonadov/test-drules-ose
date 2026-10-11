@@ -1,0 +1,7 @@
+rule "R3129"
+    when
+        $ctx : CpeContext( codigoBbssDetraccionInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3129", "El dato ingresado como codigo de BBSS de detraccion no corresponde al valor esperado.");
+end

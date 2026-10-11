@@ -1,0 +1,8 @@
+rule "R4288"
+    when
+        $ctx : CpeContext(valorVentaItemDifiere == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4288", "El valor de venta por ítem difiere de los importes consignados.");
+        $ctx.marcarError(4288);
+end

@@ -1,0 +1,7 @@
+rule "R3313"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3313", "Si consigna información del codigo bien sujeto a detraccion, debe informar la cuenta de BN y montos de la detraccion");
+end

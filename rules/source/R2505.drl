@@ -1,0 +1,7 @@
+rule "R2505"
+    when
+        $ctx : CpeContext( tipoDocReferenciaAnticipoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2505", "Codigo de documento de referencia debe ser 02 o 03.");
+end

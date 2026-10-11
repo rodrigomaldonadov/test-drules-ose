@@ -1,0 +1,7 @@
+rule "R2238"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2238", "LineID - El dato ingresado no cumple con el estandar");
+end

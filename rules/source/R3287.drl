@@ -1,0 +1,7 @@
+rule "R3287"
+    when
+        $ctx : CpeContext( totalAnticiposSinDescuentosGlobales == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3287", "Si se informa 'Total de anticipos' debe consignar los descuentos globales por anticipo con monto mayor a cero");
+end

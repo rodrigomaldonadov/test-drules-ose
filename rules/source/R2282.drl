@@ -1,0 +1,7 @@
+rule "R2282"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2282", "Existe documento ya informado anteriormente");
+end

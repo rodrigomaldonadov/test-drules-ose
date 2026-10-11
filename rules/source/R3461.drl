@@ -1,0 +1,7 @@
+rule "R3461"
+    when
+        $ctx : CpeContext( formaPagoCuotaMismoPaymentTerms == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3461", "La forma de pago y/o numero de cuota no pueden estar contenidos en el mismo cac:PaymentTerms");
+end

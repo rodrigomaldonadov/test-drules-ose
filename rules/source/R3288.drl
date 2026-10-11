@@ -1,0 +1,7 @@
+rule "R3288"
+    when
+        $ctx : CpeContext( subtotal == null )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3288", "Debe consignar el Total Valor de Venta");
+end

@@ -1,0 +1,10 @@
+rule "R3297"
+    when
+        $ctx : CpeContext(
+            totalOtrosTributos != null,
+            totalOtrosTributos.compareTo( java.math.BigDecimal.ZERO ) < 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3297", "La sumatoria del monto base - Otros tributos de linea no corresponden al total");
+end

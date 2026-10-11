@@ -1,0 +1,7 @@
+rule "R2986"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2986", "Solo se acepta informacion de percepcion para nuevas boletas.");
+end

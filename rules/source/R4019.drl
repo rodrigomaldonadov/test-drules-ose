@@ -1,0 +1,8 @@
+rule "R4019"
+    when
+        $ctx : CpeContext(calculoIgvInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4019", "El calculo del IGV no es correcto");
+        $ctx.marcarError(4019);
+end

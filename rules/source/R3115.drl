@@ -1,0 +1,7 @@
+rule "R3115"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3115", "El dato ingresado como unidad de medida de cantidad de especie vendidas no corresponde al valor esperado.");
+end

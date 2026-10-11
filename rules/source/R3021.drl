@@ -1,0 +1,7 @@
+rule "R3021"
+    when
+        $ctx : CpeContext( montoTotalImpuestosLineaInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3021", "El dato ingresado en el monto total de impuestos por linea no cumple con el formato establecido");
+end

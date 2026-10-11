@@ -1,0 +1,11 @@
+rule "R4302"
+    when
+        $ctx : CpeContext(
+            eval( esBoleta == true || esNotaCredito == true || esNotaDebito == true ),
+            importeIvapNoCorresponde == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4302", "El importe del IVAP no corresponden al determinado por la informacion consignada.");
+        $ctx.marcarError(4302);
+end

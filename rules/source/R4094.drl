@@ -1,0 +1,7 @@
+rule "R4094"
+    when
+        $ctx : CpeContext( direccionDomicilioFiscalInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4094", "La direccion completa y detallada del domicilio fiscal del emisor no cumple con el formato establecido");
+end

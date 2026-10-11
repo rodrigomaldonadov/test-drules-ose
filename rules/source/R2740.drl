@@ -1,0 +1,7 @@
+rule "R2740"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2740", "El dato ingresado en el Importe retenido debe ser numérico mayor a cero");
+end

@@ -1,0 +1,7 @@
+rule "R3318"
+    when
+        $ctx : CpeContext( faltaBaseRetencion2da == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3318", "Debe consignar la base de la retencion de segunda categoria");
+end

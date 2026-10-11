@@ -1,0 +1,7 @@
+rule "R3122"
+    when
+        $ctx : CpeContext( faltaMontoReferencialTransporte == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3122", "El XML no contiene el tag o no existe informacion del monto del valor referencial en Detracciones - Servicios de transporte de carga.");
+end

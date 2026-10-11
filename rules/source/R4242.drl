@@ -1,0 +1,7 @@
+rule "R4242"
+    when
+        $ctx : CpeContext( localAnexoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4242", "El dato ingresado como local anexo no cumple con el formato establecido");
+end

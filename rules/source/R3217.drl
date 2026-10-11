@@ -1,0 +1,7 @@
+rule "R3217"
+    when
+        $ctx : CpeContext( faltaRucEmisorAnticipo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3217", "Debe consignar de RUC del emisor del comprobante de anticipo");
+end

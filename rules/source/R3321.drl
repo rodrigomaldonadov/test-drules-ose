@@ -1,0 +1,7 @@
+rule "R3321"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3321", "La fecha de la cuota debe ser mayor a la fecha de emisión de la factura");
+end

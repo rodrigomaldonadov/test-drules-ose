@@ -1,0 +1,7 @@
+rule "R3024"
+    when
+        $ctx : CpeContext( taxTotalRepetidoTotales == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3024", "El tag cac:TaxTotal no debe repetirse a nivel de totales");
+end

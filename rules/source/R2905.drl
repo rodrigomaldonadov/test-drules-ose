@@ -1,0 +1,7 @@
+rule "R2905"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2905", "El distrito del domicilio fiscal del emisor no cumple con el formato establecido");
+end

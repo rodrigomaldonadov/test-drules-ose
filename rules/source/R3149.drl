@@ -1,0 +1,7 @@
+rule "R3149"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3149", "El XML no contiene el tag de Proveedores Estado: N° de Contrato");
+end

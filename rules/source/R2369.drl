@@ -1,0 +1,7 @@
+rule "R2369"
+    when
+    	$ctx : CpeContext(priceAmountValorFormatoInvalido == true )
+    	$res : ResultadoValidacion()
+    then
+        $res.addError("2369", "El dato ingresado en PriceAmount del Valor de venta unitario por item no cumple con el formato establecido");
+end

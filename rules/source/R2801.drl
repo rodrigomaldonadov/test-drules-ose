@@ -1,0 +1,11 @@
+rule "R2801"
+    when
+        $ctx : CpeContext(
+            tipoDocCliente == "1",
+            docCliente != null,
+            docCliente not matches "\\d{8}"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2801", "El DNI ingresado no cumple con el estandar.");
+end

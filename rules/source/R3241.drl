@@ -1,0 +1,10 @@
+rule "R3241"
+    when
+        $ctx : CpeContext(
+            tipoDocumentoReceptor != null,
+            totalExonerado.compareTo( java.math.BigDecimal.ZERO ) < 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3241", "Para el tipo de operacion 2100, 2101 y 2102 (Creditos) debe consignar Numero de contrato, Fecha de otorgamiento y Monto del credito otorgado (capital)");
+end

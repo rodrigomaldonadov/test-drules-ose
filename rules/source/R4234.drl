@@ -1,0 +1,8 @@
+rule "R4234"
+    when
+        $ctx : CpeContext(codigoProductoFormatoInvalido == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4234", "El codigo de producto no cumple con el formato establecido");
+        $ctx.marcarError(4234);
+end

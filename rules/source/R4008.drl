@@ -1,0 +1,11 @@
+rule "R4008"
+    when
+        $ctx : CpeContext(
+            tipoOperacion != null,
+            tipoOperacion matches "1001|1002|1003|1004|2001|2002|2003|2004",
+            ( codigoDetraccion == null || codigoDetraccion.trim().length() == 0 )
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4008", "El tipo de operacion informado requiere datos de detraccion");
+end

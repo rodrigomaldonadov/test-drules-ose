@@ -1,0 +1,9 @@
+rule "R1037"
+    when
+        $ctx : CpeContext(
+            razonSocialEmisor == null || razonSocialEmisor.trim().length() == 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1037", "El XML no contiene el tag o no existe informacion de RegistrationName del emisor del documento");
+end

@@ -1,0 +1,7 @@
+rule "R3327"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3327", "No esta permitido referenciar el Código del régimen de percepción con el regimen del documento relacionado.");
+end

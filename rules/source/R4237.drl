@@ -1,0 +1,7 @@
+rule "R4237"
+    when
+        $ctx : CpeContext( tasaTributoLineaIncorrecta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4237", "La tasa del tributo de la linea no corresponde al valor esperado");
+end

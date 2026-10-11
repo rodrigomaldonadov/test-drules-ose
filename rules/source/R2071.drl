@@ -1,0 +1,7 @@
+rule "R2071"
+    when
+        $ctx : CpeContext( monedaInconsistente == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2071", "La moneda debe ser la misma en todo el documento. Salvo las percepciones que solo son en moneda nacional");
+end

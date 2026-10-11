@@ -1,0 +1,8 @@
+rule "R3249"
+    when
+        $ctx : CpeContext( esCredito == true,
+                           sinCuotasDePago == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3249", "Si el tipo de transaccion es al Credito debe existir al menos informacion de una cuota de pago");
+end

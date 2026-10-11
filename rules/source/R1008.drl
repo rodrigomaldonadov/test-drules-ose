@@ -1,0 +1,9 @@
+rule "R1008"
+    when
+        $ctx : CpeContext(
+            schemeIdEmisor == null || schemeIdEmisor.trim().length() == 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1008", "El XML no contiene el tag o no existe informacion en tipo de documento del emisor.");
+end

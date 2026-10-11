@@ -1,0 +1,8 @@
+rule "R3284"
+    when
+        $ctx : CpeContext( tieneLeyenda2002 == true,
+                           totalValorVentaExoneradas <= 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3284", "Si se utiliza la leyenda con codigo 2002, el total de operaciones exoneradas debe ser mayor a 0.00");
+end

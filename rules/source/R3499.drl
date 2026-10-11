@@ -1,0 +1,7 @@
+rule "R3499"
+    when
+        $ctx : CpeContext( contratoSinDatosComplementarios == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3499", "Si informa Numero de contrato, debe consignar el Tipo de contrato, la Descripcion de contrato y el Porcentaje de participacion");
+end

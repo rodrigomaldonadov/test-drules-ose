@@ -1,0 +1,7 @@
+rule "R3304"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3304", "La moneda del monto para el redondeo debe ser PEN");
+end

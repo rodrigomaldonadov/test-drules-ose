@@ -1,0 +1,7 @@
+rule "R2896"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2896", "El código ingresado como estado del ítem no existe en el catálogo");
+end

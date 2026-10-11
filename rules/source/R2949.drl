@@ -1,0 +1,7 @@
+rule "R2949"
+    when
+        $ctx : CpeContext( icbperNoVigente == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2949", "El impuesto ICBPER no se encuentra vigente");
+end

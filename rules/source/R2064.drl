@@ -1,0 +1,7 @@
+rule "R2064"
+    when
+        $ctx : CpeContext( chargeTotalAmountFormatoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2064", "El dato ingresado en ChargeTotalAmount no cumple con el formato establecido");
+end

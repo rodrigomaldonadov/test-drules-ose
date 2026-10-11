@@ -1,0 +1,7 @@
+rule "R3030"
+    when
+        $ctx : CpeContext( faltaCodigoLocalAnexoEmisor == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3030", "El XML no contiene el tag o no existe informacion del codigo de local anexo del emisor");
+end

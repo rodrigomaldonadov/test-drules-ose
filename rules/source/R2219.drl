@@ -1,0 +1,7 @@
+rule "R2219"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2219", "El XML no contiene el tag AdditionalAccountID del emisor del documento");
+end

@@ -1,0 +1,7 @@
+rule "R3072"
+    when
+        $ctx : CpeContext( faltaCodigoMotivoCargDescGlobal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3072", "El XML no contiene el tag o no existe informacion de codigo de motivo de cargo/descuento global.");
+end

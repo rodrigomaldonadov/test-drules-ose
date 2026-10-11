@@ -1,0 +1,7 @@
+rule "R4098"
+    when
+        $ctx : CpeContext( distritoDomicilioFiscalInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4098", "El distrito del domicilio fiscal del emisor no cumple con el formato establecido");
+end

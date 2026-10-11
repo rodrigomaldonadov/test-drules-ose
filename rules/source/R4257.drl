@@ -1,0 +1,7 @@
+rule "R4257"
+    when
+        $ctx : CpeContext( atributoSchemeUriIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4257", "El dato ingresado como atributo @schemeURI es incorrecto.");
+end

@@ -1,0 +1,7 @@
+rule "R2594"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2594", "El tipo de documento modificado por la nota electronica no es valido");
+end

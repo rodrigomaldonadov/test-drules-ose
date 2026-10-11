@@ -1,0 +1,7 @@
+rule "R3059"
+    when
+        $ctx : CpeContext( faltaCodigoTributo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3059", "El XML no contiene el tag o no existe informacion de codigo de tributo.");
+end

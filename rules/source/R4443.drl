@@ -1,0 +1,7 @@
+rule "R4443"
+    when
+        $ctx : ResumenContext( fueraDePlazo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4443", "El comprobante fue informado fuera del plazo establecido");
+end

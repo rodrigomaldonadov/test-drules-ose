@@ -1,0 +1,7 @@
+rule "R3223"
+    when
+        $ctx : CpeContext( combinacionTributosNoPermitida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3223", "La combinacion de tributos no es permitida");
+end

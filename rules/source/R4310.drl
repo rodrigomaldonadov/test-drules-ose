@@ -1,0 +1,11 @@
+rule "R4310"
+    when
+        $ctx : CpeContext(
+            esBoleta == true,
+            valorVentaImpuestosNoConcuerda == true
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addObservacion("4310", "La sumatoria del Total del valor de venta más los impuestos no concuerda con la base imponible.");
+        $ctx.marcarError(4310);
+end

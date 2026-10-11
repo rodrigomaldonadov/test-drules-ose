@@ -1,0 +1,7 @@
+rule "R3216"
+    when
+        $ctx : CpeContext( faltaIdPagoComprobanteAnticipo == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3216", "Falta identificador del pago del comprobante para relacionarlo con el monto de anticipo");
+end

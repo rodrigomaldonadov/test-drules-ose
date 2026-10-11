@@ -1,0 +1,7 @@
+rule "R3065"
+    when
+        $ctx : CpeContext( faltaFechaConceptoLinea == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3065", "El XML no contiene tag de la fecha del concepto por linea.");
+end

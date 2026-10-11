@@ -1,0 +1,7 @@
+rule "R3007"
+    when
+        $ctx : CpeContext( codigoTributoGlobalNoEsperado == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3007", "El dato ingresado como codigo de tributo global no corresponde al valor esperado");
+end

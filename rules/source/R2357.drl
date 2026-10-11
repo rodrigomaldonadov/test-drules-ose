@@ -1,0 +1,7 @@
+rule "R2357"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2357", "No debe existir un elemento sac:BillingPayment a nivel de item con el mismo valor de cbc:InstructionID");
+end

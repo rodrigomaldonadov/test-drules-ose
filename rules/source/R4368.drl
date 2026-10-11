@@ -1,0 +1,7 @@
+rule "R4368"
+    when
+        $ctx : CpeContext( monedaNotaDistintaDocumentoModifica == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4368", "El tipo de moneda de la nota debe ser el mismo que el declarado en el documento que modifica");
+end

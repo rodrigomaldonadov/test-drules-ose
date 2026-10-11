@@ -1,0 +1,7 @@
+rule "R2548"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2548", "El valor del país inválido.");
+end

@@ -1,0 +1,8 @@
+rule "R4024"
+    when
+        $ctx : CpeContext(leyenda2003SinOperacionesExoneradas == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4024", "Si se utiliza la leyenda con codigo 2003, el total de operaciones exoneradas debe ser mayor a 0.00");
+        $ctx.marcarError(4024);
+end

@@ -1,0 +1,7 @@
+rule "R3109"
+    when
+        $ctx : CpeContext( factorBaseOtrosTributosNoCorresponde == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3109", "El producto del factor y monto base de la afectacion de otros tributos no corresponde al monto de afectacion de linea.");
+end

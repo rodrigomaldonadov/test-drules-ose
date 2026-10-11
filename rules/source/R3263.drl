@@ -1,0 +1,7 @@
+rule "R3263"
+    when
+        $ctx : CpeContext( importeRetencionIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3263", "El Importe de la retencion no tiene el valor correcto");
+end

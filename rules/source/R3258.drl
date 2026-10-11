@@ -1,0 +1,11 @@
+rule "R3258"
+    when
+        $ctx : CpeContext(
+            formaPago != null,
+            formaPago.trim().length() > 0,
+            formaPago not matches "Contado|Credito"
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3258", "El valor de la forma de pago no es valido (Contado o Credito)");
+end

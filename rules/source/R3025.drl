@@ -1,0 +1,7 @@
+rule "R3025"
+    when
+        $ctx : CpeContext( factorCargDescGlobalInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3025", "El dato ingresado en factor de cargo o descuento global no cumple con el formato establecido.");
+end

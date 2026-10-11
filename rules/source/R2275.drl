@@ -1,0 +1,7 @@
+rule "R2275"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2275", "Si el codigo de tributo es 2000, el nombre del tributo debe ser ISC");
+end

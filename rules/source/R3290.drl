@@ -1,0 +1,7 @@
+rule "R3290"
+    when
+        $ctx : CpeContext( cargoDescItemDifiere == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3290", "El valor de cargo/descuento por item difiere de los importes consignados.");
+end

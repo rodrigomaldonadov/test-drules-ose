@@ -1,0 +1,731 @@
+// Código 1001
+rule "R1001"
+    when
+        $ctx : CpeContext( formatoSerieCorrelativoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1001", "ID - El dato SERIE-CORRELATIVO no cumple con el formato de acuerdo al tipo de comprobante");
+end
+
+
+// Código 1033
+rule "R1033"
+    when
+        $ctx : CpeContext( duplicado == true, esFactura == false )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1033", "El comprobante fue registrado previamente con otros datos");
+end
+
+
+// Código 1034
+rule "R1034"
+    when
+        $ctx : CpeContext( rucArchivoDistintoXml == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1034", "Numero de RUC del nombre del archivo no coincide con el consignado en el contenido del archivo XML");
+end
+
+
+// Código 1037
+rule "R1037"
+    when
+        $ctx : CpeContext(
+            razonSocialEmisor == null || razonSocialEmisor.trim().length() == 0
+        )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1037", "El XML no contiene el tag o no existe informacion de RegistrationName del emisor del documento");
+end
+
+
+// Código 1038
+rule "R1038"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1038", "RegistrationName - El nombre o razon social del emisor no cumple con el estandar");
+end
+
+
+// Código 1049
+rule "R1049"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1049", "ID - Serie y Número del archivo no coincide con el consignado en el contenido del XML.");
+end
+
+
+// Código 2110
+rule "R2110"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2110", "UBLVersionID - La versión del UBL no es correcta");
+end
+
+
+// Código 2111
+rule "R2111"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2111", "El XML no contiene el tag o no existe informacion de UBLVersionID");
+end
+
+
+// Código 2112
+rule "R2112"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2112", "CustomizationID - La version del documento no es correcta");
+end
+
+
+// Código 2113
+rule "R2113"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2113", "El XML no contiene el tag o no existe informacion de CustomizationID");
+end
+
+
+// Código 2133
+rule "R2133"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2133", "RegistrationName - El dato ingresado no cumple con el estandar");
+end
+
+
+// Código 2134
+rule "R2134"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2134", "El XML no contiene el tag o no existe informacion de RegistrationName del receptor del documento");
+end
+
+
+// Código 2511
+rule "R2511"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2511", "El tipo de documento no es aceptado.");
+end
+
+
+// Código 2516
+rule "R2516"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2516", "Debe indicar tipo de documento.");
+end
+
+
+// Código 2548
+rule "R2548"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2548", "El valor del país inválido.");
+end
+
+
+// Código 2600
+rule "R2600"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2600", "El comprobante fue enviado fuera del plazo permitido.");
+end
+
+
+// Código 2617
+rule "R2617"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2617", "Senor contribuyente a la fecha no se encuentra registrado ó habilitado con la condición de Agente de retención.");
+end
+
+
+// Código 2618
+rule "R2618"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2618", "El régimen retención enviado no corresponde con su condición de Agente de retención.");
+end
+
+
+// Código 2619
+rule "R2619"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2619", "La tasa de retención enviada no corresponde con el régimen de retención.");
+end
+
+
+// Código 2620
+rule "R2620"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2620", "El Proveedor no puede ser el mismo que el Emisor del comprobante de retención.");
+end
+
+
+// Código 2621
+rule "R2621"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2621", "Número de RUC del Proveedor no existe.");
+end
+
+
+// Código 2622
+rule "R2622"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2622", "La moneda del importe de pago debe ser la misma que la del documento relacionado.");
+end
+
+
+// Código 2623
+rule "R2623"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2623", "Los montos de pago, retenidos y montos pagados consignados para el documento relacionado no son correctos.");
+end
+
+
+// Código 2625
+rule "R2625"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2625", "La fecha de pago debe estar entre el primer día calendario del mes al cual corresponde la fecha de emisión del comprobante de retención o desde la fecha de emisión del comprobante relacionado.");
+end
+
+
+// Código 2626
+rule "R2626"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2626", "El Nro. de documento con el número de pago ya se encuentra en la Relación de Documentos Relacionados agregados.");
+end
+
+
+// Código 2628
+rule "R2628"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2628", "Importe total retenido debe ser igual a la suma de los importes retenidos por cada documento relacionado.");
+end
+
+
+// Código 2629
+rule "R2629"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2629", "Importe total pagado debe ser igual a la suma de los importes pagados por cada documento relacionado.");
+end
+
+
+// Código 2661
+rule "R2661"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2661", "La fecha de cobro de cada documento relacionado deben ser del mismo Periodo (mm/aaaa), asimismo estas fechas podrán ser menores o iguales a la fecha de emisión del comprobante de retencion");
+end
+
+
+// Código 2669
+rule "R2669"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2669", "El dato ingresado en TotalInvoiceAmount debe ser numérico mayor a cero");
+end
+
+
+// Código 2678
+rule "R2678"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2678", "El XML no contiene el atributo o no existe información del tipo de documento del emisor");
+end
+
+
+// Código 2691
+rule "R2691"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2691", "El XML no contiene el tag o no existe información del tipo de documento relacionado");
+end
+
+
+// Código 2692
+rule "R2692"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2692", "El tipo de documento relacionado no es válido");
+end
+
+
+// Código 2693
+rule "R2693"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2693", "El XML no contiene el tag o no existe información del número de documento relacionado");
+end
+
+
+// Código 2694
+rule "R2694"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2694", "El número de documento relacionado no está permitido o no es valido");
+end
+
+
+// Código 2696
+rule "R2696"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2696", "El dato ingresado en el importe total documento relacionado debe ser numérico mayor a cero");
+end
+
+
+// Código 2715
+rule "R2715"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2715", "El valor de la moneda objetivo para la Tasa de Cambio debe ser PEN");
+end
+
+
+// Código 2716
+rule "R2716"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2716", "El dato ingresado en el tipo de cambio debe ser numérico mayor a cero");
+end
+
+
+// Código 2719
+rule "R2719"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2719", "El XML no contiene el tag o no existe información de la moneda de referencia para el tipo de cambio");
+end
+
+
+// Código 2721
+rule "R2721"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2721", "El XML no contiene el tag o no existe información del tipo de cambio");
+end
+
+
+// Código 2722
+rule "R2722"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2722", "El XML no contiene el tag o no existe información de la fecha de cambio");
+end
+
+
+// Código 2723
+rule "R2723"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2723", "El XML no contiene el tag o no existe información del número de documento de identidad del proveedor");
+end
+
+
+// Código 2724
+rule "R2724"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2724", "El valor ingresado como documento de identidad del proveedor es incorrecto");
+end
+
+
+// Código 2728
+rule "R2728"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2728", "El valor de la moneda del Importe total Retenido debe ser PEN");
+end
+
+
+// Código 2730
+rule "R2730"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2730", "El dato ingresado en SUNATTotalPaid debe ser numérico mayor a cero");
+end
+
+
+// Código 2732
+rule "R2732"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2732", "El valor de la moneda del Importe total Pagado debe ser PEN");
+end
+
+
+// Código 2733
+rule "R2733"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2733", "El XML no contiene el tag o no existe información del número de pago");
+end
+
+
+// Código 2734
+rule "R2734"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2734", "El dato ingresado en el número de pago no es válido");
+end
+
+
+// Código 2735
+rule "R2735"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2735", "El XML no contiene el tag o no existe información del Importe del pago");
+end
+
+
+// Código 2736
+rule "R2736"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2736", "El dato ingresado en el Importe del pago debe ser numérico mayor a cero");
+end
+
+
+// Código 2737
+rule "R2737"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2737", "El XML no contiene el tag o no existe información de la fecha de pago del documento Relacionado");
+end
+
+
+// Código 2740
+rule "R2740"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2740", "El dato ingresado en el Importe retenido debe ser numérico mayor a cero");
+end
+
+
+// Código 2742
+rule "R2742"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2742", "El valor de la moneda de importe retenido debe ser PEN");
+end
+
+
+// Código 2746
+rule "R2746"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2746", "El dato ingresado en el Importe total a pagar (neto) debe ser numérico mayor a cero");
+end
+
+
+// Código 2748
+rule "R2748"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2748", "El valor de la Moneda del monto neto pagado debe ser PEN");
+end
+
+
+// Código 2749
+rule "R2749"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2749", "La moneda de referencia para el tipo de cambio debe ser la misma que la del documento relacionado");
+end
+
+
+// Código 2901
+rule "R2901"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2901", "El nombre comercial del emisor no cumple con el formato establecido");
+end
+
+
+// Código 2902
+rule "R2902"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2902", "La urbanización del domicilio fiscal del emisor no cumple con el formato establecido");
+end
+
+
+// Código 2903
+rule "R2903"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2903", "La provincia del domicilio fiscal del emisor no cumple con el formato establecido");
+end
+
+
+// Código 2904
+rule "R2904"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2904", "El departamento del domicilio fiscal del emisor no cumple con el formato establecido");
+end
+
+
+// Código 2905
+rule "R2905"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2905", "El distrito del domicilio fiscal del emisor no cumple con el formato establecido");
+end
+
+
+// Código 2906
+rule "R2906"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2906", "El nombre comercial del proveedor no cumple con el formato establecido");
+end
+
+
+// Código 2907
+rule "R2907"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2907", "La urbanización del domicilio fiscal del proveedor no cumple con el formato establecido");
+end
+
+
+// Código 2908
+rule "R2908"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2908", "La provincia del domicilio fiscal del proveedor no cumple con el formato establecido");
+end
+
+
+// Código 2909
+rule "R2909"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2909", "El departamento del domicilio fiscal del proveedor no cumple con el formato establecido");
+end
+
+
+// Código 2910
+rule "R2910"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2910", "El distrito del domicilio fiscal del proveedor no cumple con el formato establecido");
+end
+
+
+// Código 2916
+rule "R2916"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2916", "La dirección completa y detallada del domicilio fiscal del emisor no cumple con el formato establecido");
+end
+
+
+// Código 2917
+rule "R2917"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2917", "Debe corresponder a algún valor válido establecido en el catálogo 13");
+end
+
+
+// Código 2918
+rule "R2918"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2918", "La dirección completa y detallada del domicilio fiscal del proveedor no cumple con el formato establecido");
+end
+
+
+// Código 2985
+rule "R2985"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2985", "Solo se acepta comprobantes con fecha de emisión hasta el 28/02/2014 si la tasa del comprobante de retencion 6%");
+end
+
+
+// Código 3207
+rule "R3207"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3207", "Comprobante físico no se encuentra autorizado");
+end
+
+
+// Código 3303
+rule "R3303"
+    when
+        $ctx : CpeContext( redondeoImporteTotalExcede == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3303", "El monto para el redondeo del Importe Total excede el valor permitido");
+end
+
+
+// Código 3304
+rule "R3304"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3304", "La moneda del monto para el redondeo debe ser PEN");
+end
+
+
+// Código 4091
+rule "R4091"
+    when
+        $ctx : CpeContext(operacionExcluidaRetencionPorProveedor == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4091", "La operacion con este proveedor esta excluida del sistema de retencion. Es agente de percepcion, agente de retencion o buen contribuyente.");
+        $ctx.marcarError(4091);
+end

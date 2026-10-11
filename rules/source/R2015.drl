@@ -1,0 +1,7 @@
+rule "R2015"
+    when
+        $ctx : CpeContext( tipoDocCliente == null || tipoDocCliente.trim().length() == 0 )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2015", "El XML no contiene el tag o no existe informacion del tipo de documento de identidad del receptor del documento");
+end

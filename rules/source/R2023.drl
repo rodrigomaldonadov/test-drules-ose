@@ -1,0 +1,7 @@
+rule "R2023"
+    when
+        $linea : LineaContext( numeroItem == null || numeroItem <= 0 || numeroItem != posicionLinea )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2023", "El Numero de orden del item no cumple con el formato establecido");
+end

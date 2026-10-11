@@ -1,0 +1,7 @@
+rule "R2605"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2605", "Número de RUC no existe.");
+end

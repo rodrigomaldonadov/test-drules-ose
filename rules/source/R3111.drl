@@ -1,0 +1,7 @@
+rule "R3111"
+    when
+        $ctx : CpeContext( igvLineaDebeSerDistintoCero == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3111", "El monto de afectacion de IGV por linea debe ser diferente a 0.00.");
+end

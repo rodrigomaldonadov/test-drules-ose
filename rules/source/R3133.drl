@@ -1,0 +1,7 @@
+rule "R3133"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3133", "El XML no contiene el tag de cantidad de especies vendidas en Detracciones para recursos hidrobiologicos.");
+end

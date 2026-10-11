@@ -1,0 +1,7 @@
+rule "R3255"
+    when
+        $ctx : CpeContext( fechaCuotaInvalida == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3255", "Fecha del pago unico o de las cuotas no cumple el formato definido");
+end

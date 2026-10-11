@@ -1,0 +1,7 @@
+rule "R2052"
+    when
+        $ctx : CpeContext( faltaCodigoTributoInternacionalGlobal == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2052", "El XML no contiene el tag codigo de tributo internacional de impuestos globales");
+end

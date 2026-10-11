@@ -1,0 +1,7 @@
+rule "R3172"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3172", "El XML no contiene tag de la Hora del concepto por linea.");
+end

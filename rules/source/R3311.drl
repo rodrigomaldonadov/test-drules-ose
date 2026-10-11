@@ -1,0 +1,7 @@
+rule "R3311"
+    when
+        $ctx : CpeContext( montoTotalPercepcionInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3311", "El Monto total incluido la percepcion no cumple con el formato establecido");
+end

@@ -1,0 +1,7 @@
+rule "R2365"
+    when
+        $ctx : CpeContext( documentoRelacionadoRepetido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2365", "El comprobante contiene un tipo y numero de Documento Relacionado repetido");
+end

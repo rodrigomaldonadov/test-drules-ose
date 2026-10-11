@@ -1,0 +1,7 @@
+rule "R3212"
+    when
+        $ctx : CpeContext( identificadorPagoAnticipoRepetido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("3212", "El comprobante contiene un identificador de pago repetido en los montos anticipados");
+end

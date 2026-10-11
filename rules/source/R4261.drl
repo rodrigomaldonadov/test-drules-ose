@@ -1,0 +1,7 @@
+rule "R4261"
+    when
+        $ctx : CpeContext( atributoListSchemeUriIncorrecto == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4261", "El dato ingresado como atributo @listSchemeURI es incorrecto.");
+end

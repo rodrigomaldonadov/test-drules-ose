@@ -1,0 +1,7 @@
+rule "R4317"
+    when
+        $ctx : CpeContext( esBoleta == true, faltaTotalPrecioVenta == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4317", "Debe consignar el Total Precio de Venta");
+end

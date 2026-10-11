@@ -1,0 +1,7 @@
+rule "R2241"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2241", "DocumentTypeCode - El valor del tipo de documento es invalido");
+end

@@ -1,0 +1,7 @@
+rule "R2968"
+    when
+        $ctx : CpeContext( allowanceChargeAmountFormatoInvalido == true )
+        $res : ResultadoValidacion()
+    then
+        $res.addError("2968", "El dato ingresado en cac:AllowanceCharge/cbc:Amount no cumple con el formato establecido.");
+end

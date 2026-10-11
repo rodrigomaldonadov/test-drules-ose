@@ -1,0 +1,7 @@
+rule "R1049"
+    when
+        $ctx : CpeContext(false)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("1049", "ID - Serie y Número del archivo no coincide con el consignado en el contenido del XML.");
+end

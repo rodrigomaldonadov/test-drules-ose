@@ -1,0 +1,8 @@
+rule "R4090"
+    when
+        $ctx : CpeContext(operacionExcluidaPercepcionPorEntidadExceptuada == true)
+        $res : ResultadoValidacion()
+    then
+        $res.addError("4090", "La operacion con este cliente esta excluida del sistema de percepcion. Es entidad exceptuada de la percepcion.");
+        $ctx.marcarError(4090);
+end
